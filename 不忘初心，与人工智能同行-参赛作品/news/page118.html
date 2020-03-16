@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  <!-- IE的设置 -->
+    <meta name="viewport" content="width=device-width, inital-scale=1.0"> <!-- 响应式设置 -->
+    <title>Let chat robot chat with you more vigorously - dialogue strategy learning</title>
+	<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/style2.css"/>
+
+
+    <link rel="stylesheet" href="./css/normalize.css"> <!-- CSS资源引入 -->
+    <link rel="stylesheet" href="./css/page.css"> <!-- CSS资源引入 -->
+    <link rel="shortcut icon" href="./images/logo.png" > <!-- 图标 -->
+  </head>
+  <body>
+
+  <div class="top"></div>
+	<div class="pr navpr">
+		<div class="nav pa">
+		<div class="w">
+			<img class="fl mt9" src="../img/nav-1.png"/>
+      <ul class="fl mt16 ml40">
+          <li><a href="../index2.html">Index</a></li>
+          <li><a href="../news/index2.html">News</a></li>
+          <li><a href="../aichutan/index2.html">Explorer</a></li>
+          <li><a href="../tushuoai/index2.html">Picture</a></li>
+          <li><a href="../zhinengshibie/index2.html">Identification</a></li>
+          <li><a href="../jiqikongzhi/index2.html">Machine</a></li>
+          <li><a href="../linjunrenwu/index2.html">Leader</a></li>
+          <li><a href="../guidianai/index2.html">Campus AI</a></li>
+          <li><a href="../xgzz/index2.html">Book</a></li>
+          <li><a href="../about/index2.html">About</a></li>
+          <div class="clear"></div>
+        </ul>
+			<div class="nav-btn fr mt17">
+				<a class="mr12" href="page117.html">中文</a>|
+				<a class="ml10" href="page118.html">English</a>			</div>
+			<div class="clear"></div>
+		</div>
+		<script>
+	$(function(){
+		var a = $('.nav'),
+			b =a.offset();
+		$(document).on('scroll',function(){
+			var	c = $(document).scrollTop();
+			if(b.top<=c){
+				a.css({'position':'fixed','top':'0px'})
+				}else{
+					a.css({'position':'absolute','top':'0px'})
+					}
+			})
+		})
+	</script>
+	</div>
+	</div>
+
+
+    <div class="bj">
+
+      <!-- 中间部分的内容 -->
+      <div class="bj-zhong">
+        <h1 class="title">Let chat robot chat with you more vigorously - dialogue strategy learning</h1>
+        <div class="two">
+          <p>One of the main tasks of building an Open-domain chat robot is to have a multi-round dialogue, and to get a better multi-round dialogue strategy has a lot of positive significance for the human-computer dialogue system. However, the current neural network dialogue generation model is prone to generate universal responses in the process of multi-round dialogue, without considering the overall trend of multi-round dialogue and so on. To solve these problems, this paper introduces Deep Q-Network (DQN) algorithm to carry out open domain multi-round dialogue strategy learning, which makes each round of reply more conducive to multi-round dialogue, reduce the generation of universal reply and produce a higher quality of multi-round dialogue.</p>
+          <p>The so-called "omnipotent reply" refers to those sentences which seem to be able to reply to any input but have no practical significance and are not conducive to the continuation of the dialogue process. Universal reply is closely related to the training corpus, usually occurring more frequently. Typical universal replies such as "I don't know" in English Open Subtitles corpus and "Ha ha ha" in Chinese microblog corpus, etc.</p>
+          <p>The end-to-end generation method represented by seq2seq model in dialogue generation task is based on maximum likelihood estimation. Each reply is the sentence with the highest probability of generation, which leads to the easy selection of universal reply.</p>
+        </div>
+        <div class="one">
+          <img src="./pimg/p1171.jpg" width=100% height=auto>
+        </div>
+        <div class="two">
+          <p>An important goal of multi round dialogue in open domain is to chat as long as possible. The choice of each round of reply in an Open-domain multi-round dialogue requires not only the ability to reply effectively to the current input, but also whether it is conducive to the continuity of the dialogue process.</p>
+          <p>In this paper, DQN is used to evaluate each reply in the current conversational state. Each reply is selected with the highest cumulative value rather than just the highest probability of generating the sentence. It alleviates the problem of generating a large number of omnipotent responses and getting stuck in a deadly circle during multiple conversations.</p>
+        </div>
+        <div class="one">
+          <img src="./pimg/p1172.jpg" width=100% height=auto>
+        </div>
+        <div class="two">
+          <p>Referring to Sutskever et al. (2014) [1] and Vinyals et al. (2015) [2], this paper implements the seq2seq model, and adds attention mechanism and dropout mechanism to the training process. After getting the basic reply generation model, we can test whether the model can effectively carry out multiple conversations by simulating dialogue. In addition, because the sentence is variable length and discrete, it is not conducive to further processing, so this paper draws on the idea of self-coding, using self-encoder to obtain a fixed dimension vector representation of the sentence.</p>
+          <p>Next, we introduce the use of reinforcement learning model to model the multi round dialogue process:</p>
+          <p>The main function of Agent is to select action a according to the status s of environment updating. This part of agent is a deep value network trained by DQN algorithm. The Deep Value Network estimates a value Q (s, a) for a given state s and action a, and then selects the action with the highest value.</p>
+          <p>The main function of the environment is to accept the action a (that is, sentence) selected by the agent, update the status s according to the sentence, and calculate the reward r of the action according to the reward function. The main part of the environment is a trained self-encoder, which encodes the input sentences into feature vectors to represent the States s.</p>
+          <p>Transfer probability does not need to be defined in the process of dialogue because the transfer of state depends on the simulated dialogue process. The Reward function guides the conversation in the direction of more rounds, more information, and less boring responses. From this point of view, reward is defined as the immediate reward after selecting an action, which is calculated quantitatively by generating probability, mutual information and cosine similarity between sentences.</p>
+        </div>
+        <div class="one">
+          <img src="./pimg/p1173.jpg" width=100% height=auto>
+        </div>
+        <div class="two">
+          <p>As for the experimental data, we use the Sina Weibo Dialogue Corpus (Shang et al. 2015) [3]. Each pair of dialog data comes from the text of the Weibo and the comments below the Weibo. Thus, a set of blog-comment pairs is similar to a set of dialog pairs. There are about 1.1 million such dialog pairs in the data set.</p>
+          <p>The following results are shown in Table 1 and table 2. It can be seen that the quality of simulated conversations has been significantly improved by introducing multi-round conversation strategy through DQN. The following are as follows:</p>
+        </div>
+        <div class="one">
+          <img src="./pimg/p1174.jpg" width=100% height=auto>
+        </div>
+        <div class="one">
+          <img src="./pimg/p1175.jpg" width=100% height=auto>
+        </div>
+        <div class="two">
+          <p>In terms of evaluation index, this paper refers to the method of Li et al. (2016) [4] to evaluate the experimental results of multiple dialogues, using the following two objective indicators: 1. The average number of dialogues. 2. diversity.</p>
+          <p>Subjective comparative evaluation is also carried out in this paper: given the same input, the DQN model and the underlying model are generated independently in a single round and simulated dialogue, and then the quality of the two models is compared subjectively by the evaluators unrelated to the experiment. For multiple rounds of dialogue, a total of 600 sets of comparison scores were received. As for subjective indicators, the proportion of dialogue strategies based on DQN is 68.3% better than that based on the basic model. As for the objective indicators, the average number of conversation rounds increased from 2.51 rounds to 4.56 rounds after DQN was introduced to learn the multi-round conversation strategy.</p>
+          <p>Our innovation is that we apply DQN to the learning process of dialogue strategy, and use an independent deep neural network to evaluate the future benefits of each candidate reply, so as to obtain a dialogue strategy which is conducive to the continuity of multiple conversations. The experimental results also show that the multi-round dialogue strategy obtained by DQN method can effectively improve the diversity, average rounds and dialogue quality of multi-round dialogue.</p>
+          <p>Our follow-up work will focus on the application of DQN to the training process of seq2seq model, using the depth value network to estimate the loss in the training process, making the training loss with more information, and improving the quality of sentences from a finer granularity.</p>
+        </div>
+
+      </div>
+      <!-- 中间部分的内容end -->
+
+    </div>
+<iframe src="../bottom2.html" width="100%" height="200px" scrolling="No"  noresize="noresize" frameborder="0" id="bottomFrame"></iframe>
+  </body>
+</html>

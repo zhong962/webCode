@@ -1,0 +1,131 @@
+
+#banner{
+    height: 550px;
+    width: 100%;
+}
+#nav{
+    background-color: #fff;
+    height: 55px;
+}
+#icon{
+    float: left;
+    margin: 11px;
+    padding: 0 0 0 145px;
+    /* transition-duration: 0.5s; */
+}
+#icon img{
+    height: 42px;
+    width: 55px;
+}
+#head{
+    display: block;
+    float: right;
+    padding: 14px 150px 0 0;
+}
+a{
+    text-decoration-line: none;
+    color: #000;
+}
+#head a{
+    padding-bottom: 7px;
+    margin: 32px;
+    cursor: pointer;
+    text-decoration: none;
+    border-bottom: 2px solid #fff;
+}
+#head a:hover{
+    color: burlywood;
+    border-bottom: 2px solid burlywood;
+}
+
+#lunbo{
+    background: url(./image/500854387.png) no-repeat;
+    background-size: cover;
+    height:530px;
+    width: 100%;
+}
+#font{
+    height: 310px;
+    width: 715px;
+    margin: 0 auto;
+    background-color: #ffffff; 
+    background-color:rgba(255, 255, 255, 0.25);    
+    /*实现背景透明而文字不透明 */
+}
+#big{
+    display: inline;
+    font-weight: bold;
+    color: #fff;
+    display: block;
+    text-align:center;       /*字体居中*/
+    font-size: 30px;
+}
+#small{
+    display: inline;
+    color: #fff;
+    display: block;
+    text-align:center;
+    margin: 0 auto;
+    font-size: 25px;
+    font-weight: bold;       /*字体加粗 */
+    width: 490px;
+    border: 2px solid #fff;
+}
+
+#container1{
+    background-color:#fff;
+    height: 400px;
+    width: 100%;
+
+}
+#left1{
+    float: left;
+    margin: 40px;
+    padding: 0 0 0 145px;
+    height: 300px;
+    width: 600px;
+    background:#fff;
+
+}
+#right1{
+    float: right;
+    margin: 43px 158px 0 50px;
+    height: 300px;
+    width: 300px;
+}
+
+#container2{
+    height: 460px;
+    background: rgb(183, 182, 182);
+}
+#container2 img{
+    width: 250px;
+    height: 300px;
+}
+#imag1{
+    float: left;
+    margin: 80px 0 0 90px;
+}
+#imag2{
+    float:left;
+    margin: 82px 0 0 57px;
+}
+#imag3{
+    float:left;
+    margin: 80px 0 0 45px
+   
+}
+#imag4{
+    float:left;
+    margin: 80px 0px 0 52px;
+}
+
+#container3{
+    height: 550px;
+    background: #fff;
+}
+
+#footer{
+    height: 300px;
+    background: #000;
+}

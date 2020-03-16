@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.19.0/axios.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <h2>正在退出登陆...</h2>
+    </div>
+
+
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                
+                
+            },
+            created(){
+                this.loginOutText = 666;
+                var that = this;
+                //清除服务器令牌session
+                axios.get('http://localhost/web/api/loginOut.php').then(function (res) {
+                        that.loginOutText = res.data;
+                        //同时清除本地缓存
+                        localStorage.removeItem('uid');
+                        localStorage.removeItem('name');
+                        window.location.href = "login.html";
+                    }).catch(function (response) {
+
+                    });
+
+            },
+            methods: {
+                
+
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,539 @@
+/* å…¬å…±æ ·å¼è¡¨css */
+html,body {
+    color: #333;
+    margin: 0;
+    height: 100%;
+    font-family: "Myriad Set Pro","Helvetica Neue",Helvetica,Arial,Verdana,sans-serif;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+img {
+    border: 0;
+}
+
+body {
+    background: #fff;
+    color: #666;
+    font: 12px/150% Arial,Verdana, "microsoft yahei";
+}
+
+html, body, div, dl, dt, dd, ol, ul, li, h1, h2, h3, h4, h5, h6, p, blockquote, pre, button, fieldset, form, input, legend, textarea, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #08acee;
+}
+
+button {
+    outline: 0;
+}
+
+img {
+    border: 0;
+}
+
+button,input,optgroup,select,textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    outline: none;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: #666;
+}
+
+a:hover {
+    color: #eee;
+}
+
+.clearfix::after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.clearfix {
+}
+
+/* å¿…è¦å¸ƒå±€æ ·å¼css */
+.banner-content {
+	margin-top: 4%;
+    min-width: 1200px;
+    height: 483px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-slide-circle {
+    position: absolute;
+    bottom: 52px;
+    z-index: 1002;
+    left: 50%;
+}
+
+.banner-slide-circle ul li {
+    width: 11px;
+    height: 11px;
+    background: #bdccd4;
+    border-radius: 50%;
+    cursor: pointer;
+    float: left;
+    margin: 0 8px;
+}
+
+.banner-slide-circle ul .on {
+    background: #45aaf2;
+}
+
+.banner-background-01 {
+    width: 997px;
+    height: 85px;
+    background: url(../images/background01.png) repeat-x;
+    _background: url(../images/background01.png) repeat-x;
+    position: absolute;
+    top: 371px;
+    width: 400%;
+    left: -236px;
+    z-index: 999;
+    animation: wave1 25s linear .4s infinite normal;
+    -moz-animation: wave1 25s linear .4s infinite normal;
+    -webkit-animation: wave1 25s linear .4s infinite normal;
+    -o-animation: wave1 25s linear .4s infinite normal;
+}
+
+.banner-background-02 {
+    width: 1009px;
+    height: 100px;
+    background: url(../images/background02.png) repeat-x;
+    _background: 0 0;
+    position: absolute;
+    top: 356px;
+    width: 400%;
+    left: 0;
+    z-index: 998;
+    animation: wave2 60s linear .4s infinite normal;
+    -moz-animation: wave2 60s linear .4s infinite normal;
+    -webkit-animation: wave2 60s linear .4s infinite normal;
+    -o-animation: wave2 60s linear .4s infinite normal
+}
+
+.banner-slide-image ul li {
+    height: 450px;
+}
+
+.banner-slide-image ul li a img {
+    width: 100%;
+    height: 450px;
+    display: block;
+    border: none;
+}
+
+@-webkit-keyframes wave1 {
+    from {
+        left: -236px
+    }
+
+    to {
+        left: -1233px
+    }
+}
+
+@-moz-keyframes wave1 {
+    from {
+        left: -236px
+    }
+
+    to {
+        left: -1233px
+    }
+}
+
+@-o-keyframes wave1 {
+    from {
+        left: -236px
+    }
+
+    to {
+        left: -1233px
+    }
+}
+
+@keyframes wave1 {
+    from {
+        left: -236px
+    }
+
+    to {
+        left: -1233px
+    }
+}
+
+@-webkit-keyframes wave2 {
+    from {
+        left: 0
+    }
+
+    to {
+        left: -1009px
+    }
+}
+
+@-moz-keyframes wave2 {
+    from {
+        left: 0
+    }
+
+    to {
+        left: -1009px
+    }
+}
+
+@-o-keyframes wave2 {
+    from {
+        left: 0
+    }
+
+    to {
+        left: -1009px
+    }
+}
+
+@keyframes wave2 {
+    from {
+        left: 0
+    }
+
+    to {
+        left: -1009px
+    }
+}
+.zt_1{
+	width: 100%;
+	height: auto;
+	margin: 6%;
+}
+
+.left1{
+	display: inline-block;
+	width: 30%;
+	height: 300px;
+	/* border: 3px solid #269ABC; */
+}
+
+.left1 h1{
+	color: #156B58;
+	/* text-align: center */;
+	padding: 10%;
+	
+}
+
+.right1{
+	width:30%;
+	height:300px;
+	float: right;
+	/* overflow: hidden; */
+	border: 3px solid #269ABC;
+	background: url(../images/pictures/p1.png) ;
+	background-repeat: no-repeat;
+	background-size:cover;
+	margin-right:20%;
+	display: inline-block;
+}
+
+.left1 p{
+	font-size: 15px;
+	line-height: 30px;
+}
+
+.zt_2{
+	width: 100%;
+	height:550px;
+	background-color: #AABDB9;
+	margin-bottom: 10%;
+	margin-top: 10%;
+}
+
+.left2{
+	background-color: white;
+	width: 20%;
+	height: auto;
+	margin: 5%;
+	display: inline-block;
+}
+
+.lup1{
+	background: url(../images/pictures/因地制宜.png);
+	width: 100%;
+	height: 200px;
+	margin: auto;
+	background-size:cover ;
+}
+.lbo1{
+	width:100% ;
+	padding: 8%;
+}
+.lbo1 h2{
+	text-align: center;
+	padding: 5%;
+	color:#1A6D5B ;
+}
+
+.lbo1 p{
+	color:#1A6D5B ;
+	line-height: 25px;
+	font-size: 15px;
+}
+
+
+
+
+.mid2{
+	background-color: white;
+	width: 20%;
+	height: auto;
+	margin: 5%;
+	display: inline-block;
+}
+.mup1{
+	background: url(../images/pictures/发展科技.png);
+	width: 100%;
+	height: 200px;
+	margin: auto;
+	background-size:cover ;
+}
+.mbo1{
+	width:100% ;
+	padding: 8%;
+}
+.mbo1 h2{
+	text-align: center;
+	padding: 5%;
+	color:#1A6D5B ;
+}
+
+.mbo1 p{
+	color:#1A6D5B ;
+	line-height: 25px;
+	font-size: 16px;
+}
+
+
+.rig2{
+	background-color: white;
+	width: 20%;
+	height: auto;
+	margin: 5%;
+	display: inline-block;
+}
+.rup1{
+	background: url(../images/pictures/废物利用.png);
+	width: 100%;
+	height: 200px;
+	margin: auto;
+	background-size:cover ;
+}
+.rbo1{
+	width:100% ;
+	padding: 8%;
+}
+.rbo1 h2{
+	text-align: center;
+	padding: 5%;
+	color:#1A6D5B ;
+}
+
+.rbo1 p{
+	color:#1A6D5B ;
+	line-height: 25px;
+	font-size: 17px;
+}
+
+.zt_3{
+	width: 100%;
+	height: 350px;
+	background: url(../images/pictures/农产品出口背景.png) no-repeat;
+	background-size: cover;
+	margin-bottom: 10%;
+	
+}
+
+.zt_3 h1{
+	padding-left: 10%;
+	margin-top: 7%;
+	font-size: 50px;
+	color: white;
+	font-family: "微软雅黑";
+}
+.pic3 img{
+	width: 45%;
+	float: right;
+	padding-right: 5%;
+}
+
+.zt_4{
+	width: 100%;
+	height: auto;
+	margin-top: 15%;
+}
+
+
+.zt_4 p{
+	width: 200px;
+
+	font-size: 16px;
+	line-height: 30px;
+
+	display: inline-block;
+
+	background-color: #AABDB9;
+	padding-top:5% ;
+}
+
+.zt_4 img{
+	width: 227%;
+}
+.zt_4 p{
+	padding: 12%;
+	margin-left: 99%;
+	color: #247361;
+}
+
+.zt_41{
+	margin-top: 3%;
+}
+.zt_41 img{
+	width: 227%;
+}
+.zt_41 p{
+	padding: 12%;
+	margin-left: 99%;
+	width: 200px;
+	
+	font-size: 14px;
+	line-height: 27.1px;
+	color: #247361;
+	display: inline-block;
+	
+	background-color: #AABDB9;
+	padding-top:5% ;
+}
+
+
+.zuoshang{
+	display: inline;
+	/* position: relative; */
+}
+.youshang{
+	padding-top:25% ;
+	display: inline;
+}
+
+.zuoxia{
+	padding-top: 50%;
+	display: inline;
+	/* position: absolute; */
+}
+.youshang{
+	display: inline;
+}
+
+.zt_5{
+	width: 100%;
+	height: auto;
+	margin-top: 15%;
+	
+}
+.zt_5 img{
+	width: 125%;
+}
+
+
+.bg_5{
+	background-color:#7EA69E;
+/* 	padding-left: 25%; */
+	width: 93%;
+	
+	margin-left: 24%;
+	
+}
+.zt_5 h1{
+	text-align: center;
+	color: white;
+	
+	padding: 12%;
+	
+}
+
+.bg_5 p{
+	width: 82%;
+	font-size: 14px;
+	line-height: 40px;
+	color: white;
+	margin-bottom: 10%;
+	/* text-align: center; */
+	
+	padding-bottom:24%;
+	padding-left: 17%;
+}
+
+
+
+
+
+.zt_6{
+	width: 100%;
+	height: auto;
+	margin-top: 10%;
+	/* background: url(../images/pictures/生态保护2.png) no-repeat; */
+	
+}
+
+/* .bg6 img{
+	width: 100%;
+	height: 380px;	
+
+} */
+
+.bg6 img{
+	position: relative;
+	width: 100%;
+	height: 380px;
+	
+	
+}
+
+.zt_6 p{
+	position: absolute;
+	width:20%;
+	height: 8%;
+	padding: 3%;
+	font-size: 16px;
+	line-height: 25px;
+	z-index: 2;
+	margin-left:45%;
+	/* margin-top: 2%; */
+	background: #7EA69E;
+	color: white;
+}
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link href="css/banner.css" rel="stylesheet" type="text/css">
+		<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+		<script src="js/banner.js" type="text/javascript"></script>
+		<link rel="stylesheet" type="text/css" href="css/hover-effects2.css"/>
+	</head>
+<div class="top"></div>
+		<div class="pr">
+			<div class="nav pa">
+			<div class="w">
+				<img class="fl mt9" src="img/nav-1.png"/>
+				<ul class="fl mt16 ml40">
+					<li><a href="#">首页</a></li>
+					<li><a href="#">新闻资讯</a></li>
+					<li><a href="#">AI初探 </a></li>
+					<li><a href="#">图说AI</a></li>
+					<li><a href="#">智能识别</a></li>
+					<li><a href="#">机器控制</a></li>
+					<li><a href="#">领军人物</a></li>
+					<li><a href="#">桂电AI</a></li>
+					<li><a href="#">相关著作</a></li>
+					<li><a href="#">关于我们</a></li>
+					<div class="clear"></div>
+				</ul>
+				<div class="nav-btn fr mt17">
+					<a class="mr12" href="">中文</a>|
+					<a class="ml10" href="">English</a>				</div>
+				<div class="clear"></div>
+			</div>
+			<script>
+		$(function(){
+			var a = $('.nav'),
+				b =a.offset();
+			$(document).on('scroll',function(){
+				var	c = $(document).scrollTop();
+				if(b.top<=c){
+					a.css({'position':'fixed','top':'0px'})
+					}else{
+						a.css({'position':'absolute','top':'0px'})
+						}
+				})
+			})
+		</script>
+		</div>
+		</div>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>首页</title>
+		<link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
+		<script src="../bootstrap-3.3.7-dist/js/jquery-1.11.3.min.js"></script>
+		<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/common.css">
+		<link rel="stylesheet" type="text/css" href="../css/Effect-FooterBG.css" />
+		<script src="../js/Effect-FooterBG.js"></script>
+		<script src="../js/common.js" type="text/javascript"></script>
+		<script>
+			$(function(){
+				// 初始化 传入dom id
+				var victor = new Victor("container", "output");
+			});
+		</script>
+	</head>
+	<body>
+		
+		<!-- navigation -->
+		
+			
+		<script src="../js/header.js"></script>
+		
+		
+		<!-- banner -->
+		
+			<!-- <div class="banner">
+				<img src="../img/组1/banner.png"/>
+			</div> -->
+			
+					
+		<!-- news -->
+			
+			<div class="news">
+				<div id="details">
+					<div class="container details" style="padding: 20px; margin: 0;">
+							<p><a href="../../sy/index.html">首页</a></p>
+							<p>&nbsp;>&nbsp;</p>
+							<p><a href="../../xwzx/index.html">新闻资讯</a></p>
+							<p>&nbsp;>&nbsp;</p>
+							<p>内容</p>
+					</div>
+						<div class="main_title font02">
+							
+							<h2 style="TEXT-ALIGN: center"><b>新研究运用数据挖掘技术，揭示气象变化与电网故障的关系</b></h2>
+							<h6 style="TEXT-ALIGN: center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;发布时间：<span>2019-08-09</span><!-- &nbsp;&nbsp;点击次数：<span id="pageview"></span> -->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><a href="javascript:;" id="fontSizeB" class="">大</a><a id="fontSize2" href="javascript:;" style="margin:0 15px;" class="red">中</a><a id="fontSizeS" href="javascript:;" class="">小</a></span></h6>
+							<div class="main_content">
+
+								<article>
+									<!-- 政务处理 -->
+								<p data-role="original-title" style="display:none">原标题：新研究运用数据挖掘技术，揭示气象变化与电网故障的关系</p>
+								<p><strong>广东今程光一电力科技有限责任公司、佛山科学技术学院自动化学院的研究人员林卫铭、吴泽君、周恒旭、郭静，在2019年第6期《电气技术》杂志上撰文指出（论文标题为“基于Apriori算法的气象与电网缺陷关联研究”），灾害性气象是造成电网缺陷进而导致电力设备出现故障的最主要因素，本文试图找出灾害性气象因素与电网缺陷的关系，通过改进现有Apriori算法，得到了适应南方沿海电网的关联模型。论文还讨论了样本数（异常气象样本偏少）导致的支持度偏低的问题。文末通过南方某电网实例解释了模型的应用。</strong></p> 
+								<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190708/ae4b4dbe769a42559fc5588f4c0ce9c5.jpeg" img_width="960" img_height="540"></p> 
+								<p>随着社会发展要求的不断提高，现代电力电网系统规模和结构愈发庞大复杂。电网架空线路长期暴露于大气环境之中，易受雷电、台风、暴雨、覆冰，山火等气象灾害的影响而导致故障。在南方沿海一带地区，台风、雷电等极端自然灾害频繁发生，在短时间内会造成电网内设备出现故障，甚至造成大面积停电。文献[2]提出了基于气候模型的输电线路负载能力预测系统，利用气候数据较好地实现了负载预测，也说明气象变化因素对电力系统运行产生较大影响。</p> 
+								<p>传统的日常巡检依赖于巡检员的经验，能够起到一定的预防作用，但人工成本高，缺陷类型确定不准，已经不能满足要求。目前电力系统能量管理系统中SCADA（supervisory control and data acquisition）完成了电网数据实时采集，为电网缺陷分析提供了数据源。</p> 
+								<p>SCADA提供的数据是非结构性的且数据海量，需要大数据理论方法对SCADA数据进行处理，达到对设备进行主动智能观测与监视统计。利用历史故障缺陷数据进行统一挖掘处理的方法包括K均值聚类法，支持向量机SVM法和统计回归法等，Apriori关联算法基于概率原理，因而允许人们对结果进行机理方面的分析，使结果得到合理的解释。</p> 
+								<p>因此我们采用Apriori算法对SCADA数据进行关联挖掘，主要贡献：①样本处理，主要包括去除无物理上无因果关系的样本和样本数据不全的插补；②改进现有Apriori算法，现有算法是基于一维向量的，本文将一维映射到二维空间，减少了操作；③改进了现有算法没有考虑故障滞后于气象数据的缺点；④对结果给出了机理分析。</p> 
+								<p><strong>1 灾害性气象因素对电网的影响</strong></p> 
+								<p>在夏季，连续高温天气导致热积累效应（热岛效应）。同时高温使得空调负荷急剧增长带来电力紧缺。以上的气象灾害可以归结于：温度、相对湿度、风力和降水量4种参数来描述。</p> 
+								<p>目前，电力公司已与当地气象部门展开合作，实现气象信息共享。以南方电网为例，南方电网气象信息应用决策支持系统按网省“1+7”模式建设部署。该系统整合了全网及中央气象台资源，提供气象要素、气象灾害监测及预报分析等功能。</p> 
+								<p>该系统运行以来，已为应对台风“彩虹”等气象灾害提供了技术支撑。气象因素对设备的影响可通过数据挖掘得到某些潜在关联信息，这些关联信息存在于大量的历史缺陷数据中，以概率的形式表现。</p> 
+								<p><strong>2 关联规则及Apriori算法（略）</strong></p> 
+								<p>Apriori算法是个关联规则算法，该算法采用递归的方法来挖掘频繁项集，文献[8]随后发展了基于Apriori深度优先搜索算法，这一算法包括创建FP-tree结构和记录节点的物理存储消耗，因而在实际应用中具有一定的难度。</p> 
+								<p>关联挖掘的效果取决于关联规则的建立，深入理解数据的物理特性和电力系统的运行特点是建立关联规则的基础，近年来基于该分析思想的方法开始应用于电力系统的数据处理中，本文综合考虑了以上两个因素来探讨电力系统故障与灾害性气象因素之间的关系。</p> 
+								<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190708/274bef03e0664654b055c7dd51493c09.jpeg" img_width="548" img_height="408"></p> 
+								<p>图1 运行时间对比图</p> 
+								<p><strong>3 电网缺陷数据挖掘应用（略）</strong></p> 
+								<p>对于电网缺陷与灾害性气象因素之间的关系，传统的做法是凭借多年经验进行判断。本文采用数据挖掘的技术，分析气象与电网输电线路缺陷的关系。本案例的总体流程如图2所示。</p> 
+								<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190708/047df75cd8e646ca93ddcf76e5294fdb.jpeg" img_width="413" img_height="731"></p> 
+								<p>图2 气象与电网缺陷关联分析流程图</p> 
+								<p>我们选取广东某市电网2013年1月至2016年6月电网设施缺陷数据，一共2656组数据，同时选取该时段的气象数据。统计某市6个探测点在2013年至2016年间每个月发生灾害性天气的天数。</p> 
+								<p>对这2656组项集以缺陷类型进行数量统计，具体如图3所示。</p> 
+								<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190708/b1f50634a2264e8c8985d0287e87a3ab.jpeg" img_width="543" img_height="353"></p> 
+								<p>图3 缺陷类型扇形图</p> 
+								<p>由图3得知锈蚀、损伤出现的数量占所有缺陷的39%，异物短路占29%。容易得到初步分析，暴雨、高温和高湿度可以直接造成设备的锈蚀、损坏。</p> 
+								<p><strong>4 模型建立与关联分析（略）</strong></p> 
+								<p>由分组关联分析明显发现每组都出现过高湿度条件，而且在三组中，高湿度关联是首条关联规则，即支持度比同组的其他关联规则要高，可得出高湿度条件仍然是电力设备缺陷的主要气象影响因素。其次是高温条件，五组都出现高温关联，且在两组里，高温关联是首条关联，所以，高温也是电力设备缺陷的主要气象影响因素。</p> 
+								<p><strong>5 模型推广</strong></p> 
+								<p>为了更好地进行电网设备运行维护，提供日常维护指导意见，利用上面归纳出历史数据所关联的设备故障的潜在状态信息，加上天气预报信息，可以得到一个可靠的维护模型。具体模型应用流程图如图4所示。</p> 
+								<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190708/b90bef5f3bef4d16a30d8dd1693d01dd.jpeg" img_width="598" img_height="625"></p> 
+								<p>图4 模型应用流程图</p> 
+								<p><strong>结论</strong></p> 
+								<p>本文介绍了Apriori算法并将其应用于电网缺陷数据信息与气象数据信息之间关联研究，并利用实际具体的数据进行验证，为了解决挖掘时出现灾害性天气较少而导致的支持度低的规则被过滤的问题，本文尝试先通过分类缺陷类型再进行单个缺陷与多种灾害性气象因素的关联挖掘，并得出的结果分析，证明了该方法行之有效。</p> 
+								<p>最后在文末利用上述关联算法设计出一个实际应用的电网维护模型，该模型在利用未来气象状况预测电网缺陷和提高电网运行可靠性方面具有实际使用价值。</p>
+								</article>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		
+		
+				
+				
+		<!-- footer	 -->
+		
+		<script src="../js/footer.js"></script>
+		
+	<script src="../js/server.js"></script>
+
+	</body>
+</html>

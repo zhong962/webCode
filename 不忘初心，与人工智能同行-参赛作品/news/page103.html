@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  <!-- IE的设置 -->
+    <meta name="viewport" content="width=device-width, inital-scale=1.0"> <!-- 响应式设置 -->
+    <title>加州理工学院巧用算法，以无人机驱逐鸟群</title>
+	<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+
+
+    <link rel="stylesheet" href="./css/normalize.css"> <!-- CSS资源引入 -->
+    <link rel="stylesheet" href="./css/page.css"> <!-- CSS资源引入 -->
+    <link rel="shortcut icon" href="./images/logo.png" > <!-- 图标 -->
+  </head>
+  <body>
+
+  <div class="top"></div>
+	<div class="pr navpr">
+		<div class="nav pa">
+		<div class="w">
+			<img class="fl mt9" src="../img/nav-1.png"/>
+			<ul class="fl mt16 ml40">
+					<li><a href="../index1.html">首页</a></li>
+					<li><a href="../news/index.html">新闻资讯</a></li>
+					<li><a href="../aichutan/index.html">AI初探 </a></li>
+					<li><a href="../tushuoai/index.html">图说AI</a></li>
+					<li><a href="../zhinengshibie/index.html">智能识别</a></li>
+					<li><a href="../jiqikongzhi/index.html">机器控制</a></li>
+					<li><a href="../linjunrenwu/index.html">领军人物</a></li>
+					<li><a href="../guidianai/index.html">桂电AI</a></li>
+					<li><a href="../xgzz/index.html">相关著作</a></li>
+					<li><a href="../about/index.html">关于我们</a></li>
+					<div class="clear"></div>
+				</ul>
+			<div class="nav-btn fr mt17">
+				<a class="mr12" href="page103.html">中文</a>|
+				<a class="ml10" href="page104.html">English</a>			</div>
+			<div class="clear"></div>
+		</div>
+		<script>
+	$(function(){
+		var a = $('.nav'),
+			b =a.offset();
+		$(document).on('scroll',function(){
+			var	c = $(document).scrollTop();
+			if(b.top<=c){
+				a.css({'position':'fixed','top':'0px'})
+				}else{
+					a.css({'position':'absolute','top':'0px'})
+					}
+			})
+		})
+	</script>
+	</div>
+	</div>
+
+
+    <div class="bj">
+
+      <!-- 中间部分的内容 -->
+      <div class="bj-zhong">
+        <h1 class="title">加州理工学院巧用算法，以无人机驱逐鸟群</h1>
+        <div class="one">
+          <img src="./pimg/p1031.jpg" width=100% height=auto>
+        </div>
+        <div class="two">
+          <p>不论是撞毁飞机，还是引发引擎故障，「鸟击」一直是威胁航空安全的重要因素之一。究竟有何办法可有效地抑止此一情况？近期美国加州理工学院研究团队，便巧用算法让全自动无人机以特定轨迹飞行，并成功驱逐鸟群。</p>
+          <p>由于机场多设于郊区，容易引来鸟朋友的「注意」，甚至不定时「串门子」，而导致鸟击事件发生。其中最为知名的就是 2009 年全美航空 1549 号班机事故，当时飞机起飞爬升过程中，遭到加拿大黑雁鸟击，导致两个引擎同时熄火，飞机完全失去动力，最后迫降于哈德逊河河面。</p>
+          <p>而为预防鸟袭，目前多以遥控飞机或出动猛禽的方式，来进行驱赶。但不论是专业操作员或是猛禽训练师，都需要一定的额外花费，成效也不见得好，那么是否有更好的办法？</p>
+          <p>根据《TechCrunch》报导，鉴于上述事件，加州理工学院研究员 Soon-Jo Chung 表示，「我觉得下次可能就不会如此幸运」，因此结合自身专长─自动控制和机器人领域，欲以科技来抵御鸟袭。</p>
+          <p>该研究团队研究了动物群体如何移动和相互影响的模型，并制作出鸟类面对威胁时如何移动的模型，运用在无人机上。利用该机制，鸟类便会自动跟随着无人机行动，阻止鸟群进入特定保护区域，如视频所示。</p>
+          <p>此方法既不会伤害到鸟类，又能有效完成任务，未来团队会进行更多的实验来调整模型，使系统达到可靠的状态，不论遇到何种规模的鸟群、飞行速度都能应对。</p>
+        </div>
+
+      </div>
+      <!-- 中间部分的内容end -->
+
+    </div>
+<iframe src="../bottom.html" width="100%" height="200px" scrolling="No"  noresize="noresize" frameborder="0" id="bottomFrame"></iframe>
+  </body>
+</html>

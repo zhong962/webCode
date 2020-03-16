@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+		.box1 {
+		    margin: 100px auto;
+		    width: 200px;
+		    height: 50px;
+		    background: #93FB40;
+		    border-radius: 12px;                /*给div元素添加圆角的边框*/
+		}
+		.box1:hover {            /*定义动画的状态，鼠标移动到链接上 */ 
+			                      /*rotate3D旋转*/
+		    -webkit-transform: rotate(-90deg);
+		    -moz-transform: rotate(-90deg);
+		    -o-transform: rotate(-90deg);
+		    transform: rotate(-90deg);           /*绕X轴且顺时针为正*/
+		}
+		
+		.box2 {
+		    margin: 100px auto;
+		    width: 200px;
+		    height: 50px;
+		    background: #33d1ee;
+		    border-radius: 12px;
+		    box-shadow:2px 2px 2px #999;
+		}
+		.box2:hover {
+		    /*定义动画的状态 */
+		    /*设置a元素在鼠标经过时放大1.5倍尺寸进行显示*/
+		     /*scale3D缩放*/
+		    -webkit-transform: scale(1.5);
+		    -moz-transform: scale(1.5);
+		    -o-transform: scale(1.5);
+		    transform: scale(1.5);
+		}
+		
+		.test{
+			margin-left: 300px;
+		}
+		.test ul {
+		    list-style: none;             /*消除列表项标记*/
+		}
+		.test ul li {
+		    float: left;
+		    width: 100px;
+		    background: #CCC;
+		    margin-left: 3px;        /*左外边距*/
+		    line-height: 30px;
+		}
+		.test a {
+		    display: block;
+		    text-align: center;
+		    height: 30px;
+		}
+		.test a:link {                     /* 未访问链接*/
+		    color: #666;
+		    background: url(img/icon1.jpg) no-repeat 5px 12px;              /*设置背景图片并定位*/
+		    text-decoration: none;             /*消除下划线*/
+		}
+		.test a:visited {               /* 已访问链接 */
+		    color: #666;
+		 }
+		.test a:hover {                      /* 鼠标移动到链接上 */
+		    color: #FFF;
+		    font-weight: bold;
+		    text-decoration: none;
+		    background: url(img/icon2.jpg) #F00 no-repeat 5px 12px;
+		    /*设置a元素在鼠标经过时向右下角位置偏移4个像素 */
+		           /*translate 3D转化*/
+		    -moz-transform: translate(4px, 4px);                                                              
+		    -webkit-transform: translate(4px, 4px);
+		    -o-transform: translate(4px, 4px);
+		    transform: translate(4px, 4px);
+		   
+                    /*skew  元素在二维平面上的倾斜转换*/		   
+		       /*-moz-transform: skew(30deg, -10deg);
+		       -webkit-transform: skew(30deg, -10deg);
+		       -o-transform: skew(30deg, -10deg);
+		        transform: skew(30deg, -10deg);*/
+		}
+</style>
+	</head>
+	<body>
+		<div class="box1">2</div>
+		<div class="box2"></div>
+		
+		<div class="test">
+    <ul>
+        <li><a href="#">首页</a></li>
+        <li><a href="#">新闻</a></li>
+        <li><a href="#">论坛</a></li>
+        <li><a href="#">博客</a></li>
+        <li><a href="#">团购</a></li>
+        <li><a href="#">微博</a></li>
+    </ul>
+</div>
+
+
+	</body>
+</html>

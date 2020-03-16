@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.19.0/axios.js"></script>
+    <title>Document</title>
+    <style>
+        *{
+            text-align: center;
+        }
+
+        #table {
+            margin: 0 auto;
+            border-radius: 5px;
+            background: #333;
+            color: #fff;
+            width: 1074px;
+        }
+
+        #table tbody td {
+            padding: 0.8rem;
+            color: #444;
+            background: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>全部订单</h2>
+    <div id="app">
+
+        <table border="1" cellspacing="0" cellpadding="5" id="table">
+            <thead>
+                <tr>
+                    <td>订单号</td>
+                    <td>用户</td>
+                    <td>入住时间</td>
+                    <td>退房时间</td>
+                    <td>房间类型</td>
+                    <td>价格</td>
+                    <td>入住人数</td>
+                    <td>备注</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for='order in orderData'>
+                    <td>{{order.oid}}</td>
+                    <td>{{order.name}}</td>
+                    <td>{{order.check_time}}</td>
+                    <td>{{order.leave_time}}</td>
+                    <td>{{order.type}}</td>
+                    <td>{{order.price}}</td>
+                    <td>{{order.number}}</td>
+                    <td>{{order.other}}</td>
+                    <td><a href="" @click="deleteOrder(order.oid)">删除</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+
+        <a href="index.html">返回首页</a>
+
+    </div>
+
+
+
+    <script>
+
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                orderData: [1, 2, 3],
+                uid: null
+
+            },
+            created() {
+                console.log("creat");
+                console.log(new Date());
+                this.uid = localStorage.getItem('uid');
+                var that = this;
+                console.log(this.uid);
+                axios({
+                    method: "post",
+                    url: "http://localhost/web/api/allOrderList.php",
+                    headers: {
+                        'Content-type': 'application/x-www-form-urlencoded'
+                    },
+                    data: {
+
+                        uid: that.uid,
+                        orderData: null
+
+                    },
+                    transformRequest: [function (data) {
+                        let ret = ''
+                        for (let it in data) {
+                            ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
+                        }
+                        return ret
+                    }],
+                }).then((res) => {
+                    console.log(res.data);
+                    for (var i = 0; i < res.data.length; i++) {
+                        res.data[i].check_time = res.data[i].check_time.slice(0, 10);
+                        res.data[i].leave_time = res.data[i].leave_time.slice(0, 10);
+                    }
+                    that.orderData = res.data;
+                })
+            },
+            methods: {
+                deleteOrder(oid) {
+                    console.log("delete inner");
+                    axios({
+                        method: "post",
+                        url: "http://localhost/web/api/deleteOrderByOid.php",
+                        headers: {
+                            'Content-type': 'application/x-www-form-urlencoded'
+                        },
+                        data: {
+                            oid: oid
+
+                        },
+                        transformRequest: [function (data) {
+                            let ret = ''
+                            for (let it in data) {
+                                ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
+                            }
+                            return ret
+                        }],
+                    }).then((res) => {
+
+                    })
+                }
+
+            }
+
+        });
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>优电网·头条新闻</title>
+
+	<script src="../sy/bootstrap-3.3.7-dist/js/jquery-1.11.3.min.js"></script>
+	<script src="../sy/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../sy/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+	
+	<link rel="stylesheet" href="css/头条新闻.css">
+	<link rel="stylesheet", href="../sy/css/nav.css">
+	<link rel="stylesheet" href="css/row.css">
+	<link rel="stylesheet" type="text/css" href="css/Effect-3DPress/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/Effect-3DPress/tilteffect.css" />
+	<link rel="stylesheet" type="text/css" href="css/Effect-Button/buttons.css" />
+	<link rel="stylesheet" type="text/css" href="css/Effect-FooterBG.css" />
+	<script src="js/Effect-FooterBG.js"></script>
+	<script>
+		$(function () {
+			// 初始化 传入dom id
+			var victor = new Victor("container", "output");
+		});
+	</script>
+
+</head>
+
+<body>
+
+	<!-- navigation -->
+
+	<script src="js/header.js"></script>
+
+	<!-- banner -->
+
+
+	<div class="container littlebanner" style="padding: 20px; margin-left:15%;">
+		<p"><a target="_blank" href="../sy/index.html">首页</a> > <a target="_blank" href="#">新闻资讯</p> </a>
+	</div>
+	<!-- details of news -->
+	<div class="row">
+		<div class="row_left">
+			<div class="row_left_title">
+				<h1>头条新闻</h1>
+				<div style="background:#5166d3;width: 100%;height: 5px;">
+					<div id="page" style="display: none;">1</div><!-- 当前页数设置 -->
+				</div>
+			</div>
+			<!-- 新闻 -->
+			<div class="row_left_box" id="leftBoxItems">
+
+			</div>
+			<div class="row_left_page" id="row_left_page">
+
+			</div>
+		</div>
+
+		<div class="row_right">
+			<div class="row_right_info">
+				<h1 class="row_right_info_title">媒体聚焦</h1>
+				<h2 class="row_right_info_hot" id="right_info_hot" onclick="right_info_hot()"
+					style="color: white; background: #5166d3">热门推荐</h2>
+				<h2 class="row_right_info_new" id="right_info_new" onclick="right_info_new()">最新资讯</h2>
+				<!-- 热门推荐内容 -->
+				<div class="info_box" id="right_info_hot_box">
+
+					<!-- <div class="info_box_item">
+						<h1>1</h1>
+						<p onmouseover="right_info_over()" onmouseleave="right_info_out()">内容内容内容内容内容内容内容内容内容内容</p>
+						
+					</div>
+					<div class="info_box_item">
+						<h1>2</h1>
+						<p onmouseover="right_info_over()" onmouseleave="right_info_out()">内容内容内容内容内容内容内容内容内容内容</p>
+					</div>
+					<div class="info_box_item">
+						<h1>3</h1>
+						<p onmouseover="right_info_over()" onmouseleave="right_info_out()">内容内容内容内容内容内容内容内容内容内容</p>
+					</div>
+					<div class="info_box_item">
+						<h1>4</h1>
+						<p onmouseover="right_info_over()" onmouseleave="right_info_out()">内容内容内容内容内容内容内容内容内容内容</p>
+					</div>
+					<div class="info_box_item">
+						<h1>5</h1>
+						<p onmouseover="right_info_over()" onmouseleave="right_info_out()">内容内容内容内容内容内容内容内容内容内容</p>
+					</div>
+					<div class="info_box_item">
+						<h1>6</h1>
+						<p onmouseover="right_info_over()" onmouseleave="right_info_out()">内容内容内容内容内容内容内容内容内容内容</p>
+					</div>
+					<div class="info_box_item">
+						<h1>7</h1>
+						<p onmouseover="right_info_over()" onmouseleave="right_info_out()">内容内容内容内容内容内容内容内容内容内容</p>
+					</div>
+					<div class="info_box_item">
+						<h1>8</h1>
+						<p onmouseover="right_info_over()" onmouseleave="right_info_out()">内容内容内容内容内容内容内容内容内容内容</p>
+					</div> -->
+				</div>
+				<!-- 最新资讯内容 -->
+				<div class="info_box" id="right_info_new_box" style="display: none;">
+				</div>
+			</div>
+
+
+			<div class="row_right_img">
+				<a target="_blank" href="../pginews/20190903/20190903090322748759102_1.html">
+					<img src="img\新闻资讯_0001s_0023_图层-1-拷贝.png">
+					<h1>70年增长1028倍！<br>中国电力到底有多强？</h1>
+				</a>
+			</div>
+			<div class="row_right_title">
+				<h1>精彩视频</h1>
+			</div>
+			<div style="background:#5166d3;width: 100%;height: 3px;"></div>
+			<div class="row_right_video_box">
+				<div class="row_right_video_box_item">
+					<a href="../pginews/20190902/46894450.html"><img src="../pginews/video/46894450_.png"></a>
+				</div>
+				<div class="row_right_video_box_item">
+					<a href="../pginews/20190902/49779663.html"><img src="../pginews/video/49779663_.png"></a>
+				</div>
+				<div class="row_right_video_box_item">
+					<a href="../pginews/20190902/61299501.html"><img src="../pginews/video/61299501_.png"></a>
+				</div>
+				<div class="row_right_video_box_item">
+					<a href="../pginews/20190902/47292312.html"><img src="../pginews/video/47292312_.png"></a>
+				</div>
+			</div>
+			<div class="row_right_img">
+				<a target="_blank" href="../pginews/20190823/20190829082323266476281.html">
+					<img src="img\新闻资讯_0001s_0023_图层-1-拷贝.png">
+					<h1 style="text-align: center">南方电网实现世界级突破</h1>
+				</a>
+			</div>
+			<div class="row_right_title">
+				<h1>专题活动</h1>
+			</div>
+			<div style="background:#5166d3;width: 100%;height: 3px;"></div>
+			<div class="row_right_activity_box">
+				<div class="row_right_activity_box_item">
+					<a target="_blank" href="../pginews/20190823/20190829082712478759238_1.html">
+						<img src="../../image/rdzt/20190811/20190811173438_319.png">
+						<h3>电力发展分析</h3>
+					</a>
+					<p>2019.01.01</p>
+				</div>
+				<div class="row_right_activity_box_item">
+					<a target="_blank" href="../pginews/20190823/20190829082723758712751.html">
+						<img src="../../image/rdzt/20190828/20190828113151_376.png">
+						<h3>“桩王”特来电</h3>
+					</a>
+					<p>2019.01.01</p>
+				</div>
+				<div class="row_right_activity_box_item">
+					<a target="_blank" href="../pginews/fzlc/2015.html">
+						<img src="../fzlc/img/aaaa.jpeg">
+						<h3>中国的电力奇迹</h3>
+					</a>
+					<p>2019.01.01</p>
+				</div>
+				<div class="row_right_activity_box_item">
+					<a target="_blank" href="../pginews/20190903/20190903090323182757893.html">
+						<img src="../pginews/img/news/20190903/20190830101522391567214.jpg">
+						<h3>国家电网的担当</h3>
+					</a>
+					<p>2019.01.01</p>
+				</div>
+
+
+			</div>
+		</div>
+
+	</div>
+
+
+
+
+	<!-- footer	 -->
+
+	<div class="footer-all">
+		<div class="footer">
+			<div class="foot container">
+				<div class="logo">
+					<img src="img/FOOTER/logo1.png">
+				</div>
+				<div class="separate">
+					<img src="img/FOOTER/logo1.png" style="width: 4%;">
+				</div>
+				<div class="contact">
+					<p>联系我们</p>
+					<div class="en">
+						<img src="img/FOOTER/小图标%201.png" style="width: 5%; margin-bottom: 10px; margin-right: 15px;">
+						<p>联系电话：18788888888</p>
+					</div>
+
+					<div class="en">
+						<img src="img/FOOTER/小图标%202.png" style="width: 5%; margin-bottom: 10px; margin-right: 15px;">
+						<p>邮箱：18788888888@163.com</p>
+					</div>
+
+					<div class="en">
+						<img src="img/FOOTER/小图标%203.png" style="width: 4%; margin-bottom: 10px; margin-right: 18px;">
+						<p>地址：桂林电子科技大学优创空间电网小组</p>
+					</div>
+				</div>
+				<div class="QR">
+					<img src="img/FOOTER/二维码.png" style="width: 70%;">
+				</div>
+				<div id="QR">
+					<p>扫一扫<br>关注微信公众号</p>
+				</div>
+			</div>
+		</div>
+		<div class="footer-background" id="container">
+			<div id="output"></div>
+		</div>
+	</div>
+
+	<script src="js/server.js"></script>
+	<script src="js/Effect-3DPress/tiltfx.js"></script>
+	<!-- 资讯脚本-->
+	<script>
+		// 热门推荐/最新资讯
+		function right_info_hot() {
+			var but1 = document.getElementById("right_info_hot");
+			var but2 = document.getElementById("right_info_new");
+			but1.style = "color: white; background: #5166d3;"
+			but2.style = "";
+			document.getElementById("right_info_hot_box").style = "";
+			document.getElementById("right_info_new_box").style = "display:none";
+		}
+		function right_info_new() {
+			var but1 = document.getElementById("right_info_hot");
+			var but2 = document.getElementById("right_info_new");
+			but1.style = ""
+			but2.style = "color: white; background: #5166d3;";
+			document.getElementById("right_info_hot_box").style = "display:none";
+			document.getElementById("right_info_new_box").style = "";
+		}
+		function right_info_over() {
+			window.event.target.previousElementSibling.style = "color: white;background:#5166d3;";
+		}
+		function right_info_out() {
+			window.event.target.previousElementSibling.style = "";
+		}
+	</script>
+
+</body>
+
+</html>

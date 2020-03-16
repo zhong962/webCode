@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			body{
+				width: 100%;
+			}
+			.box1{
+				position: relative;
+				
+			}
+			.head1{
+				position: relative;
+				top:40px;
+				left:350px;                                   /*border: 1px solid #000;padding: 0;*/
+			}
+			.head1 p{
+				font-size: 30px;
+				line-height: 0px;        /*行高为0*/
+				}
+			.phead1{
+				position: relative;
+				top:40px;
+				left:350px;                                       /*border: 1px solid #000;padding: 0;*/
+				font-size: 20px;
+				line-height: 2pt;       /*设置行高，每行之间的间隔*/
+			}
+			.connect1{
+				position: relative;
+				top:70px;
+				left: 350px;
+				width:570px;                            /*border: 1px solid #000;padding: 0;*/
+			}
+			.connect1 p{
+				text-indent:2em;             /*首行缩进两个字符*/
+				word-wrap:break-word;         /*设置div盒子内自动换行，允许长单词换行到下一行*/
+			}
+			.a1{
+				position: relative;
+				width: 200px;
+				top:150px;
+				left: 350px;
+				border: 2px solid;
+			}
+			.a1 p{
+				text-align: center;
+			}
+			.img1{
+				position: absolute;                 /*绝对定位*/
+				top:20px;
+				left:1150px;
+			}
+			
+			
+			
+			
+			
+			.box2{
+				margin-top: 190px;
+				background-color: #bfbfbf;
+			}
+			.box2{
+				position: relative;
+				width: 1700px;
+				height: 560px;
+			}
+			.head2{
+				position: relative;
+				border-bottom: 1.5px solid;        /*下边框*/
+				width:150px;
+				top:40px;
+				left:870px;
+			}
+			.head2 p{
+				font-size: 30px;
+				line-height: 0px;
+			}
+			.phead2{
+				position: relative;
+				top:40px;
+				left:800px;
+				font-size: 20px;
+				line-height: 0px;
+			}
+			.img2{                              /*将图片设置定位为relative*/
+				position: relative;
+				top:80px;
+				left: 350px;
+			}
+			.mask {                          /*遮罩层设置为absolute*/
+                position: absolute;
+                top: 0;
+			    left: 0;
+			    width: 284px;              /*和图片一致*/
+			    height: 368px;
+			    background: rgba(0, 0, 0, 0.6);  /*显示时透明的设置为0.6*/   /*背景颜色+透明度*/
+			    color: #FFFFFF;
+			    opacity: 0;            /*鼠标未触碰时透明度为0，不显示遮罩*/
+			}
+			.mask h2 {
+				text-align: center;
+				line-height: 300px;
+				}
+			.mask p {
+				text-align: center;
+				}
+			.img2 a:hover .mask {         /*鼠标掠过时显示遮罩*/
+			    opacity: 1;           /*透明度*/
+			}
+			
+			.img3{
+				position: absolute;
+				top:152px;
+				left: 650px;
+			}
+			.img4{
+				position: absolute;
+				top:152px;
+				left: 950px;
+			}
+			.img5{
+				position: absolute;
+				top:152px;
+				left: 1250px;
+			}
+
+
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<div class="head1"><p>品牌故事 </p></div>
+			<div class="phead1"><p>HIGH QUALITY COFFEE</p></div>
+			<div class="connect1"><p>咖啡店又称之为咖啡馆。最早的咖啡馆叫做“Kaveh Kanes”,是在麦加建成的。
+				咖啡店尽管最初是出于一种宗教目的，但很快这些地方就成了下棋、闲聊、唱歌、跳舞和欣赏音乐的中心。
+				从麦加开始，咖啡馆又遍及亚丁、梅迪纳（Medina）和开罗（Cairo）。咖啡馆是人们休闲、商务交流的
+				场所。普遍认为，人类首次在非洲发现咖啡。</p></div>
+			<div class="a1"><p><a >READ MORE</a></p></div>
+			<div class="img1"><img src="img/500792858.png"></div>
+		</div>
+		
+		
+		<div class="box2">
+			<div class="head2"><p>我们的服务</p></div>
+			<div class="phead2"><P>MAKE&nbsp;A&nbsp;DIFFERENT&nbsp;IN&nbsp;TESTES</P></div>      <!--转义字符&nbsp;表示1个空格-->
+			<div class="img2">                                     <!--	将遮罩层html代码与图片放在一个div-->
+				<img src="img/500215859.png">
+					<a href="#">         
+		                <div class="mask">
+			                <h2>咖&nbsp;啡&nbsp;工&nbsp;艺</h2>
+			                <p>源远流长&nbsp;浓香醇厚</p>
+		                </div>
+		            </a>
+			</div>
+			<div class="img3"><img src="img/500460236.png"></div>
+			<div class="img4"><img src="img/500854784.png"></div>
+			<div class="img5"><img src="img/500200095.png"></div>
+		</div>
+	</body>
+</html>

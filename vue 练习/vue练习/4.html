@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue中样式：class属性</title>
+ 
+    <script src="vue.js"></script>     
+    <style>
+        .red{
+            color: red;
+        }
+        .thin{
+            font-weight: 200;
+        }
+        .italic{
+            font-style: italic;
+        }
+        /* letter-spacing是行间距 */
+        .active{
+            letter-spacing: 0.5ex;       
+        }
+    
+    </style>
+
+
+</head>
+<body>
+    <div id="app">
+        <h1 class="red italic">这是一个h1标签</h1>
+
+        <!-- 这是第一种方式，用数组的方式渲染class样式，注意，必须使用v-bind进行数据绑定 -->
+        <h1 :class="['red','thin','active']">这是一个h1标签</h1>
+
+        <!-- 第二种方式，用三元表达式 -->
+        <h1 :class="['red','italic',flag?'active':'']">这是一个h1标签</h1>
+
+        <!-- 第三种方式，在数组中，用对象来代替三元表达式提高代码可行性 -->
+        <!-- <h1 :class="['red','active'，{'thin':flag}]">这是一个h1标签</h1> -->
+
+        <!-- 第四种，直接使用对象，注意，由于对象的属性可以带引号也可以不带引号，并且属性的值是一个标识符，故可以不写引号 -->
+        <h1 :class="obj">这是一个h1标签</h1>
+    </div>
+    <script>
+        var  vm = new Vue({
+            el:'#app',
+            data:{
+                flag:true,
+                obj:{red:true,thin:true,italic:false,active:true}
+            },
+            methods:{}
+        })
+    </script>
+</body>
+</html>

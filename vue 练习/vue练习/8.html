@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>全局过滤器Vue.filter的使用</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{ msg | msgFormat  }}</p>
+           <!-- {{名称|过滤器的名称 }}这是基本表达 -->
+           <!-- 可以调用多个过滤器，因为是按照从左到右顺序执行过滤器方法，像这样{{ msg | msgFormat | text  }} -->
+    </div>
+
+    <script>
+        //定义vue的全局过滤器msgFormat
+        // Vue.filter('过滤器名称', function (名称) {
+
+        Vue.filter('msgFormat', function (msg) {
+            
+            return  msg.replace(/潘裤衩/g,'小仙女')
+
+            //在数组的replace方法中，第一个参数处理可以写一个字符串之外，还可以写正则，有时候要代替的字符串不止出现一次的情况下用正则表达式
+            //然后返回表达式
+        })
+ 
+
+
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                msg:'潘裤衩是猪~潘裤衩是猪~潘裤衩是猪~潘裤衩是猪~'
+            },
+            methods:{},
+            
+        })
+    </script>
+
+</body>
+</html>

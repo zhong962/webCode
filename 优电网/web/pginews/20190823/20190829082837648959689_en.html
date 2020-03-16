@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>首页</title>
+		<link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
+		<script src="../bootstrap-3.3.7-dist/js/jquery-1.11.3.min.js"></script>
+		<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/common_en.css">
+		<link rel="stylesheet" type="text/css" href="../css/Effect-FooterBG.css" />
+		<script src="../js/Effect-FooterBG.js"></script>
+		<script src="../js/common.js" type="text/javascript"></script>
+		<script>
+			$(function(){
+				// 初始化 传入dom id
+				var victor = new Victor("container", "output");
+			});
+		</script>
+	</head>
+	<body>
+		
+		<!-- navigation -->
+		
+			
+		<script src="../js/header.js"></script>
+		
+		
+		<!-- banner -->
+		
+			<!-- <div class="banner">
+				<img src="../img/组1/banner.png"/>
+			</div> -->
+			
+					
+		<!-- news -->
+			
+			<div class="news">
+				<div id="details">
+					<div class="container details" style="padding: 20px; margin: 0;">
+							<p><a href="../../sy/index.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Home</font></font></a></p>
+							<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&nbsp;&gt;&nbsp;</font></font></p>
+							<p><a href="../../xwzx/index.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">news</font></font></a></p>
+							<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&nbsp;&gt;&nbsp;</font></font></p>
+							<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">content</font></font></p>
+					</div>
+						<div class="main_title font02">
+							
+							<h2 style="TEXT-ALIGN: center"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">New research uses data mining technology to reveal the relationship between meteorological changes and grid faults</font></font></b></h2>
+							<h6 style="TEXT-ALIGN: center"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Published: </font></font><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2019-08-09 </font></font></span><!-- &nbsp;&nbsp;点击次数：<span id="pageview"></span> -->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><a href="javascript:;" id="fontSizeB" class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Big </font></font></a><a id="fontSize2" href="javascript:;" style="margin:0 15px;" class="red"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">mean </font></font></a><a id="fontSizeS" href="javascript:;" class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">small</font></font></a></span></h6>
+							<div class="main_content">
+
+								<article>
+									<!-- 政务处理 -->
+								<p data-role="original-title" style="display:none"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Original title: New research uses data mining technology to reveal the relationship between meteorological changes and grid faults</font></font></p>
+								<p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Researchers Lin Weiming, Wu Zejun, Zhou Hengxu and Guo Jing from Guangdong Jincheng Electric Power Technology Co., Ltd. and Foshan University of Science and Technology, pointed out in the 6th issue of "Electrical Technology" in 2019 (the paper titled "Based on Apriori Algorithm" The relationship between meteorological and grid defects"), disaster meteorology is the most important factor causing power grid defects and causing power equipment failure. This paper attempts to find out the relationship between severe meteorological factors and grid defects, and improve the existing Apriori algorithm to obtain Adapted to the correlation model of the southern coastal power grid. </font><font style="vertical-align: inherit;">The paper also discusses the problem of low support due to the small number of samples (less abnormal meteorological samples). </font><font style="vertical-align: inherit;">At the end of the paper, the application of the model was explained by an example of a power grid in the south.</font></font></strong></p> 
+								<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190708/ae4b4dbe769a42559fc5588f4c0ce9c5.jpeg" img_width="960" img_height="540"></p> 
+								<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">With the continuous improvement of social development requirements, the scale and structure of modern power grid systems are becoming more and more complex. </font><font style="vertical-align: inherit;">Long-term exposure of the grid overhead line to the atmosphere is vulnerable to meteorological disasters such as lightning, typhoon, heavy rain, ice, and mountain fires. </font><font style="vertical-align: inherit;">In the southern coastal areas, extreme natural disasters such as typhoons and thunderstorms occur frequently, causing equipment failures in the power grid and even large-scale power outages in a short period of time. </font><font style="vertical-align: inherit;">Literature [2] proposed a climate model based transmission line load capacity prediction system, which uses climate data to better achieve load forecasting, and also shows that meteorological change factors have a greater impact on power system operation.</font></font></p> 
+								<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The traditional daily inspection relies on the experience of the inspector and can play a certain preventive role. However, the labor cost is high and the defect type is determined to be inaccurate. </font><font style="vertical-align: inherit;">At present, SCADA (supervisory control and data acquisition) in power system energy management system completes real-time grid data collection, which provides a data source for grid defect analysis.</font></font></p> 
+								<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The data provided by SCADA is unstructured and the data is massive. The big data theory method is needed to process the SCADA data to achieve active intelligent observation and monitoring statistics on the equipment. </font><font style="vertical-align: inherit;">The methods of unified mining processing using historical fault defect data include K-means clustering method, support vector machine SVM method and statistical regression method. The Apriori association algorithm is based on the probability principle, thus allowing people to analyze the mechanism of the results, so that the results are obtained. Reasonable explanation.</font></font></p> 
+								<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Therefore, we use Apriori algorithm to correlate SCADA data. The main contributions are: 1 sample processing, which mainly includes the removal of samples without physical causality and imputation of sample data incompleteness; 2 improvement of existing Apriori algorithm, the existing algorithm is based on For one-dimensional vectors, this paper maps one-dimensional to two-dimensional space, which reduces the operation; 3 improves the shortcomings of existing algorithms without considering the fault lags behind meteorological data; 4 gives the mechanism analysis of the results.</font></font></p> 
+								<p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1 Impact of severe meteorological factors on the grid</font></font></strong></p> 
+								<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">In summer, continuous high temperature weather causes a heat accumulation effect (heat island effect). </font><font style="vertical-align: inherit;">At the same time, the high temperature makes the air conditioning load increase sharply, resulting in power shortage. </font><font style="vertical-align: inherit;">The above meteorological disasters can be attributed to four parameters: temperature, relative humidity, wind and precipitation.</font></font></p> 
+								<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">At present, the power company has cooperated with the local meteorological department to realize the sharing of meteorological information. </font><font style="vertical-align: inherit;">Taking the Southern Power Grid as an example, the decision support system for the meteorological information application of the Southern Power Grid is constructed according to the “1+7” mode of the province. </font><font style="vertical-align: inherit;">The system integrates the resources of the whole network and the Central Meteorological Observatory to provide functions such as meteorological elements, meteorological disaster monitoring and forecast analysis.</font></font></p> 
+								<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Since the system was in operation, it has provided technical support for dealing with meteorological disasters such as typhoon “Rainbow”. </font><font style="vertical-align: inherit;">The impact of meteorological factors on equipment can be obtained through data mining to obtain some potentially related information, which exists in a large number of historical defect data and is expressed in the form of probability.</font></font></p> 
+								<p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2 association rules and Apriori algorithm (omitted)</font></font></strong></p> 
+								<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The Apriori algorithm is an association rule algorithm that uses recursive methods to mine frequent itemsets. The literature [8] subsequently developed an Apriori depth-first search algorithm, which includes creating FP-tree structures and recording node physical storage consumption. Therefore, it has certain difficulty in practical applications.</font></font></p> 
+								<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The effect of association mining depends on the establishment of association rules. The in-depth understanding of the physical characteristics of data and the operating characteristics of power systems is the basis for establishing association rules. In recent years, methods based on this analysis have begun to be applied to the data processing of power systems. The above two factors are considered to explore the relationship between power system faults and severe meteorological factors.</font></font></p> 
+								<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190708/274bef03e0664654b055c7dd51493c09.jpeg" img_width="548" img_height="408"></p> 
+								<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Figure 1 Comparison of running time</font></font></p> 
+								<p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3 grid defect data mining application (omitted)</font></font></strong></p> 
+								<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">For the relationship between grid defects and catastrophic meteorological factors, the traditional approach is based on years of experience. </font><font style="vertical-align: inherit;">This paper uses data mining technology to analyze the relationship between meteorology and grid transmission line defects. </font><font style="vertical-align: inherit;">The overall process of this case is shown in Figure 2.</font></font></p> 
+								<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190708/047df75cd8e646ca93ddcf76e5294fdb.jpeg" img_width="413" img_height="731"></p> 
+								<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Figure 2 Flow chart of correlation analysis between meteorological and grid defects</font></font></p> 
+								<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">We selected the grid facility defect data from January 2013 to June 2016 in a power grid in Guangdong, a total of 2656 sets of data, and selected meteorological data for that period. </font><font style="vertical-align: inherit;">Count the number of days of severe weather in each of the six detection points in a city between 2013 and 2016.</font></font></p> 
+								<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The 2656 group items are counted by the defect type, as shown in Figure 3.</font></font></p> 
+								<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190708/b1f50634a2264e8c8985d0287e87a3ab.jpeg" img_width="543" img_height="353"></p> 
+								<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Figure 3 defect type pie chart</font></font></p> 
+								<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">It can be seen from Fig. 3 that the number of rust and damage accounts for 39% of all defects, and the short circuit of foreign matter accounts for 29%. </font><font style="vertical-align: inherit;">It is easy to get a preliminary analysis. Rainstorm, high temperature and high humidity can directly cause corrosion and damage of the equipment.</font></font></p> 
+								<p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">4 Model establishment and association analysis (omitted)</font></font></strong></p> 
+								<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">It is obvious from the group association analysis that each group has excessive high humidity conditions, and in the three groups, the high humidity association is the first association rule, that is, the support degree is higher than other association rules of the same group, and the high humidity condition can still be obtained. It is the main meteorological influencing factor of power equipment defects. </font><font style="vertical-align: inherit;">Followed by high temperature conditions, high temperature correlation occurs in all five groups, and in the two groups, high temperature correlation is the first correlation, so high temperature is also the main meteorological influencing factor of power equipment defects.</font></font></p> 
+								<p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5 Model promotion</font></font></strong></p> 
+								<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">In order to better carry out the operation and maintenance of the power grid equipment, provide routine maintenance guidance, and use the potential state information of the equipment faults associated with the historical data, plus the weather forecast information, to obtain a reliable maintenance model. </font><font style="vertical-align: inherit;">The specific model application flow chart is shown in Figure 4.</font></font></p> 
+								<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190708/b90bef5f3bef4d16a30d8dd1693d01dd.jpeg" img_width="598" img_height="625"></p> 
+								<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Figure 4 Model application flow chart</font></font></p> 
+								<p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">in conclusion</font></font></strong></p> 
+								<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">This paper introduces the Apriori algorithm and applies it to the correlation between grid defect data information and meteorological data information, and uses actual and specific data for verification. In order to solve the problem of low support caused by less severe weather during mining, The problem of being filtered, this paper attempts to first mine the related defects with a variety of catastrophic meteorological factors through the classification of defect types, and the results of the analysis prove that the method is effective.</font></font></p> 
+								<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Finally, at the end of the paper, a practical grid maintenance model is designed by using the above-mentioned association algorithm. The model has practical use value in predicting grid defects and improving grid operation reliability by using future meteorological conditions.</font></font></p>
+								</article>
+							</div>
+						</div>
+					</div>
+				
+			</div>
+			
+		
+		
+				
+				
+		<!-- footer	 -->
+		<script src="../js/footer_en.js"></script>
+		
+	<script src="../js/server_en.js"></script>
+
+	</body>
+</html>

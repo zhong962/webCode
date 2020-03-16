@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)file:///C:/Users/Administrator/Desktop/%E9%92%9F%E6%B1%89%E5%88%A9/1.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>跑马灯效果</title>
+    <script src="file:///C:/Users/Administrator/Desktop/%E9%92%9F%E6%B1%89%E5%88%A9/vue.js"></script>
+    <!--导入vue包-->
+</head>
+<body>
+    <div id="app"><input type="button" value="略略略"> <input type="button" value="停止"> <h1>谢佩容是宇宙无敌第一大仙女~</h1></div>
+    
+    
+    <script>
+        //给按钮一个点击事件，用v-on属性；
+        //用字符串来实现字符变化效果，可以调用字符串的substring方法；
+        //最后是给时间一个定时器setInterval(function () {}）
+
+        var vm =new Vue({
+            el:'#app',
+            data:{
+                msg:'谢佩容是宇宙无敌第一大仙女~',
+                intervalId:null  
+            },
+            methods:{
+                //这样子可以直接把方法名当作属性名，简化步骤
+                pan(){
+                    // console.log(this.msg);
+                    // //在vm里想要调用data或methods里的方法，都必须要用this.来表示；
+                    //有因为this在function函数中不能使用，可以用var _this=this;或者兼容函数？
+                //    setInterval(function(){
+                   this.intervalId= setInterval(() =>{
+                    var start=this.msg.substring(0,1);    
+                    //找出第一个字符
+                    var end=this.msg.substring(1);         
+                    //然后获取后面所有的字符
+                    this.msg=end+start;                    
+                    //重新拼接得到新的字符并且赋值给msg；
+                    //因为在vm示例中会监听data属性的所有改变，所以会不断更新数据，点击按钮就会得到新的数据
+                    
+                   },400)
+                },
+                stop(){      //停止定时器
+                   clearInterval(this.intervalId)
+                }
+            }
+
+        })
+
+    </script>
+    
+
+</body></html>

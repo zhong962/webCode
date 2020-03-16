@@ -1,0 +1,170 @@
+*{
+    box-sizing: border-box;
+}
+/* a{
+	box-sizing: content-box;
+} */
+.row{
+    width: 100%;
+    height: 550px;
+    padding-left: 20%;
+    padding-right: 20%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.AIcar{
+    position: absolute;
+    width: 60%;
+    height: 500px;
+    margin-top: 30px;
+}
+/*AI左*/
+.AIcar_left{
+   width: 50%;
+   margin-left: 130px; 
+   position: relative;
+   margin-top: 25px;
+    /* height: 510px; */
+}
+.AIcar_left_bg{
+	position: absolute;
+	left: -13%;
+	bottom: -17%;
+	z-index: -2;
+}
+/*AI右*/
+.AIcar_right{
+    position: absolute;
+    left: 60%;
+    width: 50%;
+	margin-top: -400px;
+    height: 530px;
+}
+.AIcar_right h2{
+    padding-top: 6%;
+    padding-left: 35%;
+
+    font-size: 17px;
+    font-weight:400;
+}
+.AIcar_right h1{
+    padding-left: 35%;
+    margin-bottom: 50px;
+
+    font-size: 46px;
+    font-weight:800;  
+}
+.AIcar_right p{
+    padding-left: 15%;
+    font-size: 18px;
+}
+
+/*电网2.0*/
+.Net2{
+    background: url("../img/组2/互联网+_0002s_0004_图片2.png");
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+	margin-top: 7em;
+}
+.Net2 h1{
+    padding-left: 20%;
+    padding-top: 105px;
+    color: white;
+    font-size: 60px;
+    font-weight:800px;  
+    letter-spacing:10px;
+}
+.paralasic {
+    background:url(../img/组2/hlw.png);
+    background-attachment: fixed;
+    background-size: cover;
+    background-size: 1920px;
+    /* background-size: 100vw; */
+    background-position: center top;
+    /* background-repeat: no-repeat; */
+  }
+/*row 2*/
+.row2{
+    width: 100%;
+    height: 880px;
+    padding-left: 20%;
+    padding-right: 20%;
+    margin-left:auto;
+    margin-right:auto;
+}
+/*AINet*/
+.AInet{
+    margin-top: 75px;
+    width: 100%;
+}
+.AInet h2{
+    padding-left: 42%;
+    font-size: 17px;
+    font-weight:400;
+}
+.AInet h1{
+    padding-left: 42%;
+    padding-bottom: 55px;
+    font-size: 46px;
+    font-weight:800;  
+}
+.AInet p{
+    padding-left: 6%;
+    padding-right: 6%;
+}
+/*box*/
+.AInet_block{
+    padding-top: 75px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+	padding-left: 8%;
+	padding-right: 8%;
+}
+.AInet_block_box{
+    position:relative;
+    width: 32%; 
+}
+.AInet_block p{
+    position: absolute;
+    padding-top: 360px;
+    padding-left: 40px;
+    padding-right: 40px;
+    text-align:center;
+    font-size: 25px;
+    color: white;
+	z-index: 4;
+}
+
+.AInet_block-img{
+    z-index: 1;
+}
+.AInet_block-imgUp{
+	top:0;
+	left: 0px;
+    position: absolute;
+	opacity:0.2;
+    z-index: 2;
+}
+.AInet_block_bottom,.AInet_block_bottom_hover{
+    position: absolute;
+	bottom:0px;
+    z-index: 3;
+}
+.AInet_block_bottom_hover{
+    opacity:0;
+}
+
+.AInet_block_box:hover .AInet_block-imgUp{
+	opacity:0;
+}
+
+.AInet_block_box:hover .AInet_block_bottom{
+	opacity:0;
+}
+
+.AInet_block_box:hover .AInet_block_bottom_hover{
+	opacity:1;
+}

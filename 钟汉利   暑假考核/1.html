@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.19.0/axios.js"></script>
+    <title>Document</title>
+    <style>
+    #ppp{
+        color: blue;
+    }
+    
+    
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <input type="button" value="略略略" @click="add">
+       
+        <p id="ppp" v-for='user in aaa'>{{user.id}} ----  {{user.name}}   ----   {{user.password}}</p>
+
+    </div>
+
+
+
+    <script>
+
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                aaa: [1, 2, 3],
+              
+            },
+            methods: {
+                add() {
+                    var that = this;
+                    console.log(2);
+                    axios.get('http://localhost/web/api/test.php').then(function (res) {
+                        console.log(res.data);
+                        that.aaa = res.data;
+                    }).catch(function (response) {
+
+                    });
+
+                }
+
+            }
+
+        });
+
+
+    </script>
+</body>
+
+</html>

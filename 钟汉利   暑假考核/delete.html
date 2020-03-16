@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.19.0/axios.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+
+        <input v-model="uid">
+       
+        <input type="button" value="略略略" @click="add">
+
+
+    </div>
+
+
+
+    <script>
+
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                uid: null,
+                password: null
+            },
+            methods: {
+                add() {
+                    var that = this;
+                    console.log(2);
+                    
+
+
+                    ///============ POST请求
+                    axios({
+                        method: "post",
+                        url: "http://localhost/web/api/delete.php",
+                        headers: {
+                            'Content-type': 'application/x-www-form-urlencoded'
+                        },
+                        data: {
+                            id: this.uid
+                            
+                        },
+                        transformRequest: [function (data) {
+                            let ret = ''
+                            for (let it in data) {
+                                ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
+                            }
+                            return ret
+                        }],
+                    }).then((res) => {
+                        if(res.data=="success"){
+                            alert("success");
+                        }else{
+                            alert("网络错误");
+                        }
+                    })
+
+
+                    //=======
+
+
+
+                }
+
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

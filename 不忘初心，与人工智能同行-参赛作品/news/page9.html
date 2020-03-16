@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  <!-- IE的设置 -->
+    <meta name="viewport" content="width=device-width, inital-scale=1.0"> <!-- 响应式设置 -->
+    <title>深度学习与深层神经网络,多层智能学习推动人工智能</title>
+	<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+
+
+    <link rel="stylesheet" href="./css/normalize.css"> <!-- CSS资源引入 -->
+    <link rel="stylesheet" href="./css/page.css"> <!-- CSS资源引入 -->
+    <link rel="shortcut icon" href="./images/logo.png" > <!-- 图标 -->
+  </head>
+  <body>
+
+  <div class="top"></div>
+	<div class="pr navpr">
+		<div class="nav pa">
+		<div class="w">
+			<img class="fl mt9" src="../img/nav-1.png"/>
+			<ul class="fl mt16 ml40">
+					<li><a href="../index1.html">首页</a></li>
+					<li><a href="../news/index.html">新闻资讯</a></li>
+					<li><a href="../aichutan/index.html">AI初探 </a></li>
+					<li><a href="../tushuoai/index.html">图说AI</a></li>
+					<li><a href="../zhinengshibie/index.html">智能识别</a></li>
+					<li><a href="../jiqikongzhi/index.html">机器控制</a></li>
+					<li><a href="../linjunrenwu/index.html">领军人物</a></li>
+					<li><a href="../guidianai/index.html">桂电AI</a></li>
+					<li><a href="../xgzz/index.html">相关著作</a></li>
+					<li><a href="../about/index.html">关于我们</a></li>
+					<div class="clear"></div>
+				</ul>
+			<div class="nav-btn fr mt17">
+				<a class="mr12" href="page9.html">中文</a>|
+				<a class="ml10" href="page10.html">English</a>			</div>
+			<div class="clear"></div>
+		</div>
+		<script>
+	$(function(){
+		var a = $('.nav'),
+			b =a.offset();
+		$(document).on('scroll',function(){
+			var	c = $(document).scrollTop();
+			if(b.top<=c){
+				a.css({'position':'fixed','top':'0px'})
+				}else{
+					a.css({'position':'absolute','top':'0px'})
+					}
+			})
+		})
+	</script>
+	</div>
+	</div>
+
+
+    <div class="bj">
+
+      <!-- 中间部分的内容 -->
+      <div class="bj-zhong">
+        <h1 class="title">深度学习与深层神经网络,多层智能学习推动人工智能</h1>
+        <div class="two">
+          <p>机器学习使计算机能够处理迄今为止仅由人执行的任务。从驾驶汽车到翻译语言，机器学习正在推动人工智能爆炸式的增长，帮助软件理解混乱而不可预知的真实世界。</p>
+        </div>
+        <div class="one">
+          <img src="./pimg/p91.jpg" width=100% height=auto>
+        </div>
+        <div class="two">
+          <p>但究竟什么是机器学习，又是什么让机器学习现在如此繁荣呢？</p>
+          <h3>什么是机器学习？</h3>
+          <p>在很高的水平上，机器学习是教授计算机系统如何在馈入数据时做出准确预测的过程。这些预测可以回答一张照片中的水果是香蕉还是苹果，发现在自动驾驶汽车前横过马路的人，电子邮件是否是垃圾邮件，或足够准确的识别语音以生成YouTube视频的标题。</p>
+          <p>与传统计算机软件的主要区别在于，人类开发人员没有编写代码来指导系统如何区分香蕉和苹果之间的区别。相反，机器学习模式通过对大量数据进行训练来准确地区分果实，在这种情况下会有大量标记为香蕉或苹果的图像。 </p>
+        </div>
+        <div class="one">
+          <img src="./pimg/p92.jpg" width=100% height=auto>
+        </div>
+        <div class="two">
+          <h3>AI和机器学习有什么不同？</h3>
+          <p>机器学习可能已取得了巨大成功 ，但那只是实现人工智能的方式之一。在20世纪50年代人工智能领域诞生之时，人工智能被定义为任何能够执行具有人类智慧任务的机器。</p>
+          <p>人工智能系统通常至少会展示以下特征中的一部分：规划，学习，推理，解决问题，知识表达，感知，动作和操纵，以及社交智能和创造力。</p>
+          <p>除了机器学习外，还有其他各种用于构建AI系统的方法，包括进化计算，其中算法经历随机变异和代之间的组合以试图演变为最优解决方案。以及专家系统，其中计算机按规则进行编程允许它们模仿特定领域的专家，例如驾驶飞机的自动驾驶系统。</p>
+        </div>
+        <div class="one">
+          <img src="./pimg/p93.jpg" width=100% height=auto>
+        </div>
+        <div class="two">
+          <h3>机器学习有哪些主要类型？</h3>
+          <p>机器学习分为两大类：有监督学习和无监督学习。</p>
+          <p>在监督学习训练期间，系统暴露于大量被标记的数据，例如标明了对应数字的手写数字图像。给出足够的例子，监督学习系统将学会识别与每个数字相关的像素和形状，并且最终能够识别手写数字，能够可靠地区分数字9和4或6和8。</p>
+          <p>但是，对这些系统进行训练通常需要大量标记数据，有些系统甚至需要暴露于数百万个示例才能掌握任务。</p>
+        </div>
+        <div class="one">
+          <img src="./pimg/p94.jpg" width=100% height=auto>
+        </div>
+        <div class="two">
+          <p>因此，用于培训这些系统的数据集可能非常庞大，Google的开放图像数据集包含大约900万个图像，其带有标签的视频存储库YouTube-8M可链接到700万个带标签的视频，ImageNet是这类早期数据库之一，拥有超过1400万个分类图像。培训数据集的规模继续增长，Facebook最近宣布已经编辑了35亿张在Instagram上公开发布的图片，并使用每张图片的标签作为标签。在ImageNet的基准测试中，使用10亿张这些照片来训练图像识别系统的记录准确率达到了85.4％。</p>
+          <p>标记训练中使用的数据集的繁琐过程通常使用群集服务进行，例如亚马逊机械土耳其人，它提供了遍布全球的大量低成本劳动力的访问。例如，ImageNet由两年近5万人组成，主要通过Amazon Mechanical Turk招募。然而，Facebook使用公开可用的数据来训练系统的方法可以提供另一种使用数十亿个数据集的训练系统的方法，而无需手动标记的开销。</p>
+        </div>
+        <div class="one">
+          <img src="./pimg/p95.jpg" width=100% height=auto>
+        </div>
+        <div class="two">
+          <h3>什么是无监督学习？</h3>
+          <p>相比之下，无监督学习任务算法在数据中识别模式，试图将相似性的数据进行分类。例如爱彼迎将邻居可租用的房屋聚集在一起，或Google新闻每天将类似主题的故事分组在一起。</p>
+          <p>该算法不是为了挑选特定类型的数据而设计，它只是查找可以按照其相似性进行分组的数据，或寻找突出异常的数据。</p>
+          <h3>什么是深度学习和深层神经网络？</h3>
+          <p>机器学习的一个子集是深度学习，其中神经网络被扩展到具有大量数据训练庞大网络中。正是这些深度神经网络推动了计算机执行语音识别和计算机视觉方面能力的飞跃发展。</p>
+          <p>各种类型的神经网络，有不同的优势和劣势。递归神经网络是特别适用于语言处理和语音识别的一类神经网络，而卷积神经网络更常用于图像识别。神经网络的设计也在不断发展，研究人员最近为有效类型的深度神经网络设计了一种更高效的设计，称为长期短期记忆或LSTM，使其能够快速运行，例如Google翻译。</p>
+          <p>进化算法的AI技术甚至被用于优化神经网络。该方法最近由优步人工智能实验室展示，该实验室发布了关于使用遗传算法训练深度神经网络以强化学习问题的论文。</p>
+        </div>
+        <div class="one">
+          <img src="./pimg/p96.jpg" width=100% height=auto>
+        </div>
+        <div class="two">
+          <h3>机器学习用来干什么？</h3>
+          <p>机器学习系统一直在我们身边使用，是现代互联网的基石。用于为您推荐在亚马逊上想要购买的产品或想要在Netflix上观看的视频。</p>
+          <p>每个Google搜索都使用多个机器学习系统，通过个性化搜索结果来了解查询中的语言，因此搜索&ldquo;低音&rdquo;的钓鱼爱好者不会被吉他的结果所淹没。同样，Gmail的垃圾邮件和网络钓鱼识别系统也使用经过机器学习的训练模型，让您的收件箱避开流氓信息。</p>
+        </div>
+        <div class="one">
+          <img src="./pimg/p97.jpg" width=100% height=auto>
+        </div>
+        <div class="two">
+          <p>虚拟助手如苹果的Siri，亚马逊的Alexa，谷歌助理和微软Cortana是机器学习最典型的例子。</p>
+          <p>除此之外，在许多其它行业中也有许多用处，包括：无人驾驶汽车，无人驾驶飞机的计算机视觉；聊天机器人和服务机器人的语音识别；人脸识别；帮助放射科医生在X射线中挑选肿瘤，帮助研究人员发现与疾病相关的基因序列，并找出可能导致医疗保健中更有效药物的分子；通过分析物联网传感器数据，允许对基础设施进行预测性维护等等。</p>
+        </div>
+
+      </div>
+      <!-- 中间部分的内容end -->
+
+
+    </div>
+<iframe src="../bottom.html" width="100%" height="200px" scrolling="No"  noresize="noresize" frameborder="0" id="bottomFrame"></iframe>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  <!-- IE的设置 -->
+    <meta name="viewport" content="width=device-width, inital-scale=1.0"> <!-- 响应式设置 -->
+    <title>The "twin sister" of block chain ： Tangle</title>
+	<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/style2.css"/>
+
+
+    <link rel="stylesheet" href="./css/normalize.css"> <!-- CSS资源引入 -->
+    <link rel="stylesheet" href="./css/page.css"> <!-- CSS资源引入 -->
+    <link rel="shortcut icon" href="./images/logo.png" > <!-- 图标 -->
+  </head>
+  <body>
+
+  <div class="top"></div>
+	<div class="pr navpr">
+		<div class="nav pa">
+		<div class="w">
+			<img class="fl mt9" src="../img/nav-1.png"/>
+      <ul class="fl mt16 ml40">
+          <li><a href="../index2.html">Index</a></li>
+          <li><a href="../news/index2.html">News</a></li>
+          <li><a href="../aichutan/index2.html">Explorer</a></li>
+          <li><a href="../tushuoai/index2.html">Picture</a></li>
+          <li><a href="../zhinengshibie/index2.html">Identification</a></li>
+          <li><a href="../jiqikongzhi/index2.html">Machine</a></li>
+          <li><a href="../linjunrenwu/index2.html">Leader</a></li>
+          <li><a href="../guidianai/index2.html">Campus AI</a></li>
+          <li><a href="../xgzz/index2.html">Book</a></li>
+          <li><a href="../about/index2.html">About</a></li>
+          <div class="clear"></div>
+        </ul>
+			<div class="nav-btn fr mt17">
+				<a class="mr12" href="page127.html">中文</a>|
+				<a class="ml10" href="page128.html">English</a>			</div>
+			<div class="clear"></div>
+		</div>
+		<script>
+	$(function(){
+		var a = $('.nav'),
+			b =a.offset();
+		$(document).on('scroll',function(){
+			var	c = $(document).scrollTop();
+			if(b.top<=c){
+				a.css({'position':'fixed','top':'0px'})
+				}else{
+					a.css({'position':'absolute','top':'0px'})
+					}
+			})
+		})
+	</script>
+	</div>
+	</div>
+
+
+    <div class="bj">
+
+      <!-- 中间部分的内容 -->
+      <div class="bj-zhong">
+        <h1 class="title">The "twin sister" of block chain ： Tangle</h1>
+        <div class="two">
+          <p>IBM pointed out in its landmark research report, Device Democracy, that in the next few years, as the number of interconnected Internet of Things devices grows from tens of billions to thousands of trillions, the development of the Internet of Things will encounter connectivity costs, network trust, and cuts based on interconnected devices. A series of challenges such as the split business model will hinder innovation and development of the Internet of things.</p>
+          <p>At the same time, the report also pointed out that using the idea and technology of block chains as a whole framework for dealing with transactions between Internet of Things devices and coordinating the operation of various devices among them would form a democratized "decentralized autonomous network".</p>
+          <p>Since the publication of this report, innovations in the integration of block chains and Internet of Things technologies have continued to evolve. During this period, IBM introduced the concept of ADEPT, and start-ups such as Filament, Skuchain, and Ledger are also trying to use decentralized distributed ledgers to connect industrial equipment and digitize supply chains.</p>
+          <p>Last June, the IOTA Foundation, an organization that specializes in block-chain technology and the Internet of Things, developed a new framework for machine-to-machine transactions and released Tangle, an encrypted money network. IOTA is a revolutionary new transaction settlement and data transfer layer designed for the Internet of Things (IoT). IOTA is the name of the platform itself. Tangle is the name of the ledger structure. The relationship between IOTA and Tangle is like that between Bitcoin or Taifang and the block chain.</p>
+          <p>This article will talk about the birth and innovation of Tangle and the difference between Tangle and block chain.</p>
+          <h2>The birth and innovation of Tangle</h2>
+          <p>In 2015, the IOTA Foundation launched a hardware development project called Jinn, which planned to develop a microprocessor for edge and fog computing environments that would give devices the ability to process data locally and achieve machine-economy transactions between devices, but the then de-centralized block chain solution faced some questions. Question: The limited number of transactions on the public block chain has led to scalability problems, and transaction costs have been increasing, making small transactions too costly. In general, block chains are not yet ready for enterprise use case production.</p>
+          <p>Based on this, the IOTA team began to do it by itself, thus resulting in the subsequent Tangle. Tangle solves these two problems:</p>
+          <p>Cost reduction. Verifiers in block chains need to run their expensive power-consuming devices, and only a certain number of transactions are suitable for each block before they have to be validated, which means that it is impossible for verifiers to select the most expensive transactions, such as micro-transactions, in block chains. However, in Tangle, because there are no blocks, there is no block size limit, and the network inherently verifies that you don't pay anyone, which means you can perform micro or even nano transactions. If you send 0.1 points to someone, they will receive 0.1 points.</p>
+          <p>Increase scalability. Because only a limited number of transactions can enter the block immediately and end with block blocking. If the block size is allowed, you can get many verification transactions. So if many users use it immediately, eventually it will take hours to clear the congested network of transactions. In Bitcoin, there are seven transactions per second, and there are absolutely no seven transactions per second compared to centralized payment processors. There are no blocks in Tangle, you can add a transaction whenever you want to enter the network, and other users in the network will verify it. There is no congested network, so Tangle is unrestricted in terms of scalability. The more users there are, the more authenticators there are.</p>
+          <h2>What are the differences between Tangle and block chain?</h2>
+          <p>Data structure is different. Tangle (tangle) is based on directed acyclic graphs (DAG), rather than a continuous chain architecture, adding blocks on a regular basis. With DAG, IOTA can achieve higher transaction throughput (through parallel validation), and no transaction fees are charged. As Tangle continues to evolve, more and more participants will initiate transactions, the entire system will become more secure and faster, confirmation time will be shortened, transactions will be completed faster and faster.</p>
+          <p>But there aren't so many nodes in the Tangle network. IOTA has developed a controller, a simple coordinator, to help confirm transactions. The main assumption behind Tangle is that it's a large enough network to be secure, but it's still booting.</p>
+          <p>Consensus mechanism innovation. Block chain consensus is achieved through a very rigorous mechanism. Adding the next block to the block chain requires competition from multiple parties and obtaining block incentives or transaction fees. Because of this, consensus and transactions are split apart and done by a small part of the network, usually with higher thresholds (like bitcoins), leading to further centralization.</p>
+          <p>In the IOTA system, the consensus mechanism no longer uses a subset of the network (such as miners) to maintain consensus, but all participants (such as devices that need to be traded) in the whole network do the verification of network transactions. Consensus mechanism and transaction process are integrated in IOTA: it is an endogenous part of IOTA, which can be extended without any transaction costs.</p>
+          <p>Usually, in block chain system, transaction costs are formed because of the need to pay the miners. But in Tangle system, every valid node in the network can validate the transaction effectively, so no transaction costs are paid. To some extent, compensation is not based on the way the system works, but on the foundation's drive to use the whole network. At the same time, the remuneration of Tangle developers is provided by the foundation.</p>
+          <p>At present, IOTA can do two things well: transaction settlement (especially micro payment) and data integrity. Most use cases derived from these two functions are meaningful and in most cases can only be implemented through IOTA.</p>
+          <p>IOTA is designed for the Internet of Things and supports partition tolerance, which means that it does not require a ubiquitous network protocol and can have clusters and meshes. So in the future, there will be devices that use 4G or devices that use Sigfox.</p>
+          <p>Tangle's first case focused on the sensor data market, with several large companies already involved. IOTA's idea is that any sensor can sell its data in the market. Because the Internet of Things is based on micro-payments, IOTA wants to demonstrate this micro-payment and business model in a Machine-based economy: anyone can buy sensor data for a small amount of money.</p>
+        </div>
+
+      </div>
+      <!-- 中间部分的内容end -->
+
+    </div>
+<iframe src="../bottom2.html" width="100%" height="200px" scrolling="No"  noresize="noresize" frameborder="0" id="bottomFrame"></iframe>
+  </body>
+</html>

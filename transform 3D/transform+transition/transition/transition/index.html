@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3练习案例</title>
+</head>
+<style type="text/css">
+    *{
+        margin:0px;
+        padding:0px;
+    }
+    .light{
+        margin-top:200px;
+        margin-left: 600px;
+        width:100px;
+        height:100px;
+        position:absolute;
+        perspective:500px;
+    }
+    .light .stage{
+        position:relative;
+        width:100px;
+        height:100px;
+        transform-style:preserve-3d;
+        -webkit-transition: all 0.8s;
+    }
+    .light .stage .image1{
+        width:100px;
+        height:100px;
+        position:absolute;
+        -webkit-transform:translateZ(50px) ;
+        transition: all 1s linear;
+    }
+    .light .stage .image2{
+        width:100px;
+        height:100px;
+        position:absolute;
+        transition: all 1s linear;
+        -webkit-transform: rotateY(-90deg) translateZ(60px);
+    } 
+
+    .light .stage .image3{
+        width:100px;
+        height:100px;
+        position:absolute;
+        transition: all 1s linear;
+        -webkit-transform: rotateY(90deg) translateZ(60px);
+    } 
+
+    .light .stage .image4{
+        width:100px;
+        height:100px;
+        position:absolute;
+        transition: all 1s linear;
+        -webkit-transform: rotateX(180deg) translateZ(60px);
+    } 
+    .light .stage:hover{
+        -webkit-transform: rotateY(180deg);
+    }
+</style>
+<body>
+    <div class="light">
+        <div class="stage">
+            <img class="image1" src="img/timg (1).jpg" />
+            <img class="image2" src="img/timg.jpg" />
+            <img class="image3" src="img/timg.jpg" />
+            <img class="image4" src="img/timg.jpg" />
+        
+        </div>
+    </div>
+</body>
+</html>

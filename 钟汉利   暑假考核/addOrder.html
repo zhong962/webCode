@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.19.0/axios.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+
+        
+        时间<input type="date" v-model="ttt">
+        时间<input type="date" v-model="le">
+        
+        <input type="button" value="注册" @click="add">
+
+
+    </div>
+
+
+
+    <script>
+
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                name: null,
+                password: null,
+                phone:null,
+                other:null,
+                aaa: [1, 2, 3],
+                rid:null,
+                uid:06,
+                ttt:null,
+                le:null
+
+    
+            },
+            methods: {
+                add(){
+                    
+                    ///============ POST请求
+                    axios({
+                        method: "post",
+                        url: "http://localhost/web/api/addOrder.php",
+                        headers: {
+                            'Content-type': 'application/x-www-form-urlencoded'
+                        },
+                        data: {
+                            rid: 5,
+                            uid: 5,
+                            check_time:this.ttt,
+                            leave_time:this.le
+                            
+                        },
+                        transformRequest: [function (data) {
+                            let ret = ''
+                            for (let it in data) {
+                                ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
+                            }
+                            return ret
+                        }],
+                    }).then((res) => {
+                        if(res.data=="success"){
+                            alert("success");
+                        }else{
+                            alert("网络错误");
+                        }
+                    })
+
+
+                    //=======
+
+                }
+
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

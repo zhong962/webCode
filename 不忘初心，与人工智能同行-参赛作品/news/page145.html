@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  <!-- IE的设置 -->
+    <meta name="viewport" content="width=device-width, inital-scale=1.0"> <!-- 响应式设置 -->
+    <title>AWS三大AI解决方案：影像辨识、聊天机器人与语音转换</title>
+	<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+
+
+    <link rel="stylesheet" href="./css/normalize.css"> <!-- CSS资源引入 -->
+    <link rel="stylesheet" href="./css/page.css"> <!-- CSS资源引入 -->
+    <link rel="shortcut icon" href="./images/logo.png" > <!-- 图标 -->
+  </head>
+  <body>
+
+  <div class="top"></div>
+	<div class="pr navpr">
+		<div class="nav pa">
+		<div class="w">
+			<img class="fl mt9" src="../img/nav-1.png"/>
+			<ul class="fl mt16 ml40">
+					<li><a href="../index1.html">首页</a></li>
+					<li><a href="../news/index.html">新闻资讯</a></li>
+					<li><a href="../aichutan/index.html">AI初探 </a></li>
+					<li><a href="../tushuoai/index.html">图说AI</a></li>
+					<li><a href="../zhinengshibie/index.html">智能识别</a></li>
+					<li><a href="../jiqikongzhi/index.html">机器控制</a></li>
+					<li><a href="../linjunrenwu/index.html">领军人物</a></li>
+					<li><a href="../guidianai/index.html">桂电AI</a></li>
+					<li><a href="../xgzz/index.html">相关著作</a></li>
+					<li><a href="../about/index.html">关于我们</a></li>
+					<div class="clear"></div>
+				</ul>
+			<div class="nav-btn fr mt17">
+				<a class="mr12" href="page145.html">中文</a>|
+				<a class="ml10" href="page146.html">English</a>			</div>
+			<div class="clear"></div>
+		</div>
+		<script>
+	$(function(){
+		var a = $('.nav'),
+			b =a.offset();
+		$(document).on('scroll',function(){
+			var	c = $(document).scrollTop();
+			if(b.top<=c){
+				a.css({'position':'fixed','top':'0px'})
+				}else{
+					a.css({'position':'absolute','top':'0px'})
+					}
+			})
+		})
+	</script>
+	</div>
+	</div>
+
+
+    <div class="bj">
+
+      <!-- 中间部分的内容 -->
+      <div class="bj-zhong">
+        <h1 class="title">AWS三大AI解决方案：影像辨识、聊天机器人与语音转换</h1>
+        <div class="two">
+          <p>年度科技产业盛事COMPUTEX 2017中以新创生态、数位经济、物联网(IoT)、人工智慧(AI)做为参展主轴的InnoVEX新创特区，集结来自各国企业讲者于展会论坛上分享该领域的未来发展方向。 </p>
+          <p>其中，亚马逊云端运算服务(AWS)港澳台商务发展事业负责人ZaneMoi以AI&DeepLearningatAmazon作为演讲主题，讲述AWS的AI及深度学习(DeepLearning)技术于其业务及消费者市场上的主要应用前景。</p>
+        </div>
+        <div class="one">
+          <img src="./pimg/p1451.jpg" width=100% height=auto>
+        </div>
+        <div class="two">
+          <p>在业务上，AWS利用Kiva机器人开创大规模仓储自动化；产品上，AmazonEcho结合AI语音助理Alexa使消费者家庭生活更为便利，Primeair无人机打造智慧送货服务；服务方面，AmazonGo无人商店更是运用深度学习演算技术记录消费者购买纪录，打造「拿了就走」科技(Just Walk Out Technology)，为消费者打造前所未有的购物体验。</p>
+          <p>近年更致力于利用AI及深度学习构筑其智慧基础建设，Moi便于展会中分享AWS三大AI服务解决方案之应用，图像辨识系统Amazon Rekognition、聊天机器人Lex及文字转语音程式Polly。</p>
+          <p>Rekognition能辨识照片中影像组成事物，也能有效识别人脸并加以记忆；例如美国电视频道C-Span就利用该程式自动识别电视节目中演讲者面孔。透过搜集超过9.7万个人像资料，Rekognition最终成功于C-Span上8个不同的节目片段中辨识出同一指定人物，让使用者能借此得知讲者身份，并进一步了解其曾出现在哪些节目影片中。</p>
+          <p>Amazon Lex与Amazon Polly则是分别为聊天机器人服务及文字转语音程式，两者皆应用自然语言理解(NLU)及自动语音辨识(ASR)技术。Lex能广泛运用于回答消费者问题、应用程式等聊天机器人，也能作为提升企业生产力的自动化机器人及IoT机器人。而Polly则能将文字转换成生动的语言文字，透过AI技术理解书面文字寓意将其精准转化为口语表达语句。</p>
+          <p>从自家仓储管理、家庭智慧生活，到给予消费者颠覆性创新的购物体验，再到三大解决方案应用，AWS愿景在于使拥有AI及深度学习智慧的机器深入日常生活中。</p>
+        </div>
+
+      </div>
+      <!-- 中间部分的内容end -->
+
+    </div>
+<iframe src="../bottom.html" width="100%" height="200px" scrolling="No"  noresize="noresize" frameborder="0" id="bottomFrame"></iframe>
+  </body>
+</html>

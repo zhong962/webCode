@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>实现品牌的增加、删除和搜索关键字功能；用过滤器精确时间</title>
+    <script src="./vue.js"></script>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+</head>
+<body>
+    <div id="app">
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title" >添加品牌</h3>
+            </div>
+            <div class="panel-body form-inline">
+                    <!-- form-inline是让元素都在同一行的css样式 -->
+                    <!-- label是标签属性 -->
+                <label >      
+                    ID:
+                    <input type="text" class="form-control" v-model="id">
+                </label>
+
+                <label >
+                    Name:
+                    <input type="text" class="form-control"  v-model="name" @keyup.enter="add">
+                    <!-- @keyup.enter="要实现的方法名称"   表示可以通过回车键添加信息，而不仅仅只能通过添加按钮实现添加功能 -->
+                    
+                </label>
+
+                <input type="button" value="添加" class="btn btn-primary"  @click="add">
+               <!-- add是点击按钮时实现的效果的方法函数，@是v-on的简写 -->
+
+               <label >
+                    搜索关键字:
+                    <input type="text" class="form-control"  v-model="keywords" v-focus>
+                    <!-- 自定义全局指令让文本框获取默认焦点，使用时都要有v-作为前缀 -->
+                    
+                </label>
+            </div>
+        </div>
+
+
+        <!-- 表单的创建 -->
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>ID:</th>
+                    <th>Name:</th>
+                    <th>Time:</th>
+                    <th>Opration</th>
+                </tr>
+            </thead>
+    
+            <tbody>
+                <!-- ：key表示属性的绑定，一般在表单表格中最好使用：是v-bind的简写 -->
+                <tr v-for="item in search(keywords)" :key="item.id">         
+                    <th>{{ item.id }}</th>
+                    <th v-text="item.name"></th>
+                    <th>{{ item.ctime | datemat }}</th>
+                    <th>
+                        <a href="" @click.prevent="del(item.id)">删除</a>
+                        <!-- 给删除一个点击效果，@是v-on的简写，然后.prevent是阻止默认行为的修饰符 -->
+
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+
+
+
+
+    <h3 id="app2" v-color="'pink'" v-fontweight="900">{{ dt | datemat }}</h3>
+
+
+
+
+    <script>
+
+        //定义vue的全局过滤器为datemat
+        Vue.filter('datemat',function (dateStr) {
+            //根据给定的时间字符串，得到特定的时间
+            var dt = new Date(dateStr)
+            //定义新的字符串存放新的时间，下面的都是获取时间的方法
+            var y = dt.getFullYear()
+            var m = (dt.getMonth() + 1).toString().padStart(2,'0')    //用了字符串的新方法padStart来填充字符串
+            var d = dt.getDate().toString().padStart(2,'0')
+            var h = dt.getHours().toString().padStart(2,'0')
+            var mi = dt.getMinutes().toString().padStart(2,'0')
+            var s = dt.getSeconds().toString().padStart(2,'0')
+            //最后返回重新获取到的时间
+            return `${y}-${m}-${d}         ${h}:${mi}:${s}`
+        })
+
+       
+
+       
+        //定义一个全局指令，Vue.directive('指令名称'，对象)
+        Vue.directive('focus',{
+            //在这个对象中，有相应的函数来执行操作
+            bind:function(el){//当指令绑定到元素上，执行这个bind函数，会执行一次；注意，这个函数只有在插入dom之后，才会起作用
+                // el.focus()
+            },
+            inserted:function(el){//这个表示在插入dom元素中时，会触发一次这个函数；与bind相反
+                el.focus()
+            },
+            updated:function(){//这个函数则是可以触发多次
+
+            }
+        })
+
+
+
+
+        //定义一个全局的改变颜色的指令
+        Vue.directive('color',{
+            bind:function(el,binding){           //将指令绑定到指定元素上，括号里表示形参，要定义参数才能使用
+
+                el.style.color = binding.value
+                //这个表示将属性想要的颜色赋给指令的值
+            }
+        })
+
+
+        
+
+
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                id:'',
+                name:'',
+                keywords:'',
+                list:[           //数组数据用v-for放进表格元素中
+                    {id:1,name:'宝马',ctime:new Date()},
+                    {id:2,name:'奔驰',ctime:new Date()},
+                    {id:3,name:'大众',ctime:new Date()}
+                ]
+            },
+            methods:{    
+
+                add(){      //实现添加品牌的方法
+                   
+                    //首先直接从data中获取id和name，用this
+                    //然后创建一个对象，然后把这个对象，用对象数组的办法，放到data的list数组中构建新的数组
+
+                    var car = {id:this.id, name:this.name, ctime:new Date()}
+                    //这是定义了一个新的对象，用this获取到id和name
+
+                    this.list.push(car)      
+                     //用push属性将新的对象放入list中形成新的数组
+
+                },
+
+                del(id){         //括号里面放id进行定义
+
+                    //根据id找到要删除的这一项的索引
+                    //然后用数组的splice方法删除
+
+                    this.list.some((item,i) => {                //箭头函数
+                        if(item.id == id){                   //如果遍历之后的id等于定义的id，说明找到了指定id的索引
+                            this.list.splice(i,1)
+
+                            return true                 //在数组的some方法中，使用return true，就会终止数组之后的循环
+                        }
+                    })
+                },
+
+                search(keywords){     //根据关键字搜索的方法
+                    // var newlist =[]                             //定义一个新数组
+                    // this.list.forEach(item => {                      //foreach是数组中循环遍历元素的方法
+                    //     if(item.name.indexOf(keywords) !=-1){         //indexOf 这里表示如果两个数组中的字符有相同的，就新城新的数组存放进newlist中
+                    //         newlist.push(item)                        //push定义newlist数组取代list数组
+                    //     }
+                    // })
+
+
+                    //在数组中，foreach、some、filter、findindex都是新方法，都能对数组进行遍历然后进行相应操作
+                    //其中foreach方法不会终止操作、filter可以过滤一些不符合的元素（更好理解）
+
+                    var newlist = this.list.filter(item =>{          //定义新的数组方法，filter过滤方法
+                        if(item.name.includes(keywords)){           //includes是数组中，包含字符串的方法，
+                            return item                              //如果keywords数组包含name的，就返回true
+                        }
+                    })
+                    return newlist            //返回新的数组
+                }
+            }
+
+
+        })
+        var vm2 = new Vue({
+            el:'#app2',
+            data:{
+                dt:new Date()
+            },
+            methods:{},
+            filters:{
+                //私有过滤器的基本要素：过滤器名称：处理函数
+                datemat:function (dateStr) {
+            //根据给定的时间字符串，得到特定的时间
+                var dt = new Date(dateStr)
+            //定义新的字符串存放新的时间，下面的都是获取时间的方法
+                var y = dt.getFullYear()
+                var m = dt.getMonth() + 1
+                var d = dt.getDate()
+                var h = dt.getHours()
+                var mi = dt.getMinutes()
+                var s = dt.getSeconds()
+            //最后返回重新获取到的时间
+                return `${y}-${m}-${d}         ${h}:${mi}:${s}`
+               }
+            },
+            directives:{
+                //定义私有指令和定义私有过滤器原理是一样的
+
+                'fontweight':{    //指令的名称 + 函数表达
+                          bind:function(el,binding){      //函数表达式基本和全局的一样
+                              el.style.fontWeight = binding.value
+                          }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

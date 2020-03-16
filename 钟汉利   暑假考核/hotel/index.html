@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" class="jsx-1536275936 next-head">
+    <title class="jsx-1536275936 next-head">热门产品</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" class="jsx-1536275936 next-head">
+    <meta name="renderer" content="webkit" class="jsx-1536275936 next-head">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" class="jsx-1536275936 next-head">
+
+
+    <link rel="stylesheet" href="css/commons.b237e9fa.chunk.css">
+    <link rel="stylesheet" href="css/hotel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.19.0/axios.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+    <style>
+        #fix {
+            position: fixed;
+            border-radius: 20px;
+            box-sizing: border-box;
+            padding: 25px;
+            z-index: 100;
+            background-color: #242736;
+            top: 50%;
+            width: 438px;
+            height: 300px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            color: #fff;
+            border: 1px solid #fff;
+            background: linear-gradient(to left, #22e1b3, #01ecdd);
+        }
+
+        #fix input{
+            margin: 5px;
+        }
+
+        #fix a {
+            display: block;
+            box-sizing: border-box;
+            width: 139px;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            border: 1px solid #999;
+            border-radius: 100px;
+            -webkit-text-decoration: none;
+            text-decoration: none;
+            color: #333;
+            vertical-align: top;
+            cursor: pointer;
+        }
+
+        #fix a:first-child {
+            float: left;
+        }
+
+        #fix a:nth-child(2) {
+            float: right;
+        }
+
+        #btn-con {
+            position: absolute;
+            bottom: 25px;
+            width: 377px;
+        }
+    </style>
+
+
+
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- //----------------------------------------------------->
+
+
+
+
+<body>
+
+    <div id="app">
+        <div class="jsx-1536275936 container-PC" data-reactroot="">
+            <div class="jsx-318783360  header-wrapper">
+                <header class="jsx-318783360 white-bg ">
+                    <div class="jsx-318783360 header-contains">
+                        <nav class="jsx-318783360 nav-list clearfix">
+                            <a :href="loginHref" class="jsx-318783360 ">{{loginText}}</a>
+                            <a class="jsx-318783360 " id="btn" href="#foot">联系我们</a>
+                            <a class="jsx-318783360 btn2" href="#commend">热销房源</a>
+                            <a href="#about us" class="jsx-318783360 btn3">关于我们</a>
+                            <a href="#" class="jsx-318783360 nav-on btn4">首页</a>
+
+                        </nav>
+                    </div>
+                    <ul class="jsx-318783360 fixed-nav-list">
+                        <li data-type="email" class="jsx-318783360 fixed-nav-email fixed-nav-li ">
+                            <div class="jsx-318783360  fixed-nav-tips">邮箱：sevice@zhonganbio.com</div>
+                        </li>
+                        <li data-type="phone" class="jsx-318783360 fixed-nav-phone fixed-nav-li ">
+                            <div class="jsx-318783360  fixed-nav-tips">电话：400-608-3568</div>
+                        </li>
+                        <li data-type="wechat" class="jsx-318783360 fixed-nav-wechat fixed-nav-li ">
+                            <div class="jsx-318783360 img-tips fixed-nav-tips"><img src="images/qrcode.png" width="95"
+                                    height="95" class="jsx-318783360"></div>
+                        </li>
+                        <li data-type="back" class="jsx-318783360 fixed-nav-back fixed-nav-li back-hide"></li>
+                    </ul>
+                </header>
+            </div>
+
+            <div class="jsx-3591821254">
+                <div class="jsx-3591821254 banner-wrapper"><img
+                        src="images/product-banner.jpg" width="2560" height="450"
+                        alt="享受舒适的生活，从xx酒店开始" class="jsx-3591821254">
+                    <p class="jsx-3591821254 banner-tips">享受舒适的生活，从xx酒店开始</p>
+                </div>
+                <div class="jsx-3591821254 kind-nav-wrapper-placeholder">
+                    <div class="jsx-3591821254  kind-nav-wrapper">
+                        <ul class="jsx-3591821254 kind-nav-list clearfix">
+                            <li data-type="hot" class="jsx-3591821254"><span class="jsx-3591821254 ">人气爆品</span><span
+                                    class="jsx-3591821254 bg-hot_on ico"></span></li>
+                            <li data-type="female" class="jsx-3591821254"><span class="jsx-3591821254 ">温馨舒适</span><span
+                                    class="jsx-3591821254 bg-female ico"></span></li>
+                            <li data-type="male" class="jsx-3591821254"><span class="jsx-3591821254 ">家庭美满</span><span
+                                    class="jsx-3591821254 bg-male ico"></span></li>
+                            <li data-type="child" class="jsx-3591821254"><span class="jsx-3591821254 ">儿童呵护</span><span
+                                    class="jsx-3591821254 bg-child ico"></span></li>
+                            <li data-type="life" class="jsx-3591821254"><span class="jsx-3591821254 "><a
+                                        href="#health">健康生活</a> </span><span class="jsx-3591821254 bg-life ico"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="jsx-3591821254 product-list-wrapper">
+                    <div class="jsx-3591821254 single-product-wrapper">
+                        <h2 class="jsx-3591821254 title-hot product-title">爆款房源</h2>
+                        <div class="jsx-3591821254 single-product"><img
+                                src="images/product-hot-1-b27b0207ae1d2d6d6417bddad42b5cdf.jpg" alt="" width="830"
+                                height="380" class="jsx-3591821254 product-img">
+                            <div class="jsx-3591821254 single-product-info">
+                                <h3 class="jsx-3591821254">为你量身打造</h3>
+                                <ul class="jsx-3591821254">
+                                    <li class="jsx-3591821254">早餐服务 一天都精力充沛</li>
+                                    <li class="jsx-3591821254">定制床垫 拥有舒眠体验</li>
+                                    <li class="jsx-3591821254">品牌洗护 专业级配方</li>
+                                    <li class="jsx-3591821254">特调香薰 凝心更安神</li>
+
+                                </ul>
+
+
+
+
+                                <p class="jsx-3591821254 deal-wrapper"><span
+                                        class="jsx-3591821254 price-wrapper">售价：<span
+                                            class="jsx-3591821254 price-flag">¥</span><span
+                                            class="jsx-3591821254 price">499</span></span>
+                                    <a @click="addOrder(aaa[0].rid)" target="_blank"
+                                        class="jsx-3591821254 buy-btn">立即预订</a></p>
+                            </div><span class="jsx-3591821254 recommend-icon"></span>
+
+
+
+                        </div>
+                    </div>
+
+                    <div class="jsx-3591821254 about-product">
+                        <h2 id="about us"  class="jsx-3591821254 title-female product-title">关于我们</h2>
+                        <div class="text-center about-product-text1">
+                            <img class="text-left" src="../hotel/images/intraduce-1.jpg" alt="">
+                            <div class="text-right">
+                                <h3 class="text-space">- 多一点自在 -</h3>
+                                <p class="text-space">我们倡导“多一点自在”的生活哲学</p>
+                                <p class="text-space">为消费者提供自在舒适的旅途生活氛围</p>
+                                <p class="text-space">更为贴心的新型朋友式服务及商旅居住体验</p>
+                            </div>
+                        </div>
+
+                        <div class="text-center about-product-text2">
+                            <img class="pull-right" src="../hotel/images/intraduce-2.jpg" alt="">
+                            <div class="pull-left about-product-text">
+                                <h3 class="text-space">- 打造皇家礼遇 -</h3>
+                                <p class="text-space">我们以美食、助眠、典雅、豪华为产品设计理念</p>
+                                <p class="text-space">旨在铸造一个集“皇家美食，贵族礼遇”为一体的皇家体验之旅</p>
+                                <p class="text-space">让宾客享受到超越期望的尊贵体验</p>
+                            </div>
+                        </div>
+
+                        <div class="text-center about-product-text3">
+                            <img class="text-left" src="../hotel/images/intraduce-3.jpg" alt="">
+                            <div class="text-right">
+                                <h3 class="text-space">- 音乐助眠系统 -</h3>
+                                <p class="text-space">将音乐融入酒店的每一个细节</p>
+                                <p class="text-space">达到艺术与酒店的完美结合</p>
+                                <p class="text-space">致力于为每一位宾客提供舒适体验</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- aaa数据渲染 -->
+                    <div class="jsx-3591821254 product-list">
+
+                        <!-- fix弹框 -->
+                        <div id="fix" v-if="showfix">
+                            入住时间 <input type="date" value="2019-08-30" v-model="check_time">
+                            <br>
+                            离开时间 <input type="date" value="2019-08-31" v-model="leave_time">
+                            <br>
+                            入住人数 <input type="text" value=" " v-model="number">
+                            <br>
+
+                            <div id="btn-con">
+                                <a href="" @click.prevent="cancelOrder">取消</a>
+                                <a href="" @click.prevent="ensureOrder">确定</a>
+                            </div>
+                        </div>
+
+                        <h2 class="jsx-3591821254 title-female product-title" id="commend">推荐房源</h2>
+                        <ul class="jsx-3591821254 clearfix product-group">
+
+                            <li id="ppp" v-for='room in aaa' class="jsx-3591821254"><img :src="room.img" alt=""
+                                    width="380" height="200" class="jsx-3591821254 product-img">
+                                <div class="jsx-3591821254 product-info">
+                                    <p class="jsx-3591821254 product-name">{{room.type}}</p>
+                                    <p class="jsx-3591821254 product-subhead">{{room.other}}</p>
+                                    <p class="jsx-3591821254 deal-wrapper"><span
+                                            class="jsx-3591821254 price-wrapper">售价：<span
+                                                class="jsx-3591821254 price-flag">¥</span><span
+                                                class="jsx-3591821254 price">{{room.price}}</span></span>
+                                        <a @click="addOrder(room.rid)" target="_blank"
+                                            class="jsx-3591821254 buy-btn">立即预订</a></p>
+                                </div><span class="jsx-3591821254 recommend-icon"></span>
+                            </li>
+
+                            <!-- <a href="" style="left:50%; float:left; position:relative; background:#01ecdd;"
+                                class="jsx-3591821254 buy-btn">更多</a> -->
+                        </ul>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="jsx-3591821254">
+                <div class="jsx-3591821254 product-list-wrapper">
+
+                </div>
+            </div>
+
+
+
+            <footer id="foot" class="jsx-1521441539 ">
+                <div class="jsx-1521441539 footer-wrapper">
+                    <div class="jsx-1521441539 content">
+                        <div class="jsx-1521441539 about">
+                            <h3 class="jsx-1521441539 title">联系我们<span class="jsx-1521441539">CONTACT US</span></h3>
+                            <ul class="jsx-1521441539 about-list clearfix">
+                                <li class="jsx-1521441539 li-type-icon bg-server_tel">
+                                    <p class="jsx-1521441539">客服电话 :</p>
+                                    <p class="jsx-1521441539">400-608-3568</p>
+                                </li>
+                                <li class="jsx-1521441539 li-type-icon bg-cooperation">
+                                    <p class="jsx-1521441539">商务合作 :</p>
+                                    <p class="jsx-1521441539"><a href="#"
+                                            class="jsx-1521441539">partner@platenogroup.com</a></p>
+                                </li>
+                                <li class="jsx-1521441539 li-type-icon bg-server_email">
+                                    <p class="jsx-1521441539">客服邮箱 :</p>
+                                    <p class="jsx-1521441539"><a href="#"
+                                            class="jsx-1521441539">service@platenogroup.com</a></p>
+                                </li>
+                                <li class="jsx-1521441539 li-type-icon bg-address">
+                                    <p class="jsx-1521441539">酒店地址 :</p>
+                                    <p class="jsx-1521441539">广州市海珠区新滘西路300号铂涛大厦</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="jsx-1521441539 other-wrapper">
+                            <div class="jsx-1521441539 focus">
+                                <h3 class="jsx-1521441539 title">关注我们<span class="jsx-1521441539">FOLLOW US</span></h3>
+                                <div class="jsx-1521441539"><img src="images/qrcode.png" width="95" height="95"
+                                        class="jsx-1521441539">
+                                    <p class="jsx-1521441539">关注微信公众号</p>
+                                </div>
+                            </div>
+                            <div class="jsx-1521441539 links">
+                                <h3 class="jsx-1521441539 title">友情链接<span class="jsx-1521441539">PARTNER SITES</span>
+                                </h3>
+                                <div class="jsx-1521441539 link-content">
+                                    <p class="jsx-1521441539"><a target="_blank" href="https://www.zhongan.com/"
+                                            class="jsx-1521441539">众安出行</a></p>
+                                    <p class="jsx-1521441539"><a target="_blank" href="https://www.zhongan.io/"
+                                            class="jsx-1521441539">众安经济</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <p class="jsx-1521441539 copyright">© 众安（深圳）有限公司
+                    <!-- --> <a target="_blank" href="http://www.miitbeian.gov.cn"
+                        class="jsx-1521441539">粤ICP备16087086号-1</a></p>
+            </footer>
+        </div>
+    </div>
+
+
+
+
+    <script type="text/javascript" src="js/skroll.js"></script>
+
+
+    <!-- <script>__NEXT_DATA__ = { "props": { "pageProps": { "currentIndex": 0, "navList": [{ "type": "hot", "title": "人气爆品", "icon": "bg-hot" }, { "type": "female", "title": "女性健康", "icon": "bg-female" }, { "type": "male", "title": "男性健康", "icon": "bg-male" }, { "type": "child", "title": "儿童呵护", "icon": "bg-child" }, { "type": "life", "title": "健康生活", "icon": "bg-life" }], "productList": [{ "type": "female", "name": "女性健康", "list": [{ "name": "宫颈癌HPV病毒检测", "subhead": "预防宫颈癌，HPV疫苗优先预约", "isRecommend": true, "link": "https://item.jd.com/30491396737.html", "price": "299" }, { "name": "乳腺癌BRCA1/2基因检测", "subhead": "检测突变基因，远离全国发病率最高的女性杀手", "isRecommend": true, "link": "https://item.jd.com/30491584684.html", "price": "299" }, { "name": "女性防癌易感基因检测", "subhead": "检测女性高发肿瘤易感基因，精选版预防4种高发肿瘤", "isRecommend": false, "link": "https://item.jd.com/30492468302.html", "price": "499" }, { "name": "叶酸吸收能力基因检测", "subhead": "叶酸补多少，基因来指导", "link": "https://item.jd.com/30493214738.html", "isRecommend": false, "price": "399" }] }, { "type": "male", "name": "男性健康", "list": [{ "name": "男性精选防癌基因检测", "subhead": "肺癌、肝癌、前列腺癌、结直肠癌，精选4项肿瘤，精准预防", "isRecommend": false, "link": "https://item.jd.com/31298795950.html", "price": "499" }] }, { "type": "child", "name": "儿童呵护", "list": [{ "name": "儿童安全用药基因检测", "subhead": "让宝宝正确用好6大类儿童常见药，减少副作用", "isRecommend": true, "link": "https://item.jd.com/30480916444.html", "price": "499" }, { "name": "儿童学习能力基因检测", "subhead": "基因检测6大学习能力，针对性提高孩子成绩", "isRecommend": true, "link": "https://item.jd.com/30479912978.html", "price": "499" }, { "name": "儿童兴趣潜力基因检测", "subhead": "用基因检测帮孩子找到擅长的领域，快乐的赢在起跑线", "isRecommend": true, "link": "https://item.jd.com/30480426729.html", "price": "499" }, { "name": "儿童营养代谢能力基因检测", "subhead": "营养吸收能力分析，日常饮食搭配的科学指南", "isRecommend": false, "link": "https://item.jd.com/30490862858.html", "price": "699" }] }, { "type": "life", "name": "健康生活", "list": [{ "name": "运动无忧基因检测", "subhead": "及时了解心脏猝死风险，运动更安全", "link": "https://item.jd.com/30493393061.html", "isRecommend": true, "price": "89" }] }] } }, "page": "/product", "query": {}, "buildId": "BT3BSE3ulUPZ2S6ZZv1g4", "nextExport": true }; __NEXT_LOADED_PAGES__ = []; __NEXT_REGISTER_PAGE = function (r, f) { __NEXT_LOADED_PAGES__.push([r, f]) }</script> -->
+    <script>
+
+
+
+
+
+        $(window).scroll(function () {
+
+            // jquery判断滚动条距离顶部的距离，实现css动画效果
+            if ($(window).scrollTop() >= 700) {
+                $(".about-product-text1").addClass("animated  slideInLeft delay-0s");
+                
+            };
+            if ($(window).scrollTop() >= 1250) {
+                $(".about-product-text2").addClass("animated  zoomIn  delay-0s");
+                
+            };
+            if ($(window).scrollTop() >= 1950) {
+                $(".about-product-text3").addClass("animated  fadeInRight delay-0s");
+                // console.log(66665);
+            };
+
+        });
+
+
+
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                aaa: [1, 2, 3],
+                rid: null,
+                uid: null,
+                isLogin: false,
+                loginText: null,
+                loginHref: null,
+                showfix: false,
+                check_time: null,
+                leave_time: null,
+                number:null
+
+            },
+
+            // created在模板渲染成html前调用，即通常初始化某些属性值，然后再渲染成视图
+            created() {
+                this.getRoomInfo();
+
+                //判断是否登陆
+                if (localStorage.getItem('uid') == null) {
+                    this.isLogin = false;
+                    this.loginText = '注册|登陆';
+                    this.loginHref = "login.html";
+                } else {
+                    this.isLogin = true;
+                    this.uid = localStorage.getItem('uid');
+                    this.loginText = '退出登陆';
+                    this.loginHref = "loginOut.html";
+                }
+
+                //判断订房日期不能小于今天的日期
+                //今天的日期，用组合字符串的格式：yyyy-mm-dd
+                var date = new Date();
+                var mon = date.getMonth() + 1;
+                var dayy = date.getDate();
+                if (mon < 10) {
+                    mon = '0' + mon;
+                }
+                if (dayy < 10) {
+                    dayy = '0' + dayy;
+                }
+
+                var today = date.getFullYear() + '-' + mon + '-' + dayy;
+
+                //明天的日期，
+                var tomoday = new Date();
+                tomoday.setTime(tomoday.getTime()+24*60*60*1000);
+                mon = tomoday.getMonth() + 1;
+                dayy = tomoday.getDate();
+                if (mon < 10) {
+                    mon = '0' + mon;
+                }
+                if (dayy < 10) {
+                    dayy = '0' + dayy;
+                }
+                tomoday = tomoday.getFullYear() + '-' + mon + '-' + dayy;
+
+               //默认订房日期为今天，退房日期为明天
+                this.check_time = today;
+                this.leave_time = tomoday;
+
+            },
+            mounted() {
+
+            },
+            methods: {
+                getRoomInfo() {
+                    var that = this;
+                    console.log(2);
+                    axios.get('http://localhost/web/api/allRoom.php').then(function (res) {
+                        console.log(res.data);
+                        that.aaa = res.data;
+                    }).catch(function (response) {
+
+                    });
+
+                },
+                addOrder(rid) {
+                    //前端简单判断用户是否登陆
+                    //读取本地 uid ，看看是否存在
+                    //在登陆的时候： 1.服务器记录session   2.浏览器存入uid到本地（uid）时服务器返回的
+                    //localStorage.getItem('uid')
+                    if (!this.isLogin) {
+                        window.location.href = "login.html";
+                        return;
+                    }
+                    this.rid = rid;
+                    this.showfix = true;
+
+
+                },
+                cancelOrder() {
+                    this.showfix = false;
+
+                },
+                ensureOrder() {
+                    this.showfix = false;
+
+
+                    var date = new Date();
+                    var mon = date.getMonth() + 1;
+                    var dayy = date.getDate();
+                    if (mon < 10) {
+                        mon = '0' + mon;
+                    }
+                    if (dayy < 10) {
+                        dayy = '0' + dayy;
+                    }
+                    var today = date.getFullYear() + '-' + mon + '-' + dayy;
+
+
+
+
+                    if (this.check_time < today) {
+                        alert("入住订房时间不能早于今天");
+                        return;
+                    }
+
+                    if (this.check_time >= this.leave_time) {
+                        alert("退房时间不能早于入住时间");
+                        return;
+                    }
+
+
+                    ///============ POST请求
+                    axios({
+                        method: "post",
+                        url: "http://localhost/web/api/addOrder.php",
+                        headers: {
+                            'Content-type': 'application/x-www-form-urlencoded'
+                        },
+                        data: {
+                            rid: this.rid,
+                            uid: this.uid,
+                            check_time: this.check_time,
+                            leave_time: this.leave_time,
+                            number: this.number,
+
+
+                        },
+                        transformRequest: [function (data) {
+                            let ret = ''
+                            for (let it in data) {
+                                ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
+                            }
+                            return ret
+                        }],
+                    }).then((res) => {
+                        if (res.data == "success") {
+
+                            var r = confirm("预订成功，现在带你去订单页面?");
+                            if (r == true) {
+                                window.location.href = "orderList.html";
+                            }
+
+                        } else {
+                            //alert("请登录");
+                            window.location.href = "login.html";
+                        }
+                    })
+                }
+            }
+
+        });
+    </script>
+</body>
+
+</html>

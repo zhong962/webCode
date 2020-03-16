@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.19.0/axios.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        background: url("../hotel/images/bg.jpg") no-repeat fixed;
+        background-size: 100% 600px;
+        position: relative;
+        height: 600px;
+        width: 100%;
+        box-sizing: border-box;
+        z-index: 1;
+    }
+
+    .container:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        filter: blur(4px);                /*背景模糊的关键代码*/
+        background: inherit;
+    }
+
+    .tab_menu {
+        position: absolute;
+        background: #fff;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      
+        height: auto;
+        width: 400px;
+        border-radius: 13px;
+        padding: 12px;
+        list-style-type: none;
+
+        text-align: center;
+        z-index: 11;
+    }
+
+    .tab_menu a {
+        display: inline-block;
+        padding: 10px 0;
+        padding-bottom: 5px;
+        margin: 0 15px;
+        cursor: pointer;
+        color: #71767a;
+        line-height: 24px;
+        text-decoration: none;
+        border-bottom: 2px solid #fff;
+        transition-duration: 0.5s;
+    }
+
+    .tab_menu a:hover {
+        color: #22e1b3;
+        border-bottom: 2px solid #22e1b3;
+    }
+
+    .tab_menu input {
+        background: #f3eaea;
+        width: 262px;
+        border: 1px solid #f3eaea;
+        border-radius: 4px;
+        height: 35px;
+        margin: 10px;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <div id="app" class="tab_menu ">
+            <a href="" @click.prevent="login">登陆</a>
+            <a href="" @click.prevent="resgister">注册</a>
+            <hr>
+
+            <form v-if="flag">
+                <input type="text" placeholder="姓名" v-model="name" minlength="1" style="margin-right: 10px">
+                <br>
+                <input type="password" placeholder="密码" v-model="password" minlength="1" maxlength="20">
+                <br><br>
+                <hr>
+                <input type="button" value="登陆" @click="add" style="background: #22e1b3;width: 100px;">
+            </form>
+
+            <div v-if="!flag">
+                <input v-model="name1" placeholder="姓名" style="margin-right: 10px">
+                <br>
+                <input type="password" placeholder="密码" v-model="password1">
+                <br>
+                <input v-model="phone1" placeholder="电话" minlength="1" maxlength="20">
+                <br><br>
+                <hr>
+                <input type="button" value="注册" @click="signin" style="background: #22e1b3;width: 100px;">
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                name: null,
+                password: null,
+                name1: null,
+                password1: null,
+                phone1: null,
+                other: null,
+                flag: true
+            },
+            methods: {
+  
+                login() {
+                    this.flag = true
+                },
+                resgister() {
+                    this.flag = false
+                },
+
+                 //注册
+                signin() {
+                    var that = this;
+                    ///============ POST请求
+                    axios({
+                        method: "post",
+                        url: "http://localhost/web/api/addUser.php",
+                        headers: {
+                            'Content-type': 'application/x-www-form-urlencoded'
+                        },
+                        data: {
+                            name: this.name1,
+                            password: this.password1,
+                            phone: this.phone1
+                        },
+                        transformRequest: [function (data) {
+                            let ret = ''
+                            for (let it in data) {
+                                ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
+                            }
+                            return ret
+                        }],
+                    }).then((res) => {
+                        alert(res.data);
+                        if (res.data != "账号已存在") {
+                            that.flag = true
+
+                        }
+
+                    })
+                    //=======
+
+                },
+
+                //登陆
+                add() {
+                    var that = this;
+                    console.log(2);
+
+
+
+                    ///============ POST请求
+                    axios({
+                        method: "post",
+                        url: "http://localhost/web/api/login.php",
+                        headers: {
+                            'Content-type': 'application/x-www-form-urlencoded'
+                        },
+                        data: {
+                            name: this.name,
+                            password: this.password,
+                        },
+                        transformRequest: [function (data) {
+                            let ret = ''
+                            for (let it in data) {
+                                ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
+                            }
+                            return ret
+                        }],
+                    }).then((res) => {
+                        if (res.data.length == 1) {
+                            //alert("登陆成功");
+                            //用户数据存入本地
+                            localStorage.setItem('uid', res.data[0].uid);
+                            localStorage.setItem('name', res.data[0].name);
+                            console.log(res.data[0]);
+                            if (res.data[0].type == "admin") {
+                                window.location.href = "allOrderList.html";
+                                return;
+                            }
+                            //普通用户跳转到首页
+                            window.location.href = "index.html";
+                        } else {
+                            alert("登陆失败");
+                        }
+                    })
+
+
+                    //=======
+
+
+
+                }
+
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

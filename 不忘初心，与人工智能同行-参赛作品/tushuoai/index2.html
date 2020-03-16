@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Picture</title>
+
+		<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/style2.css"/>
+		<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="shortcut icon" href="./img/logo.png" > <!-- 图标 -->
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body>
+
+		<div class="top"></div>
+	<div class="pr navpr">
+		<div class="nav pa">
+		<div class="w">
+			<img class="fl mt9" src="../img/nav-1.png"/>
+			<ul class="fl mt16 ml40">
+					<li><a href="../index2.html" style="font-size: 18px">Index</a></li>
+					<li><a href="../news/index2.html" style="font-size: 18px">News</a></li>
+					<li><a href="../aichutan/index2.html" style="font-size: 18px">Explorer </a></li>
+					<li><a href="index2.html" style="font-size: 18px">Picture</a></li>
+					<li><a href="../zhinengshibie/index2.html" style="font-size: 18px">Identification</a></li>
+					<li><a href="../jiqikongzhi/index2.html" style="font-size: 18px">Machine</a></li>
+					<li><a href="../linjunrenwu/index2.html" style="font-size: 18px">Leader</a></li>
+					<li><a href="../guidianai/index2.html" style="font-size: 18px">Campus AI</a></li>
+					<li><a href="../xgzz/index2.html" style="font-size: 18px">Book</a></li>
+					<li><a href="../about/index2.html" style="font-size: 18px">About</a></li>
+					<div class="clear"></div>
+				</ul>
+			<div class="nav-btn fr mt17">
+				<a class="mr12" href="index.html" style="font-size: 16px">中文</a>|
+				<a class="ml10" href="index2.html" style="font-size: 18px">English</a>			</div>
+			<div class="clear"></div>
+		</div>
+		<script>
+	$(function(){
+		var a = $('.nav'),
+			b =a.offset();
+		$(document).on('scroll',function(){
+			var	c = $(document).scrollTop();
+			if(b.top<=c){
+				a.css({'position':'fixed','top':'0px'})
+				}else{
+					a.css({'position':'absolute','top':'0px'})
+					}
+			})
+		})
+	</script>
+	</div>
+	</div>
+
+
+		<div class="container">
+			<header class="clearfix">
+
+			</header>
+			<div id="grid-gallery" class="grid-gallery">
+				<section class="grid-wrap">
+					<ul class="grid">
+						<li class="grid-sizer"></li><!-- for Masonry column width -->
+						<li>
+							<figure>
+								<img src="img/thumb/1.jpg" alt="img01"/>
+								<figcaption><h3>Intelligent Security</h3></figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<img src="img/thumb/2.jpg" alt="img02"/>
+								<figcaption><h3>Intelligent Robot</h3></figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<img src="img/thumb/3.jpg" alt="img03"/>
+								<figcaption><h3>Face Recognition</h3></figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<img src="img/thumb/4.jpg" alt="img04"/>
+								<figcaption><h3>Smart Home</h3></figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<img src="img/thumb/5.jpg" alt="img05"/>
+								<figcaption><h3>Fingerprint Identification</h3></figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<img src="img/thumb/6.jpg" alt="img06"/>
+								<figcaption><h3>Intelligent Teaching</h3></figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<img src="img/thumb/7.jpg" alt="img07"/>
+								<figcaption><h3>Smart Financial</h3></figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<img src="img/thumb/8.jpg" alt="img08"/>
+								<figcaption><h3>Intelligent Catering</h3></figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<img src="img/thumb/9.jpg" alt="img09"/>
+								<figcaption><h3>Intelligent Transportation</h3></figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<img src="img/thumb/10.jpg" alt="img10"/>
+								<figcaption><h3>Palmprint Recognition</h3></figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<img src="img/thumb/11.jpg" alt="img11"/>
+								<figcaption><h3>Iris Recognition</h3></figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<img src="img/thumb/12.jpg" alt="img12"/>
+								<figcaption><h3>Unmanned Aerial Vehicle</h3></figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<img src="img/thumb/13.jpg" alt="img13"/>
+								<figcaption><h3>Intelligent Search Engine</h3></figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<img src="img/thumb/14.jpg" alt="img14"/>
+								<figcaption><h3>Intelligent Manufacturing</h3></figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<img src="img/thumb/15.jpg" alt="img15"/>
+								<figcaption><h3>Speech Recognition</h3></figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<img src="img/thumb/16.jpg" alt="img16"/>
+								<figcaption><h3>Smart Game</h3></figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<img src="img/thumb/17.jpg" alt="img17"/>
+								<figcaption><h3>Driverless Car</h3></figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<img src="img/thumb/18.jpg" alt="img18"/>
+								<figcaption><h3>Intelligent Medical</h3></figcaption>
+							</figure>
+						</li>
+					</ul>
+				</section>
+
+
+				<!-- // grid-wrap -->
+				<section class="slideshow">
+					<ul>
+						<li>
+							<figure>
+								<figcaption>
+									<h3>Intelligent Security</h3>
+									<p>The intelligent security alarm system is a kind of home security system composed of various sensors, function keys, detectors and actuators, which is the brain of the home security system.The alarm function includes the function of fire prevention, theft prevention, gas leakage alarm and emergency assistance. The alarm system adopts advanced intelligent control network technology and is managed and controlled by microcomputer to realize automatic alarm of unexpected accidents such as bandit situation, theft, fire, gas and emergency assistance.</p>
+								</figcaption>
+								<img src="img/large/1.jpg" alt="img01"/>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<figcaption>
+									<h3>Intelligent Robot</h3>
+									<p>Intelligent robot can understand human language, use human language to talk with the operator, in its own "consciousness" alone formed a kind of "survival" of the external environment - the detailed model of the actual situation.It can analyze what is happening, adjust its actions to meet all the requirements of the operator, formulate the desired actions, and perform them under conditions of inadequate information and rapid changes in the environment.</p>
+								</figcaption>
+								<img src="img/large/2.jpg" alt="img02"/>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<figcaption>
+									<h3>Face Recognition</h3>
+									<p>Face recognition is mainly used for identification.As video monitoring is rapidly popularizing, many video monitoring applications urgently need a fast identification technology in the state of long-distance and user non-cooperation, so as to quickly confirm the identity of personnel in long-distance and realize intelligent warning.Face recognition technology is undoubtedly the best choice. The fast face detection technology can be used to search face in real time from the monitoring video image and compare with face database in real time, so as to realize rapid identification.</p>
+								</figcaption>
+								<img src="img/large/3.jpg" alt="img03"/>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<figcaption>
+									<h3>Smart Home</h3>
+									<p>Smart home is a house as a platform, the use of integrated wiring technology, network communication technology, security technology, automatic control technology, audio and video technology to integrate the household life related facilities, schedule to build efficient residential facilities and family affairs management system, improve home security, convenience, comfort, artistry, and realize environmental protection and energy saving living environment, it is in the Internet under the influence of instrumentation.</p>
+								</figcaption>
+								<img src="img/large/4.jpg" alt="img04"/>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<figcaption>
+									<h3>Fingerprint Identification</h3>
+									<p>As technology advances, fingerprinting has begun to enter the computer world.Many companies and research institutes have made great breakthroughs in the field of fingerprint identification technology, and launched many applications that perfectly combine fingerprint identification with traditional IT technology, and these products have been recognized by more and more users.Fingerprint identification technology is mostly used in business areas with high security requirements, while internationally renowned brands such as Fujitsu, samsung and IBM, which are quite established in business mobile office, have more mature fingerprint identification systems.</p>
+								</figcaption>
+								<img src="img/large/5.jpg" alt="img05"/>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<figcaption>
+									<h3>Intelligent Teaching</h3>
+									<p>The intelligent teaching system, through the Internet computer artificial simulation technology, provides immediate, effective, comprehensive and targeted teaching by scientific analysis, intelligent judgment and purposeful teaching resources and research results.It can intelligently discover the blind spots that students and teachers can not easily find in learning and teaching, and intelligently remove the blind spots, which can reduce students' learning burden, improve teachers' teaching efficiency, and finally achieve the goal of improving students' academic performance.</p>
+								</figcaption>
+								<img src="img/large/6.jpg" alt="img06"/>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<figcaption>
+									<h3>Smart Financial</h3>
+									<p>Smart financial namely comprehensive integration, artificial intelligence and finance in artificial intelligence, big data, cloud computing, blocks in chains, and other high and new technology as the core elements of the comprehensive assignment to financial institutions, improve the service efficiency of financial institutions, expand the scope and depth of the financial services, make the whole society can get equal, efficient and professional financial services, to implement the intelligent of the financial services, personalized and customized.</p>
+								</figcaption>
+								<img src="img/large/7.jpg" alt="img07"/>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<figcaption>
+									<h3>Intelligent Catering</h3>
+									<p>In the future, with the deeper integration of ai with various industries, some jobs, such as restaurant waiters, restaurant dishwashers and cashiers, will be replaced by ai.By 2025, about 25 percent of jobs will be replaced by artificial intelligence or robots, according to a report.In short, the more automated, computerised jobs you have in your profession, the more likely it is that they will be handed over to machines.</p>
+								</figcaption>
+								<img src="img/large/8.jpg" alt="img08"/>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<figcaption>
+									<h3>Intelligent Transportation</h3>
+									<p>The 21st century will be the century of intelligent road traffic, people will adopt intelligent transportation system, is an advanced integrated traffic management system.In this system, the vehicle drives freely on the road by its own intelligence, and the highway adjusts the traffic flow to the best state by its intelligence. With this system, the administrator will have a clear understanding of the whereabouts of the road and the vehicle.</p>
+								</figcaption>
+								<img src="img/large/9.jpg" alt="img09"/>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<figcaption>
+									<h3>Palmprint Recognition</h3>
+									<p>Palm-print recognition is a new biometric recognition technology in recent years.Palmprint is an image of the palm of the hand from the end of the finger to the wrist.Many of these features can be used for identification: mainline, wrinkles, fine texture, ridge tip, bifurcation point, etc.Palmprint recognition is also a non-invasive method, which is easy for users to accept and less demanding for acquisition equipment.</p>
+								</figcaption>
+								<img src="img/large/10.jpg" alt="img10"/>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<figcaption>
+									<h3>Iris Recognition</h3>
+									<p>Iris recognition is one of the most convenient and accurate biometrics, including fingerprint recognition.Iris recognition technology is widely regarded as the most promising biological certification technology in the 21st century. In the future, the application of multiple fields such as security, national defense and e-commerce will inevitably focus on iris recognition technology.</p>
+								</figcaption>
+								<img src="img/large/11.jpg" alt="img11"/>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<figcaption>
+									<h3>Unmanned Aerial Vehicle</h3>
+									<p>Unmanned aerial vehicle (uav), short for unmanned aerial vehicle (uav), is an unmanned aircraft operated by radio remote control equipment and self-programmed control devices, or operated completely or intermittently autonomously by onboard computer.At present, it is applied in aerial photography, plant protection, micro-selfie, express delivery, disaster rescue, observation of wild animals, monitoring of infectious diseases, surveying and mapping, news reporting, disaster relief, etc.</p>
+								</figcaption>
+								<img src="img/large/12.jpg" alt="img12"/>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<figcaption>
+									<h3>Intelligent Search Engine</h3>
+									<p>The intelligent search engine is characterized by intelligence and humanization of information service, which allows netizens to use natural language for information retrieval and provides them with more convenient and accurate search services.Users can quickly switch to different categories or engines by clicking on the mouse as long as they input the search keywords at one time, which greatly reduces the time for manually entering the website to open the search engine, select the category, and then enter the keyword search.</p>
+								</figcaption>
+								<img src="img/large/13.jpg" alt="img13"/>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<figcaption>
+									<h3>Intelligent Manufacturing</h3>
+									<p>Intelligence is the development direction of manufacturing automation, and artificial intelligence technology is widely used in every link of manufacturing process.Expert system technology can be used in engineering design, process design, production scheduling, fault diagnosis, etc.It can also apply advanced computer intelligent methods such as neural network and fuzzy control technology to product formulation, production scheduling, etc., to realize intelligent manufacturing process.</p>
+								</figcaption>
+								<img src="img/large/14.jpg" alt="img14"/>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<figcaption>
+									<h3>Speech Recognition</h3>
+									<p>Speech recognition is the most popular application on mobile terminals. Speech dialogue robots, voice assistants and interactive tools are emerging one after another. It is predicted that in the next 10 years, speech recognition technology will enter various fields such as industry, household appliances, communication, automobile electronics, medical care, family services and consumer electronic products.Many experts consider voice recognition to be one of the top 10 most important developments in information technology between 2000 and 2010. </p>
+								</figcaption>
+								<img src="img/large/15.jpg" alt="img15"/>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<figcaption>
+									<h3>Smart Game</h3>
+									<p>Computer game is an important research direction in the field of artificial intelligence, as well as an important scientific basis in the field of artificial intelligence, such as machine intelligence, stratagem, intelligent decision-making system and so on.Machine game is regarded as one of the most challenging research directions in the field of artificial intelligence.The computer game of chess has a long history and experienced a spectacular "fight to the death", and the "deep blue" computer's victory has left a deep impression on mankind.</p>
+								</figcaption>
+								<img src="img/large/16.jpg" alt="img16"/>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<figcaption>
+									<h3>Driverless Car</h3>
+									<p>Unmanned vehicle is an intelligent vehicle that senses the road environment through the vehicle-mounted sensor system, automatically plans the driving route and controls the vehicle to reach the preset target.It is the product of the high development of computer science, pattern recognition and intelligent control technology. It is also an important mark to measure the scientific research strength and industrial level of a country.</p>
+								</figcaption>
+								<img src="img/large/17.jpg" alt="img17"/>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<figcaption>
+									<h3>Intelligent Medical</h3>
+									<p>Intelligent medical engineering is based on the theory of modern medicine and biology, integration of advanced brain cognition, big data, cloud computing, machine learning and artificial intelligence engineering technology and related fields, the nature and law of human life and disease phenomenon, explore the diagnosis and treatment method and clinical application of intelligent human-machine collaborative emerging interdisciplinary.</p>
+								</figcaption>
+								<img src="img/large/18.jpg" alt="img18"/>
+							</figure>
+						</li>
+					</ul>
+					<nav>
+						<span class="icon nav-prev"></span>
+						<span class="icon nav-next"></span>
+						<span class="icon nav-close"></span>
+					</nav>
+				</section><!-- // slideshow -->
+			</div><!-- // grid-gallery -->
+		</div>
+		<script src="js/imagesloaded.pkgd.min.js"></script>
+		<script src="js/masonry.pkgd.min.js"></script>
+		<script src="js/classie.js"></script>
+		<script src="js/cbpGridGallery.js"></script>
+		<script>
+			new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
+		</script>
+<div style="text-align:center;margin-top:50px; font:normal 14px/24px 'MicroSoft YaHei';">
+<iframe src="../bottom2.html" width="100%" height="200px" scrolling="No"  noresize="noresize" frameborder="0" id="bottomFrame"></iframe>
+</div>
+</body>
+</html>

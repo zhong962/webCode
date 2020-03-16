@@ -1,0 +1,167 @@
+.kj1{
+	width: 100%;
+	/* padding-top: 150%;
+	margin-top: 150%; */
+}
+.kj_1 img{
+	width: 85%;
+	/* padding-top: 150%; */
+	margin-top: 5%;
+	position: relative;
+	
+	/* margin-right: 50%; */
+}
+
+.f1 h1{
+	/* float: right; */
+	padding-left: 66%;
+	margin-top: -19%;
+	position: absolute;
+	color: white;
+	font-size: 50px;
+}
+
+.f2 h1{
+	float: right;
+	
+	padding-left: 61%;
+	margin-top: -24%;
+	position: absolute;
+	color: white;
+	font-size: 50px;
+}
+
+.kj2{
+	margin-top:13% ;
+	
+}
+
+.k1{
+	padding-bottom: 5%;
+	padding-left: 31%;
+	/* padding: 5%; */
+}
+
+.k1 h1{
+	font-size: 50px;
+	display: inline-block;
+	padding-left: 10%;
+}
+
+k1 img{
+	display: inline-block;
+}
+
+.kj_2 img{
+	width: 91%;
+	text-align: center;
+	padding-left: 7%;
+	position: absolute; 
+}
+
+.f3{
+	width: 34%;
+	padding-top: 8%;
+	position: relative;
+	padding-left: 20%;
+	color: white;
+	line-height: 24px;
+	font-size: 16px;
+}
+
+/* kj_3 */
+.kj3{
+	margin-top:19% ;
+	
+}
+
+.k3{
+	padding-bottom: 5%;
+	padding-left: 31%;
+	/* padding: 5%; */
+}
+
+.k3 h1{
+	font-size: 50px;
+	display: inline-block;
+	padding-left: 10%;
+}
+
+k3 img{
+	display: inline-block;
+}
+
+.kj_3 img{
+	width: 91%;
+	text-align: center;
+	padding-left: 7%;
+	position: absolute; 
+}
+
+.f4{
+	width: 80%;
+	padding-top: 7%;
+	position: relative;
+	padding-left:62%;
+	color: white;
+	line-height: 25px;
+	font-size:16px ;
+}
+
+/* kj_5 */
+
+.kj5{
+	margin-top:19% ;
+	
+}
+
+.k5{
+	padding-bottom: 5%;
+	padding-left: 31%;
+	/* padding: 5%; */
+}
+
+.k5 h1{
+	font-size: 50px;
+	display: inline-block;
+	padding-left: 10%;
+}
+
+k5 img{
+	display: inline-block;
+}
+
+.kj_5 img{
+	width: 91%;
+	text-align: center;
+	padding-left: 7%;
+	position: absolute; 
+}
+
+.f5{
+	width: 38%;
+	padding-top: 7%;
+	position: relative;
+	padding-left:18%;
+	/* color: white; */
+	line-height: 25px;
+	font-size: 16px;
+}
+.f6{
+	width: 80%;
+	padding-top: 25%;
+	position: relative;
+	padding-left:58%;
+	color: white;
+	line-height: 28px;
+	font-size: 17px;
+}
+.f7{
+	width: 89%;
+	padding-top: 25%;
+	position: relative;
+	padding-left:76%;
+	/* color: white; */
+	line-height: 25px;
+	font-size: 15px;
+}

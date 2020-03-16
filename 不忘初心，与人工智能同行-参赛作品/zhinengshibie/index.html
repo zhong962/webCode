@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>智能识别</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="keywords" content="" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+<link rel="shortcut icon" href="./images/logo.png" > <!-- 图标 -->
+
+<!-- bootstrap-css -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!--// bootstrap-css -->
+<!-- css -->
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+<!--// css -->
+<!-- font-awesome icons -->
+<link href="css/font-awesome.css" rel="stylesheet">
+<!-- //font-awesome icons -->
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<![endif]-->
+</head>
+<body>
+
+<div class="top"></div>
+	<div class="pr navpr">
+		<div class="nav pa">
+		<div class="w">
+			<img class="fl mt9" src="../img/nav-1.png"/>
+			<ul class="fl mt16 ml40">
+					<li><a href="../index1.html">首页</a></li>
+					<li><a href="../news/index.html">新闻资讯</a></li>
+					<li><a href="../aichutan/index.html">AI初探 </a></li>
+					<li><a href="../tushuoai/index.html">图说AI</a></li>
+					<li><a href="index.html">智能识别</a></li>
+					<li><a href="../jiqikongzhi/index.html">机器控制</a></li>
+					<li><a href="../linjunrenwu/index.html">领军人物</a></li>
+					<li><a href="../guidianai/index.html">桂电AI</a></li>
+					<li><a href="../xgzz/index.html">相关著作</a></li>
+					<li><a href="../about/index.html">关于我们</a></li>
+					<div class="clear"></div>
+				</ul>
+			<div class="nav-btn fr mt17">
+				<a class="mr12" href="index.html">中文</a>|
+				<a class="ml10" href="index2.html">English</a>			</div>
+			<div class="clear"></div>
+		</div>
+		<script>
+	$(function(){
+		var a = $('.nav'),
+			b =a.offset();
+		$(document).on('scroll',function(){
+			var	c = $(document).scrollTop();
+			if(b.top<=c){
+				a.css({'position':'fixed','top':'0px'})
+				}else{
+					a.css({'position':'absolute','top':'0px'})
+					}
+			})
+		})
+	</script>
+	</div>
+	</div>
+
+
+	<!-- banner -->
+
+	<!-- //banner -->
+
+	<!-- 第一部分 -->
+	<div class="jarallax testimonial">
+		<div class="testimonial-dot">
+			<div class="container">
+				<div class="agileits-heading testimonial-heading">
+					<h3>智能识别</h3>
+				</div>
+				<div class="w3-agile-testimonial">
+					<div class="slider">
+						<div class="callbacks_container">
+							<ul class="rslides callbacks callbacks1" id="slider3">
+								<li>
+									<div class="testimonial-img-info">
+										<p>生活在现代社会的人类新增了许多过去没有的烦恼，经常会忘记的各种各样的密码就是其中之一。如果都采用简单的密码，虽然容易记忆了但显然安全性变差了；如果采用不同的无意义的密码，虽然安全性好了可是经常会忘记。这让我们如何是好呢？下面介绍智能识别技术的相关知识。所谓智能识别技术，也称为自动识别技术，通过被识别物体与识别装置之间的交互自动获取被识别物体的相关信息，并提供给计算机系统供进一步处理。识别技术覆盖的范畴相当广泛，大致可以分为语音识别、图像识别、生物识别等识别技术。</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="clearfix"> </div>
+						<script>
+									// You can also use "$(window).load(function() {"
+									$(function () {
+									  // Slideshow 4
+									  $("#slider3").responsiveSlides({
+										auto: true,
+										pager:false,
+										nav:false,
+										speed: 500,
+										namespace: "callbacks",
+										before: function () {
+										  $('.events').append("<li>before event fired.</li>");
+										},
+										after: function () {
+										  $('.events').append("<li>after event fired.</li>");
+										}
+									  });
+
+									});
+						</script>
+						<!--banner Slider starts Here-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 第一部分end -->
+
+	<!-- 第二部分 -->
+	<div class="news"  style="padding-bottom:0px">
+		<div class="container">
+			<div class="agileits-heading">
+				<h3>图像识别</h3>
+			</div>
+			<div class="w3-agileits-news-grids">
+				<div class="col-md-6 news-left">
+					<div class="w3-agile-news-img">
+						<a href=""><img src="images/1.jpg" alt="" /></a>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="col-md-6 news-right">
+					<div class="news-right-grid">
+						<p>图像识别技术是人工智能的一个重要领域。它是指对图像进行对象识别，以识别各种不同模式的目标和对像的技术。在图像识别过程中，知觉机制必须排除输入的多余信息,抽出关键的信息。同时,在大脑里必定有一个负责整合信息的机制，它能把分阶段获得的信息整理成一个完整的知觉映象。</p>
+						<p>现有的图像分割的方法有许多种，有阈值分割方法，边缘检测方法，区域提取方法，结合特定理论工具的分割方法等。从图像的类型来分有：灰度图像分割、彩色图像分割和纹理图像分割等。早在1965年就有人提出了检测边缘算子，使得边缘检测产生了不少经典算法。但在近二十年间，随着基于直方图和小波变换的图像分割方法的研究计算技术、VLSI技术的迅速发展，有关图像处理方面的研究取得了很大的进展。图像分割方法结合了一些特定理论、 方法和工具，如基于数学形态学的图像分割、基于小波变换的分割、基于遗传算法的分割等。</p>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- 第二部分end -->
+
+	<!-- 第三部分 -->
+	<div class="news"  style="padding-bottom:0px">
+		<div class="container">
+			<div class="agileits-heading">
+				<h3>语音识别</h3>
+			</div>
+			<div class="w3-agileits-news-grids">
+				<div class="col-md-6 news-left">
+					<div class="w3-agile-news-img">
+						<a href=""><img src="images/3.jpg" alt="" /></a>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="col-md-6 news-right">
+					<div class="news-right-grid">
+						<p>语音识别技术就是让机器通过识别和理解过程把人类的语音信号转变为相应的文本或命令的技术，属于多维模式识别和智能计算机接口的范畴。</p>
+						<p>与机器进行语音交流，让机器明白你说什么，这是人们长期以来梦寐以求的事情。中国物联网校企联盟形象得把语音识别 ，比做为“机器的听觉系统”。语音识别技术就是让机器通过识别和理解过程把语音信号转变为相应的文本或命令的高技术。语音识别技术主要包括特征提取技术、模式匹配准则及模型训练技术三个方面。语音识别技术车联网也得到了充分的引用，例如在翼卡车联网中，只需按一键通客服人员口述即可设置目的地直接导航，安全、便捷。</p>
+						<p>语音识别的应用领域非常广泛，常见的应用系统有：语音输入系统、语音控制系统、智能对话查询系统、电话语音拨号、汽车语音控制、家电遥控等等。</p>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- 第三部分end -->
+
+	<!-- 第四部分 -->
+	<div class="news"  style="padding-bottom:0px">
+		<div class="container">
+			<div class="agileits-heading">
+				<h3>生物识别</h3>
+			</div>
+			<div class="w3-agileits-news-grids">
+
+				<div class="col-md-6 news-left">
+					<div class="w3-agile-news-images">
+						<a href=""><img src="images/4.jpg" alt="" /></a>
+						<h4><a href="">指纹识别技术</a></h4>
+						<p>指纹识别即指通过比较不同指纹的细节特征点来进行鉴别。指纹识别技术涉及图像处理、模式识别、计算机视觉、数学形态学、小波分析等众多学科。由于每个人的指纹不同，就是同一人的十指之间，指纹也有明显区别，因此指纹可用于身份鉴定。由于每次捺印的方位不完全一样，着力点不同会带来不同程度的变形，如何正确提取特征和实现正确匹配，是指纹识别技术的关键。</p>
+					</div>
+					<div class="w3-agile-news-images" style="float: right">
+						<a href=""><img src="images/5.jpg" alt="" /></a>
+						<h4><a href="">掌纹识别技术</a></h4>
+						<p>掌纹识别是近几年提出的一种较新的生物特征识别技术。掌纹是指手指末端到手腕部分的手掌图像。其中很多特征可以用来进行身份识别：如主线、皱纹、细小的纹理、脊末梢、分叉点等。掌纹识别系统同其他生物特征识别系统在结构上是一样的，但是相比于指纹识别来说掌纹识别是一种非侵犯性的识别方法，用户比较容易接受，对采集设备要求不高。</p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+
+				<div class="col-md-6 news-right">
+					<div class="w3-agile-news-images">
+						<a href=""><img src="images/6.jpg" alt="" /></a>
+						<h4><a href="">人脸识别技术</a></h4>
+						<p>人脸识别是一项热门的计算机技术研究领域，它属于生物特征识别技术，是对生物体（一般特指人）本身的生物特征来区分生物体个体。广义的人脸识别实际包括构建人脸识别系统的一系列相关技术，包括人脸图像采集、人脸定位、人脸识别预处理、身份确认以及身份查找等；而狭义的人脸识别特指通过人脸进行身份确认或者身份查找的技术或系统。</p>
+					</div>
+					<div class="w3-agile-news-images" style="float: right">
+						<a href=""><img src="images/7.jpg" alt="" /></a>
+						<h4><a href="">虹膜识别技术</a></h4>
+						<p>虹膜识别是与眼睛有关的生物识别中对人产生较少干扰的技术。它使用相当普通的照相机元件，而且不需要用户与机器发生接触。另外，它有能力实现更高的模板匹配性能。因此，它吸引了各种人的注意。虹膜在胎儿发育阶段形成后，在整个生命历程中将是保持不变的。虹膜特征的唯一性，同时也决定了身份识别的唯一性。因此，可以将眼睛的虹膜特征作为每个人的身份识别对象。</p>
+					</div>
+					<div class="clearfix"> </div>
+			</div>
+
+		</div>
+	</div>
+	<!-- 第四部分end -->
+
+	<!-- 第五部分 -->
+	<div class="news"  style="padding-bottom:0px">
+		<div class="container">
+			<div class="agileits-heading">
+				<h3>应用前景</h3>
+			</div>
+			<div class="w3-agileits-news-grids">
+
+				<div class="col-md-6 news-left">
+					<div class="w3-agile-news-images" style="width: 100%">
+						<h4><a href="">指纹识别技术</a></h4>
+						<p>相信随着指纹识别技术的完善，还会广泛的应用在身份证，机动车，家居等更多的领域。未来5年，我国将有近百亿元的市场等待着企业去开拓。指纹识别技术的巨大市场前景，将对国际、国内安防产业产生巨大的影响。较小的公司将面临新进入的传统行业大公司的无情竞争。在这些巨无霸面前，现有中小公司很难说有太多的竞争力，行业重新洗牌不可避免，合并与退出可能会成为大部分中小公司的无奈选择。最终可能形成传统行业的公司或大资本在较短时间内主导生物特征识别行业的局面。当然，也不排除部分具有核心竞争力的公司以“快鱼吃慢鱼”的方式成长为新兴的大公司。“大鱼”与“快鱼”并存，这也是每一个新兴市场的必然结果。而竞争的结果将会形成一个新兴的大产业。</p>
+					</div>
+					<div class="w3-agile-news-images" style="width: 100%">
+						<h4><a href="">掌纹识别技术</a></h4>
+						<p>掌纹识别技术是近几年提出的一种较新的生物特征识别技术。掌纹是指手指末端到手腕部分的手掌图像。其中很多特征可以用来进行身份识别：如主线、皱纹、细小的纹理、脊末梢、分叉点等。掌纹识别技术也是一种非侵犯性的识别方法，用户比较容易接受，对采集设备要求不高。随着信息技术和网络技术的高速发展，信息安全显示出前所未有的重要性。生物识别技术以其特有的稳定性、唯一性和方便性，得到越来越广泛的应用。掌纹识别作为一项新兴的生物识别技术，因具有采样简单、图像信息丰富、用户接受程度高、不易伪造、受噪声干扰小等特点受到国内外研究人员的广泛关注。但是由于掌纹识别技术起步较晚，尚处于学习和借鉴其他生物特征识别技术的阶段。</p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+
+				<div class="col-md-6 news-right">
+					<div class="w3-agile-news-images" style="width: 100%">
+						<h4><a href="">人脸识别技术</a></h4>
+						<p>随着人脸识别技术不断成熟，市场需求将加速释放，应用场景不断被挖掘。从社保领取到校园门禁，从远程预授信到安检闸机检查，人脸识别正不断打开市场。人脸识别应用的加速普及，行业也将呈现出新的发展趋势。人脸识别市场热度高涨，其应用场景得到跨越式发展的根本原因在于技术革新。深度学习将人脸识别的精确度提高到肉眼级别，极大丰富了人脸识别的应用场景。互联网银行远程开户的刚需将人脸识别带进了金融级应用场景；巨头频繁布局人脸识别赋予其更大的应用场景想像空间，同时培养用户“刷脸”习惯以及对技术的认可度，有利于产业进一步发展。多方的推动使得人脸识别应用得到爆发式发展。随着我国社会经济脚步的不断加快，对于人脸识别技术的应用需求也将越来越大。</p>
+					</div>
+					<div class="w3-agile-news-images" style="width: 100%">
+						<h4><a href="">虹膜识别技术</a></h4>
+						<p>近年来虹膜识别朝着两个方向发展。一个方向是往远的方向、多模态的方向发展，是指在距离达到几米远的情况下，同时融合人脸等其他模态的生物特征实现行走状态下的识别。譬如近年来卡耐基梅隆大学生物识别中心已开发出一种识别距离可达12 米之外的远程虹膜扫描技术，该技术可以在车主眼睛不经意间扫过车辆后视镜的时候便快速读取到其虹膜信息。其具体操作：联结摄像头的计算机系统会将拍摄的萨维德斯虹膜图片与其数据库作对比匹配，然后会准确显示出萨维德斯的名字和其他身份信息。如果这项技术落实到警用，则能够帮助警察更快速、更安全的识别驾车司机；可以用来识别正在逃亡，且企图通过改变他们容貌而逃之夭夭的疑犯；也可以在机场等重要卡口承担安防工作。</p>
+					</div>
+					<div class="clearfix"> </div>
+			</div>
+
+		</div>
+	</div>
+	<!-- 第五部分end -->
+
+	<!-- 第六部分 -->
+	<div class="news"  style="padding-bottom:0px">
+		<div class="container">
+			<div class="agileits-heading">
+				<h3>动态热点</h3>
+			</div>
+			<div class="w3-agileits-news-grids">
+
+				<div class="col-md-6 news-left">
+					<div class="w3-agile-news-images" style="width: 100%">
+						<a href=""><img src="images/8.jpg" alt="" /></a>
+						<h4><a href="">阿尔法大蛋人工智能机器人——轻松识别“家人”身份</a></h4>
+						<p>阿尔法大蛋人工智能机器人是由科大讯飞旗下安徽淘云科技有限公司(以下简称：讯飞淘云)倾力打造的一款教育陪伴智能机器人，集成了教育内容、超级电视、视频通话、智能音箱和自然语言交互等功能于一体，以帮助孩子学习和丰富孩子的生活为目标，更贴心地为家庭所有成员提供贴心服务。凭借科大讯飞赋予的“讯飞超脑”，阿尔法大蛋能够通过深度自我学习形成独特的知识图谱，打造多元智能和全脑思维模式;在此基础上，讯飞淘云为阿尔法大蛋配备了TY OS智能系统;其理解能力、表达能力、智商会随着深度自我学习，不断成长，在陪伴小朋友时始终能保持“智商在线”，了解孩子所想所做，读懂孩子深层次的表达。搭配其独有的声纹识别技术，轻松记住家人声音，识别家人身份，成为一家人真正的专属智能机器人!</p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+
+				<div class="col-md-6 news-right">
+					<div class="w3-agile-news-images" style="width: 100%">
+						<a href=""><img src="images/9.jpg" alt="" /></a>
+						<h4><a href="">GOOGLE推出AI语音合成器，DEEPMIND AI提供支持</a></h4>
+						<p>Google正在推出一款新的AI语音合成器，作为其机器学习云工具套件的一部分。名为云文本到语音的服务将适用于任何需要语音合成的开发人员或企业，无论是应用程序，网站还是虚拟助理。有趣的是，Cloud Text-to-Speech由WaveNet提供支持，该公司由谷歌在英国的AI子公司DeepMind创建。自Google于2014年收购DeepMind以来，一直在探索如何将公司的AI人才变为有形产品。现在，使用DeepMind的算法将Google数据中心的电力成本降低40%，并且DeepMind将投入医疗保健领域。但是，将WaveNet直接整合到其云服务中可能更为重要，特别是谷歌试图从亚马逊和微软手里赢得云业务。 其次，DeepMind的AI语音合成技术是业内最先进和最现实的技术之一。谷歌表示，这项新服务提供32种不同的语音，用户可以自定义音调和速度等因素。</p>
+					</div>
+					<div class="clearfix"> </div>
+			</div>
+
+		</div>
+	</div>
+	<!-- 第六部分end -->
+
+	<!-- 第七部分 -->
+	<div class="news"  style="padding-bottom:0px">
+		<div class="container">
+			<div class="agileits-heading">
+				<h3>运用领域</h3>
+			</div>
+			<div class="w3-agileits-news-grids">
+
+				<div class="col-md-6 news-left">
+					<div class="w3-agile-news-images">
+						<a href="zpage1.html"><img src="images/10.jpg" alt="" /></a>
+						<h4 style="margin:0 0 3em 0"><a href="zpage1.html">通讯领域</a></h4>
+						</div>
+					<div class="w3-agile-news-images" style="float: right">
+						<a href="zpage3.html"><img src="images/11.jpg" alt="" /></a>
+						<h4 style="margin:0 0 3em 0"><a href="zpage3.html">生物医学图像识别</a></h4>
+						</div>
+					<div class="clearfix"> </div>
+				</div>
+
+				<div class="col-md-6 news-right">
+					<div class="w3-agile-news-images">
+						<a href="zpage5.html"><img src="images/12.jpg" alt="" /></a>
+						<h4 style="margin:0 0 3em 0"><a href="zpage5.html">遥感图像识别</a></h4>
+						</div>
+					<div class="w3-agile-news-images" style="float: right">
+						<a href="zpage7.html"><img src="images/13.jpg" alt="" /></a>
+						<h4 style="margin:0 0 3em 0"><a href="zpage7.html">机器视觉领域</a></h4>
+						</div>
+					<div class="clearfix"> </div>
+			</div>
+
+			<div class="col-md-6 news-left">
+				<div class="w3-agile-news-images">
+					<a href="zpage9.html"><img src="images/14.jpg" alt="" /></a>
+					<h4 style="margin:0 0 3em 0"><a href="zpage9.html">虚拟个人助理</a></h4>
+					</div>
+				<div class="w3-agile-news-images" style="float: right">
+					<a href="zpage11.html"><img src="images/15.jpg" alt="" /></a>
+					<h4 style="margin:0 0 3em 0"><a href="zpage11.html">安全监控</a></h4>
+					</div>
+				<div class="clearfix"> </div>
+			</div>
+
+			<div class="col-md-6 news-right">
+				<div class="w3-agile-news-images">
+					<a href="zpage13.html"><img src="images/16.jpg" alt="" /></a>
+					<h4 style="margin:0 0 3em 0"><a href="zpage13.html">教育领域</a></h4>
+					</div>
+				<div class="w3-agile-news-images" style="float: right">
+					<a href="zpage15.html"><img src="images/17.jpg" alt="" /></a>
+					<h4 style="margin:0 0 3em 0"><a href="zpage15.html">指纹支付</a></h4>
+					</div>
+				<div class="clearfix"> </div>
+		</div>
+
+		</div>
+	</div>
+	<!-- 第七部分end -->
+
+	<script src="js/responsiveslides.min.js"></script>
+	<script src="js/jarallax.js"></script>
+	<script src="js/SmoothScroll.min.js"></script>
+	<script type="text/javascript">
+		/* init Jarallax */
+		$('.jarallax').jarallax({
+			speed: 0.5,
+			imgWidth: 1366,
+			imgHeight: 768
+		})
+	</script>
+
+	<script type="text/javascript" src="js/move-top.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>
+
+<iframe src="../bottom.html" width="100%" height="200px" scrolling="No"  noresize="noresize" frameborder="0" id="bottomFrame"></iframe>
+</body>
+</html>

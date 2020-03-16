@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  <!-- IE的设置 -->
+    <meta name="viewport" content="width=device-width, inital-scale=1.0"> <!-- 响应式设置 -->
+    <title>Google研发AI诊断眼疾技术，准确度媲美权威专家</title>
+	<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+
+
+    <link rel="stylesheet" href="./css/normalize.css"> <!-- CSS资源引入 -->
+    <link rel="stylesheet" href="./css/page.css"> <!-- CSS资源引入 -->
+    <link rel="shortcut icon" href="./images/logo.png" > <!-- 图标 -->
+  </head>
+  <body>
+
+  <div class="top"></div>
+	<div class="pr navpr">
+		<div class="nav pa">
+		<div class="w">
+			<img class="fl mt9" src="../img/nav-1.png"/>
+			<ul class="fl mt16 ml40">
+					<li><a href="../index1.html">首页</a></li>
+					<li><a href="../news/index.html">新闻资讯</a></li>
+					<li><a href="../aichutan/index.html">AI初探 </a></li>
+					<li><a href="../tushuoai/index.html">图说AI</a></li>
+					<li><a href="../zhinengshibie/index.html">智能识别</a></li>
+					<li><a href="../jiqikongzhi/index.html">机器控制</a></li>
+					<li><a href="../linjunrenwu/index.html">领军人物</a></li>
+					<li><a href="../guidianai/index.html">桂电AI</a></li>
+					<li><a href="../xgzz/index.html">相关著作</a></li>
+					<li><a href="../about/index.html">关于我们</a></li>
+					<div class="clear"></div>
+				</ul>
+			<div class="nav-btn fr mt17">
+				<a class="mr12" href="spage23.html">中文</a>|
+				<a class="ml10" href="spage24.html">English</a>			</div>
+			<div class="clear"></div>
+		</div>
+		<script>
+	$(function(){
+		var a = $('.nav'),
+			b =a.offset();
+		$(document).on('scroll',function(){
+			var	c = $(document).scrollTop();
+			if(b.top<=c){
+				a.css({'position':'fixed','top':'0px'})
+				}else{
+					a.css({'position':'absolute','top':'0px'})
+					}
+			})
+		})
+	</script>
+	</div>
+	</div>
+
+
+    <div class="bj">
+
+      <!-- 中间部分的内容 -->
+      <div class="bj-zhong">
+        <h1 class="title">Google研发AI诊断眼疾技术，准确度媲美权威专家</h1>
+        <div class="one">
+          <img src="./simg/s231.jpg" width=100% height=auto>
+        </div>
+        <div class="two">
+          <p>近期，伦敦一间眼科医院与 Google 旗下 AI 开发部门 DeepMind，联合公布一项研究指，已掌握可分析复杂眼球结构的 AI 技术。这项技术能诊断超过 50 种眼疾，准确度媲美权威专家。</p>
+          <p>该项研究刊登于国际学术期刊《自然医学》中。研究人员表示，他们邀请了 1000 名眼疾病人和 8 名眼科权威专家参与实验。实验要求眼科权威专家和 AI 将 1000 名病人分为「紧急」、「半紧急」、「须检查」和「可观望」四类。结果显示，眼科专家与 AI 的判断误差率都是约 5.5% ，两者实力不相上下。两者在判辨「紧急」类别的准确度更达到 100%。研究团队希望，有关技术能加速判断病情的过程，让病人能适时获得治疗。</p>
+          <p>现时，DeepMind 正与伦敦帝国学院研究如何训练 AI 分析乳房 X 光片，从而准确地诊断乳癌。可是，亦有人担心在训练 AI 过程中，需收集大量病历，会侵犯病人私隐。DeepMind 研究人员指，他们十分重视病人私隐，强调公司有最高级保安系统防止数据泄漏。</p>
+        </div>
+
+      </div>
+      <!-- 中间部分的内容end -->
+
+    </div>
+<iframe src="../bottom.html" width="100%" height="200px" scrolling="No"  noresize="noresize" frameborder="0" id="bottomFrame"></iframe>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  <!-- IE的设置 -->
+    <meta name="viewport" content="width=device-width, inital-scale=1.0"> <!-- 响应式设置 -->
+    <title>Demystifying the deep learning engine in Alipay: xNN</title>
+	<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/style2.css"/>
+
+
+    <link rel="stylesheet" href="./css/normalize.css"> <!-- CSS资源引入 -->
+    <link rel="stylesheet" href="./css/page.css"> <!-- CSS资源引入 -->
+    <link rel="shortcut icon" href="./images/logo.png" > <!-- 图标 -->
+  </head>
+  <body>
+
+  <div class="top"></div>
+	<div class="pr navpr">
+		<div class="nav pa">
+		<div class="w">
+			<img class="fl mt9" src="../img/nav-1.png"/>
+      <ul class="fl mt16 ml40">
+					<li><a href="../index2.html">Index</a></li>
+					<li><a href="../news/index2.html">News</a></li>
+					<li><a href="../aichutan/index2.html">Explorer</a></li>
+					<li><a href="../tushuoai/index2.html">Picture</a></li>
+					<li><a href="../zhinengshibie/index2.html">Identification</a></li>
+					<li><a href="../jiqikongzhi/index2.html">Machine</a></li>
+					<li><a href="../linjunrenwu/index2.html">Leader</a></li>
+					<li><a href="../guidianai/index2.html">Campus AI</a></li>
+					<li><a href="../xgzz/index2.html">Book</a></li>
+					<li><a href="../about/index2.html">About</a></li>
+					<div class="clear"></div>
+				</ul>
+			<div class="nav-btn fr mt17">
+				<a class="mr12" href="page99.html">中文</a>|
+				<a class="ml10" href="page100.html">English</a>			</div>
+			<div class="clear"></div>
+		</div>
+		<script>
+	$(function(){
+		var a = $('.nav'),
+			b =a.offset();
+		$(document).on('scroll',function(){
+			var	c = $(document).scrollTop();
+			if(b.top<=c){
+				a.css({'position':'fixed','top':'0px'})
+				}else{
+					a.css({'position':'absolute','top':'0px'})
+					}
+			})
+		})
+	</script>
+	</div>
+	</div>
+
+
+  <div class="bj">
+
+        <!-- 中间部分的内容 -->
+        <div class="bj-zhong">
+          <h1 class="title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Demystifying the deep learning engine in Alipay: xNN</font></font></h1>
+          <div class="two">
+            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">This article introduces the deep learning engine in the Alipay App - xNN. </font><font style="vertical-align: inherit;">Through optimization of the two aspects of the model and the computing framework, xNN solves a series of problems that deep learning falls on the mobile side. </font><font style="vertical-align: inherit;">xNN's model compression tool (xqueeze) achieves a compression ratio of nearly 50 times on the business model, making it possible to deploy deep learning algorithms on a large scale in mobile applications with very limited package budgets. </font><font style="vertical-align: inherit;">The computational performance of xNN is deeply optimized by both algorithms and instructions, which greatly reduces the threshold of mobile DL.</font></font></p>
+          </div>
+          <div class="one">
+            <img src="./pimg/p991.jpg" width="100%" height="auto">
+          </div>
+          <div class="two">
+            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Deep learning - the cloud or the mobile?</font></font></p>
+            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Recently, deep learning (DL) has made breakthroughs in many fields such as image recognition, speech recognition, and natural language processing. </font><font style="vertical-align: inherit;">DL usually gives people the impression of complicated computing and huge models - from Siri voice assistant to various chat bots, to Alipay "sweeping five blessings", mobile data collection + cloud processing seems to become a common sense. </font><font style="vertical-align: inherit;">However, for many applications, this model is just a helpless choice.</font></font></p>
+          </div>
+          <div class="one">
+            <img src="./pimg/p992.jpg" width="100%" height="auto">
+          </div>
+          <div class="two">
+            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">In the “Sweeping Five Fortunes” event during the Spring Festival last year, in order to recognize the handwritten “Fu”, the Alipay multimedia team mobilized nearly a thousand servers for deploying image recognition models. </font><font style="vertical-align: inherit;">The clusters of such a scale have not been able to withstand the enthusiasm of the people of the whole country to gather the five blessings. </font><font style="vertical-align: inherit;">In order to prevent overloading of cloud computing power, the downgrade plan had to be initiated in the middle and late stages of activities - replacing the DL model with a traditional visual algorithm with small computational complexity but low precision. </font><font style="vertical-align: inherit;">Although the downgrade does not prevent everyone from continuing to collect Foca in the heat, it has certain influence on the user experience. For example, some inexpressible Chinese characters have also been mistakenly sentenced to "Fu".</font></font></p>
+            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">On the other hand, DL in the cloud means that data must be uploaded. </font><font style="vertical-align: inherit;">Even without considering the computational pressure, there are various restrictions on the user experience from the perspectives of network latency, traffic, and privacy protection. </font><font style="vertical-align: inherit;">Therefore, for quite a number of applications, moving the DL model forward to the mobile side can be seen as a necessity.</font></font></p>
+            <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Two major challenges</font></font></h3>
+            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Recently, with the improvement of the performance of mobile phone processors and the development of lightweight technology, mobile DL is becoming more and more feasible and has received extensive attention. </font><font style="vertical-align: inherit;">Apple and Google have separately announced the DL framework Core ML and Tensorflow Lite on their respective operating systems, which will undoubtedly greatly promote the development of mobile DL. </font><font style="vertical-align: inherit;">However, especially for national apps like Alipay, there are still some serious challenges that cannot be solved by directly applying vendor solutions.</font></font></p>
+            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1. Large span of models: Alipay App has hundreds of millions of audiences, and the business that falls into it must provide a quality experience for as many users as possible and as many models as possible. </font><font style="vertical-align: inherit;">For Alipay, it is not appropriate to refer to Core ML to open only a few high-end models. </font><font style="vertical-align: inherit;">Therefore, regardless of performance indicators such as running speed and memory usage, or compatibility, Alipay's mobile DL must be the ultimate in order to minimize the use threshold.</font></font></p>
+            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2. The package size requirements are strict: Alipay App integrates a large number of business functions, the installation package resources are very tight, and a new model to be integrated into the installation package often means that other functions need to be offline. </font><font style="vertical-align: inherit;">Even if deployed through a dynamically distributed form, the size of the DL model will strongly affect the user experience. </font><font style="vertical-align: inherit;">As the degree of intelligence on the mobile side continues to increase, there will inevitably be more and more DL applications running directly on the end. This is almost unimaginable in terms of the size of the current single model, which is tens of thousands and hundreds of meters. </font><font style="vertical-align: inherit;">At the same time, the SDK of the mobile DL engine itself needs to be as slim as possible.</font></font></p>
+            <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Five goals</font></font></h3>
+            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Alipay xNN is a mobile DL solution customized for the national App environment. The project has the following technical goals.</font></font></p>
+            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1. Light model: Through the efficient model compression algorithm, the model size is greatly reduced under the premise of ensuring the accuracy of the algorithm.</font></font></p>
+            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2. Small engine: Deep cut of the mobile SDK.</font></font></p>
+            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3. Fast: Combine the optimization of the instruction layer and the algorithm layer to improve the efficiency of DL calculation.</font></font></p>
+            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">4. General: To ensure maximum model coverage, the most versatile CPU is used instead of the more powerful GPU as the key optimization platform. </font><font style="vertical-align: inherit;">It not only supports classic CNN and DNN networks, but also supports network forms such as RNN and LSTM.</font></font></p>
+            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5. Easy to use: The tool chain is highly user-friendly – ​​enabling algorithm engineers to focus on the algorithm itself and quickly complete cloud-to-mobile without the need for model compression experts and mobile development experts. Conversion and deployment of the end model.</font></font></p>
+            <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">List of main features</font></font></h3>
+            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">xNN provides a full lifecycle solution for DL ​​models from compression to deployment to runtime statistical monitoring. </font><font style="vertical-align: inherit;">The xNN environment consists of a development backend and a deployment front end.</font></font></p>
+          </div>
+          <div class="one">
+            <img src="./pimg/p993.jpg" width="100%" height="auto">
+          </div>
+          <div class="two">
+            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The development background is centered on the xqueeze toolchain and supports multiple training frameworks. </font><font style="vertical-align: inherit;">Businesses can use xqueeze to compress and optimize their DL models, resulting in a model version with significantly reduced size and significantly faster speeds. </font><font style="vertical-align: inherit;">The compressed model can be deployed to the mobile terminal through the application installation package or on-demand.</font></font></p>
+            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">At the front end of the deployment, xNN's computing framework provides efficient forward prediction capabilities. </font><font style="vertical-align: inherit;">The application layer of xNN also provides one-stop capability for model delivery, data statistics, and error reporting on the basis of calculation. </font><font style="vertical-align: inherit;">xNN also provides the ability to directly dock H5 applications through a jsapi - through the dynamic delivery of the DL model and H5, it can achieve complete dynamization, so that the algorithm + logic is updated at the same time without the client.</font></font></p>
+          </div>
+          <div class="one">
+            <img src="./pimg/p994.jpg" width="100%" height="auto">
+          </div>
+          <div class="two">
+            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The figure above shows the main features of xNN. </font><font style="vertical-align: inherit;">Based on the xqueeze model compression, xNN also supports improved performance by quickly processing sparse networks. </font><font style="vertical-align: inherit;">xNN supports a rich set of network structures, including classic CNN/DNN, SSD target detection, and LSTM. </font><font style="vertical-align: inherit;">The xNN deployment framework is natively compatible with Caffe, and the business can run existing Caffe models directly on the mobile without conversion to quickly evaluate the results. </font><font style="vertical-align: inherit;">The compressed private format model is smaller and faster. </font><font style="vertical-align: inherit;">Models trained on the Tensorflow and Keras platforms can also be compressed on the original environment and then converted to xNN-supported formats for deployment to the mobile side. </font><font style="vertical-align: inherit;">Unlike core ML, xNN theoretically supports all models on Android and iOS.</font></font></p>
+            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The model compression process of xNN-xqueeze is shown in (a) below, including neuron pruning, synapse pruning, quantification, network transform, and adaptation. Huffman coding (adaptive Huffman), a total of 5 steps. </font><font style="vertical-align: inherit;">The first three steps are theoretically lossy, and using xqueeze to perform finetune on network weights and compressed super-parameters can keep the drop in precision at a controllable or even negligible level. </font><font style="vertical-align: inherit;">The last two steps do not affect the output accuracy of the network at all. </font><font style="vertical-align: inherit;">The whole process not only reduces the size of the model, but also significantly improves the speed of forward prediction through network sparseness and structural optimization.</font></font></p>
+          </div>
+          <div class="one">
+            <img src="./pimg/p995.jpg" width="100%" height="auto">
+          </div>
+          <div class="two">
+            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Based on the domain's classic scheme DeepCompression, xqueeze further extends the capabilities of neuronpruning and network transform. </font><font style="vertical-align: inherit;">Among them, neuron pruning can cut off "important" neurons and their corresponding weight parameters. </font><font style="vertical-align: inherit;">Through the combination of neuron pruning and synapse pruning, a better balance between model accuracy and compression ratio is achieved. </font><font style="vertical-align: inherit;">Xqueeze also has a network transform, the ability to optimize at the macro level of the network. The networktransform script scans the entire network and diagnoses optimizable points, including automatic layer layer combination and equivalent replacement under conditional conditions. . </font><font style="vertical-align: inherit;">In addition, xqueeze effectively improves the compression ratio of models with different sparsity levels by adaptively using Huffman coding.</font></font></p>
+            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">As shown in the figure below, for the business classification model, the xqueeze toolchain can achieve 45.5 times compression. Under the same degree of precision loss, the compression ratio exceeds the classic scheme by 60%.</font></font></p>
+          </div>
+          <div class="one">
+            <img src="./pimg/p996.jpg" width="100%" height="auto">
+          </div>
+          <div class="two">
+            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The performance optimization of xNN is not limited to the bottom layer. Instead, it cooperates with the xqueeze tool chain to synchronize the algorithm and instruction levels to create space for deeper optimization.</font></font></p>
+            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">As shown in the figure below, at the algorithm level, xqueeze's pruning also promotes the sparseness of the network while compressing the size of the model—that is, spawning a large number of zero-valued weights. </font><font style="vertical-align: inherit;">Correspondingly, xNN implements the sparse operation module in the instruction layer. In the convolution and full connection calculations, these zero value weights are automatically ignored, which reduces the computational overhead and speeds up. </font><font style="vertical-align: inherit;">As already mentioned, in the network transform phase of xqueeze, the network is optimized at the macro level, including the equivalent combination and replacement of adjacent layers to reduce computational redundancy and improve access. Memory efficiency. </font><font style="vertical-align: inherit;">To give full play to the performance of the network transform, it is also inseparable from the support of the instruction layer implementation.</font></font></p>
+          </div>
+          <div class="one">
+            <img src="./pimg/p997.jpg" width="100%" height="auto">
+          </div>
+          <div class="two">
+            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">At the instruction level, xNN improves the performance in a multi-threaded environment by intelligently provisioning the load of each core. </font><font style="vertical-align: inherit;">In the design, xNN not only pays attention to computing resources, but also fully considers the overhead of accessing memory, and improves the cache hit rate by finely scheduling the reading and writing of data. </font><font style="vertical-align: inherit;">Most importantly, all core computing modules are handwritten by an assembly code expert from a chip industry.</font></font></p>
+            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">On the SqueezeNet-based business classification model, xNN can output a forward predictive frame rate of 29.4 FPS on the Qualcomm 820 CPU, and a frame rate of 52.6 FPS on the Apple A10 CPU (iPhone 7), which is more efficient than CPU and GPU. Core ML is even faster.</font></font></p>
+            <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Business landing</font></font></h3>
+            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The Alipay App has integrated xNN. </font><font style="vertical-align: inherit;">At Alipay's “AR Sweep” portal, more than 90% of Android and iOS models use xNN to complete pre-category classification, and recommend convenient functions such as “AR Sweeping Flowers” ​​to users. </font><font style="vertical-align: inherit;">The robustness of xNN itself has withstood the test of large-scale operational activities such as high-intensity and wide-machine coverage of "Chinese Valentine's Day to send you a flower." </font><font style="vertical-align: inherit;">The latest version of the model has been compressed to less than 100KB under the premise of ensuring accuracy. </font><font style="vertical-align: inherit;">On the Android platform, the full-featured xNN SDK package is only 200KB in increments. If you tailor it to a specific application, you can easily reduce it to more than 100 KB.</font></font></p>
+            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">After the launch of xNN, it has caused strong repercussions within ants and Ali. A large wave of mobile DL applications is being developed based on xNN and will be gradually available to users in the coming months.</font></font></p>
+          </div>
+
+        </div>
+        <!-- 中间部分的内容end -->
+
+      </div>
+<iframe src="../bottom2.html" width="100%" height="200px" scrolling="No"  noresize="noresize" frameborder="0" id="bottomFrame"></iframe>
+  </body>
+</html>

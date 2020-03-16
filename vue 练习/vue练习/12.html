@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-resource</title>
+    <script src="../vue练习/bootstrap/js/jquery-1.11.1.min.js"></script>
+    <script src="../vue练习/bootstrap/js/vue-resource151.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h3></h3>
+        
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>ctime</th>
+                    <th>operation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{item.id}</td>
+                    <td>{item.name}</td>
+                    <td>{item.ctime}</td>
+                    <td>
+                        <a href="" @click="add(item.id)"></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+
+    </div>
+
+
+    <script>
+          var vm = new Vue({
+            el:'#app',
+            data:{
+                name:'',
+                list:[           //数组数据用v-for放进表格元素中
+                    {id:1,name:'宝马',ctime:new Date()},
+                    {id:2,name:'奔驰',ctime:new Date()},
+                    {id:3,name:'大众',ctime:new Date()}
+                ]
+            },
+            methods:{   
+                add(){
+
+                }
+            } 
+    </script>
+</body>
+</html>

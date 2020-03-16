@@ -1,0 +1,331 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>关于我们</title>
+
+<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="../js/banner.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="../css/hover-effects2.css"/>
+<link rel="shortcut icon" href="./img/logo.png" > <!-- 图标 -->
+
+
+
+<style>
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #333;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #ecf0f9;
+  background-attachment: fixed;
+}
+
+.content {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1000px;
+}
+
+.heading {
+  width: 100%;
+  margin-left: 1rem;
+  font-weight: 900;
+  font-size: 1.618rem;
+  text-transform: uppercase;
+  letter-spacing: .1ch;
+  line-height: 1;
+  padding-bottom: .5em;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+/* .heading:after {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(135deg, #1a9be6, #1a57e6);
+  bottom: 0;
+} */
+
+.description {
+  width: 100%;
+  margin-top: 0;
+  margin-left: 1rem;
+  margin-bottom: 3rem;
+}
+
+.card {
+  color: inherit;
+  cursor: pointer;
+  width: calc(33% - 2rem);
+  min-width: calc(33% - 2rem);
+  height: 400px;
+  min-height: 400px;
+  perspective: 1000px;
+  margin: 1rem;
+  position: relative;
+}
+@media screen and (max-width: 800px) {
+  .card {
+    width: calc(50% - 2rem);
+  }
+}
+@media screen and (max-width: 500px) {
+  .card {
+    width: 100%;
+  }
+}
+
+.front,
+.back {
+  display: flex;
+  border-radius: 6px;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: ease-in-out 600ms;
+}
+
+.back h2 {
+  font-size: 24px;
+}
+
+.back p {
+  font-size: 18px;
+  letter-spacing: 1px; /*字间距*/
+  line-height: 1.5;/*设置每行的行间距*/
+  margin: 10px auto;
+}
+
+.front {
+  background-size: cover;
+  padding: 2rem;
+  font-size: 1.618rem;
+  font-weight: 600;
+  color: #fff;
+  overflow: hidden;
+  font-family: Poppins, sans-serif;
+}
+.front:before {
+  position: absolute;
+  display: block;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background: linear-gradient(135deg, #1a9be6, #1a57e6); */
+  opacity: .25;
+  z-index: -1;
+}
+.card:hover .front {
+  transform: rotateY(180deg);
+}
+.card:nth-child(even):hover .front {
+  transform: rotateY(-180deg);
+}
+
+.back {
+  background: #fff;
+  transform: rotateY(-180deg);
+  padding: 0 2em;
+}
+.card:hover .back {
+  transform: rotateY(0deg);
+}
+.card:nth-child(even) .back {
+  transform: rotateY(180deg);
+}
+.card:nth-child(even):hover .back {
+  transform: rotateY(0deg);
+}
+
+.button {
+  transform: translateZ(40px);
+  cursor: pointer;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  font-weight: bold;
+  color: #fff;
+  padding: .5em 1em;
+  border-radius: 100px;
+  font: inherit;
+  background: linear-gradient(135deg, #1a9be6, #1a57e6);
+  border: none;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: 300ms ease;
+}
+.button:before {
+  transition: 300ms ease;
+  position: absolute;
+  display: block;
+  content: '';
+  transform: translateZ(-40px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  height: calc(100% - 20px);
+  width: calc(100% - 20px);
+  border-radius: 100px;
+  left: 10px;
+  top: 16px;
+  box-shadow: 0 0 10px 10px rgba(26, 87, 230, 0.25);
+  background-color: rgba(26, 87, 230, 0.25);
+}
+.button:hover {
+  transform: translateZ(55px);
+}
+.button:hover:before {
+  transform: translateZ(-55px);
+}
+.button:active {
+  transform: translateZ(20px);
+}
+.button:active:before {
+  transform: translateZ(-20px);
+  top: 12px;
+}
+</style>
+</head>
+<body>
+<div class="top"></div>
+	<div class="pr navpr">
+		<div class="nav pa">
+		<div class="w">
+			<img class="fl mt9" src="../img/nav-1.png"/>
+			<ul class="fl mt16 ml40">
+					<li><a href="../index1.html">首页</a></li>
+					<li><a href="../news/index.html">新闻资讯</a></li>
+					<li><a href="../aichutan/index.html">AI初探 </a></li>
+					<li><a href="../tushuoai/index.html">图说AI</a></li>
+					<li><a href="../zhinengshibie/index.html">智能识别</a></li>
+					<li><a href="../jiqikongzhi/index.html">机器控制</a></li>
+					<li><a href="../linjunrenwu/index.html">领军人物</a></li>
+					<li><a href="../guidianai/index.html">桂电AI</a></li>
+					<li><a href="../xgzz/index.html">相关著作</a></li>
+					<li><a href="index.html">关于我们</a></li>
+					<div class="clear"></div>
+				</ul>
+			<div class="nav-btn fr mt17">
+				<a class="mr12" href="index.html">中文</a>|
+				<a class="ml10" href="index2.html">English</a>			</div>
+			<div class="clear"></div>
+		</div>
+		<script>
+	$(function(){
+		var a = $('.nav'),
+			b =a.offset();
+		$(document).on('scroll',function(){
+			var	c = $(document).scrollTop();
+			if(b.top<=c){
+				a.css({'position':'fixed','top':'0px'})
+				}else{
+					a.css({'position':'absolute','top':'0px'})
+					}
+			})
+		})
+	</script>
+	</div>
+	</div>
+
+
+
+
+<div class="content pt50 mb50">
+  <h1 class="heading" style="text-align: center">团队简介</h1>
+
+  <!-- 第一 -->
+  <a class="card" href="#!">
+    <div class="front" style="background-image: url(img/1.jpg);">    </div>
+    <div class="back">
+      <div>
+        <h2>岑婷婷</h2>
+        <p>（热心的大姐姐）</p>
+        <p>爱好：读书、弹钢琴</p>
+        <p>座右铭：心无旁骛，脚踏实地</p>
+        <button class="button">加油 点赞</button>
+      </div>
+    </div></a>
+
+    <!-- 第二 -->
+    <a class="card" href="#!">
+    <div class="front" style="background-image: url(img/2.jpg);">    </div>
+    <div class="back">
+      <div>
+        <h2>李泽</h2>
+        <p>（自带文人气息）</p>
+        <p>爱好：诗词、计算机科学、数学</p>
+        <p>座右铭：天行健君子以自强不息</p>
+        <button class="button">加油 点赞</button>
+      </div>
+    </div></a>
+
+    <!-- 第三 -->
+    <a class="card" href="#!">
+    <div class="front" style="background-image: url(img/3.jpg);">    </div>
+    <div class="back">
+      <div>
+        <h2>王曾诚</h2>
+        <p>（一位追梦少年）</p>
+        <p>爱好：听歌、跑步</p>
+        <p>座右铭：宝剑锋从磨砺出，梅花香自苦寒来</p>
+        <button class="button">加油 点赞</button>
+      </div>
+    </div></a>
+
+    <!-- 第四 -->
+    <a class="card" href="#!">
+    <div class="front" style="background-image: url(img/4.jpg);">    </div>
+    <div class="back">
+      <div>
+        <h2>罗新怀</h2>
+        <p>（勤奋好学，无人能敌）</p>
+        <p>爱好：所有运动项目</p>
+        <p>座右铭：你没有那么多观众，别那么累</p>
+        <button class="button">加油 点赞</button>
+      </div>
+    </div></a>
+
+    <!-- 第五 -->
+    <a class="card" href="#!">
+    <div class="front" style="background-image: url(img/5.jpg);">    </div>
+    <div class="back">
+      <div>
+        <h2>杨云路</h2>
+        <p>（整个一佛系少女）</p>
+        <p>爱好：学习、画画</p>
+        <p>座右铭：车到山前必有路</p>
+        <button class="button">加油 点赞</button>
+      </div>
+    </div></a></div>
+<iframe src="../bottom.html" width="100%" height="200px" scrolling="No"  noresize="noresize" frameborder="0" id="bottomFrame"></iframe>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo1</title>
+</head>
+<style type="text/css">
+    #test{
+        width:400px;
+        height:400px;
+        position:absolute;
+        margin-left:100px;
+        margin-top: 100px;
+        /* 光源设置为离页面200像素的位置 */
+        perspective:200px;
+    }
+    #test1{
+        width:400px;
+        height:400px;
+        position:relative;
+        /* 相当于指定一个3D的空间 */
+        /* transform-style:preserve-3d; */
+    }
+    #div2{
+        width:400px;
+        height:400px;
+        position:relative;
+        background:lightcoral;
+        /* 指定变换效果，变换时间为1S */
+        -webkit-transition: all 1s;
+
+    }
+    #test #test1:hover #div2{
+        /* 绕Y轴旋转180度 */
+        -webkit-transform: rotateX(180deg),rotateZ(180deg);
+    }
+
+</style>
+<body>
+    <div id="test">
+        <div id="test1">
+            <div id="div2"></div>
+        </div>
+        
+    </div>
+</body>
+</html>

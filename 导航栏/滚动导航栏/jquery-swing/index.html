@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>导航插件</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		h1 {
+			text-align: center;
+			font-size: 16px;
+			margin-top: 10px;
+		}
+
+		.box {
+			background-color: #202932;
+			margin: 50px 200px;
+		}
+
+		.f-nav {
+			height: 60px;
+			overflow: hidden;
+			transition: all 1s;
+			display: block;
+			position: relative;
+			padding: 0;
+			box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+			background-color: #202932;
+		}
+
+		.f-nav li {
+			padding: 0;
+			margin: 0;
+			float: left;
+			height: 60px;
+			line-height: 60px;
+			position: relative;
+			z-index: 100;
+			display: inline-block;
+			list-style-type: none;
+			width: 100px;
+			color: #fff;
+			text-align: center;
+			cursor: pointer;
+		}
+
+		.sideline {
+			position: absolute;
+			background-color: #208ff9;
+			left: 0;
+			top: 0;
+			color: #fff;
+			min-height: 30px;
+			z-index: 1;
+			height: 60px;
+			line-height: 60px;
+			display: inline-block;
+			list-style-type: none;
+			width: 100px;
+			color: #fff;
+			text-align: center;
+			cursor: pointer;
+		}
+
+		
+
+	</style>
+</head>
+
+<body>
+	<h1>左右滚动</h1>
+	<div class="box">
+		<ul class="f-nav" id='f-nav'>
+			<li>首页</li>
+			<li>分页一</li>
+			<li>分页二</li>
+			<li>分页三</li>
+			<li>分页四</li>
+			<div class='sideline'></div>
+		</ul>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="jquery-nav.js"></script>
+	<script type="text/javascript">
+		$('#f-nav').tooltip({
+			default: 2,       // 默认为空  --  选中默认值
+			width: '200',     // 限制宽度
+			height: '100',
+			textList: ['首页', '分页1', '分页2', '分页3'],   // 每个导航的内容
+			type: 'slideMove',  // 必填, 选择内容
+			success: function (ret) {
+
+			}   //初始化回调
+		});
+		
+	</script>
+</body>
+
+</html>

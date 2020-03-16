@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>私有过滤器方法的使用和字符串的padstart方法的使用</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <div id="app2">{{ dt | datemat}}</div>
+
+    
+    <button type="button" class="btn btn-large btn-block btn-default">button</button>
+    
+
+    <script>
+        var vm = new Vue({
+            el:'#app2',
+            data:{
+                dt:new Date()
+            },
+            methods:{},
+
+            //这里学习新的方法：私有过滤器filters
+            //过滤器有两个条件： 过滤器名称、处理函数
+            //因为使用过滤器处理时间，会出现时间位数不够，如8，不是08
+            //这时候可以使用字符串的新方法.padStart()来填充字符串
+            //.tostring().padStart（maxLength填充之后的最大位数,fillLength=''用来填充的字符），如.toString().padStart（2,'0'）
+            filters:{
+               
+                datemat:function (dateStr) {
+            
+                var dt = new Date(dateStr)
+            
+                var y = dt.getFullYear()
+                var m = (dt.getMonth() + 1).toString().padStart(2,'0')
+                var d = dt.getDate().toString().padStart(2,'0')
+                var h = dt.getHours().toString().padStart(2,'0')
+                var mi = dt.getMinutes().toString().padStart(2,'0')
+                var s = dt.getSeconds().toString().padStart(2,'0')
+            //最后返回重新获取到的时间
+                return `${y}-${m}-${d}         ${h}:${mi}:${s}`
+                }
+            }
+        })
+    </script>
+</body>
+</html>

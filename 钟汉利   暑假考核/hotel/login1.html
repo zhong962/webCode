@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.19.0/axios.js"></script>
+    <script src="https://cdn.bootcss.com/vue-router/3.0.1/vue-router.js"></script>
+    <style type="text/css">
+        .red {
+            color: red;
+        }
+
+        .thin {
+            font-weight: 100;
+        }
+
+        .active {
+            color: blue;
+        }
+
+        .v-enter,
+        .v-leave-to {
+            opacity: 0;
+            transform: translateY(80px);
+        }
+
+        .v-enter-active,
+        .v-leave-active {
+            transition: all .6s ease;
+        }
+
+        /*往上补缺动画*/
+        .v-move {
+            transition: all .6s ease;
+        }
+
+        .v-leave-active {
+            /*注意设置宽度，否则实际效果打折扣*/
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div id="out">
+            <div id="inner">
+
+                <span>组件动画</span>
+
+                <div>
+                    <a href="" @click.prevent="componentname='logintemp'">登陆</a>
+                    <a href="" @click.prevent="componentname='registertemp'">注册</a>
+                    <transition>
+                        <!-- 公用之前的 .v-enter-active,  .v-leave-active那些代码 -->
+                        <!-- mode="out-in" 让一个组件出去,下一个才进来 ,不过上下切换没看出啥区别.视频中上下切换效果明显-->
+                        <component :is="componentname" mode="out-in"></component>
+                    </transition>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- 登陆注册组件template -->
+    <template id="logintemp">
+        <div>
+            <h2>登陆--{{this.$route.query.id}}--{{this.$route.query.name}}</h2>
+            姓名<input v-model="name" minlength="1">
+            密码<input v-model="password" minlength="1" maxlength="20">
+            <input type="button" value="登陆" @click="add">
+        </div>
+    </template>
+
+    <template id="registertemp">
+        <div>
+            <h2>注册--{{this.$route.params.id}}--{{this.$route.params.name}}</h2>
+            姓名<input v-model="name1">
+            密码<input v-model="password1">
+            电话<input v-model="phone1" minlength="1" maxlength="20">
+            <input type="button" value="注册" @click="signin">
+
+        </div>
+    </template>
+
+
+
+
+    <script type="text/javascript">
+
+
+        var temp10login = {
+            template: '#logintemp'
+        }
+
+        var temp10register = {
+            template: '#registertemp'
+        }
+
+
+
+        var routerOjb = new VueRouter({
+            routes: [
+                //默认展示login，根路径重定向
+                { path: '/login', component: temp10login },
+                //注意这里的temp10login是模板对象变量引用不是字符串
+                { path: '/register/:id/:name', component: temp10register }
+            ]
+        })
+
+
+        Vue.component('logintemp', {
+            template: '#logintemp'
+        })
+
+        Vue.component('registertemp', {
+            template: '#registertemp'
+        })
+
+
+        var vue = new Vue({
+            el: '#app',
+            data: {
+                componentname: 'logintemp',
+                name: null,
+                password: null,
+                name1: null,
+                password1: null,
+                phone1: null,
+                other: null
+
+            },
+            methods: {
+                signin() {
+                    ///============ POST请求
+                    axios({
+                        method: "post",
+                        url: "http://localhost/web/api/addUser.php",
+                        headers: {
+                            'Content-type': 'application/x-www-form-urlencoded'
+                        },
+                        data: {
+                            name: this.name1,
+                            password: this.password1,
+                            phone: this.phone1
+                        },
+                        transformRequest: [function (data) {
+                            let ret = ''
+                            for (let it in data) {
+                                ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
+                            }
+                            return ret
+                        }],
+                    }).then((res) => {
+                        alert(res.data);
+                    })
+                    //=======
+
+                },
+                add() {
+                    var that = this;
+                    console.log(2);
+
+
+
+                    ///============ POST请求
+                    axios({
+                        method: "post",
+                        url: "http://localhost/web/api/login.php",
+                        headers: {
+                            'Content-type': 'application/x-www-form-urlencoded'
+                        },
+                        data: {
+                            name: this.name,
+                            password: this.password,
+                        },
+                        transformRequest: [function (data) {
+                            let ret = ''
+                            for (let it in data) {
+                                ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
+                            }
+                            return ret
+                        }],
+                    }).then((res) => {
+                        if (res.data.length == 1) {
+                            //alert("登陆成功");
+                            //用户数据存入本地
+                            localStorage.setItem('uid', res.data[0].uid);
+                            localStorage.setItem('name', res.data[0].name);
+                            console.log(res.data[0]);
+                            if (res.data[0].type == "admin") {
+                                window.location.href = "allOrderList.html";
+                                return;
+                            }
+                            //普通用户跳转到首页
+                            window.location.href = "index.html";
+                        } else {
+                            alert("登陆失败");
+                        }
+                    })
+                }
+
+                //=======
+
+
+
+            },
+            router: routerOjb
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,713 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .red {
+            color: red;
+        }
+
+        .thin {
+            font-weight: 100;
+        }
+
+        .active {
+            color: blue;
+        }
+
+        .v-enter,
+        .v-leave-to {
+            opacity: 0;
+            transform: translateY(80px);
+        }
+
+        .v-enter-active,
+        .v-leave-active {
+            transition: all .6s ease;
+        }
+
+        /*往上补缺动画*/
+        .v-move {
+            transition: all .6s ease;
+        }
+
+        .v-leave-active {
+            /*注意设置宽度，否则实际效果打折扣*/
+            position: absolute;
+        }
+
+        .ball {
+            width: 20px;
+            height: 20px;
+            background-color: blue;
+            border-radius: 50%;
+            opacity: .5;
+        }
+
+        .router-link-active {
+            font-weight: bold;
+            color: blue;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div id="out" @click="out">
+            <div id="inner" @click.self="inner">
+                <button @click="btn">按钮</button>
+                <a href="www.baidu.com" @click.prevent='href'>baidu</a>
+                <h2> {{msg}}</h2>
+                <input type="text" name="" v-model="msg">
+                <br>
+                <h2>calc</h2>
+                <input type="" name="" v-model='n1'>
+                <select v-model='opt'>
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                </select>
+                <input type="" name="" v-model='n2'>
+                <input type="button" value="=" name="" @click="calc">
+                <input type="" name="" v-model='result'>
+                <br>
+                <h1 :class="['red','thin',{'active':flag}]" @click="active">激活三元表达式</h1>
+                <h1 :class="{red:true,thin:true,active:flag}" @click="active">激活对象类1</h1> <!-- 属性可以不加引号 -->
+                <h1 :style="style1">style的样式绑定应用</h1>
+                <h1 :style="[style1,style2]">style的样式绑定应用</h1>
+                <span v-for="i in numlist">{{i}}</span>
+                <span v-for="i in 5"> {{+i}} </span>
+                <p v-for="(item,i) in objlist">id：{{item.id}} 姓名：{{item.name}} 年龄：{{item.age}} </p>
+                <p v-for="(val,key,i) in obj">{{i}} {{key}} {{val}}</p>
+
+                <!-- key要唯一，假设后台传过来的值没有唯一呢？ -->
+                <div id="key">
+                    <input type="text" v-model="id" value="name" name="">
+                    <input type="text" v-model="name" name="" value="age" @keyup.enter="add"> <!-- enter可换成f2 -->
+                    <input type="button" name="" @click='add' value="添加">
+                    <input type="text" v-model="keyword" name="" placeholder="搜索" v-focus v-color="'blue'">
+
+                    <!-- =========== 循环====== -->
+
+                    <transition-group appear tag="ul">
+                        <!-- appear可以去掉：初始化渐入效果 -->
+                        <!-- 默认渲染为span属性,制定为ul -->
+                        <p v-for="item in search1(keyword)" :key=item.id>
+                            <input type="checkbox" name="">
+                            id：{{item.id}} 姓名：{{item.name}} 年龄：{{item.age}}
+
+                            <a href="" @click.prevent="del1(item.id)">删除</a>
+                        </p>
+
+                    </transition-group>
+
+
+
+
+
+                </div>
+
+
+                <!-- =========== -->
+                <h2 v-if="flag" @click="flag = !flag">v-if</h2>
+                <!-- 适合频繁切换 -->
+                <h2 v-show="flag" @click="flag = !flag;">v-show</h2>
+
+                <!-- 过滤器 ,全局和私有都是pool，就近原则调用私有的pool-->
+                <h1>过滤器</h1>
+                <p>管道{{msg | pool(1)}}</p>
+
+                <h2 v-fontweight="100">私有普通：自定义私有指令v-fontweight="100" </h2>
+                <h2 v-size="'30px'">全局简写：自定义私有指令v-size</h2>
+                <h2 v-size="'35px'">私有简写：自定义私有指令v-sizeone</h2>
+
+                <!-- 组件开始 -->
+                <test-com1></test-com1>
+                <test-com2></test-com2>
+                <test-com3></test-com3>
+                <test-com4></test-com4>
+
+                <!-- 私有组件 -->
+                <login></login>
+                <logout></logout>
+
+                <!-- 组件data -->
+                <test-com5></test-com5>
+
+                <!-- 组件data methods-->
+                <test-com6></test-com6>
+                <hr>
+                <test-com6></test-com6>
+
+                <hr>
+
+                <!-- 登陆注册组件 -->
+                <!-- if else 适合两种情况 -->
+                <div>
+                    <a href="" @click.prevent="loginflag=true">登陆</a>
+                    <a href="" @click.prevent="loginflag=false">注册</a>
+
+                    <logintemp v-if="loginflag"></logintemp>
+                    <registertemp v-else="loginflag"></registertemp>
+                </div>
+
+                <hr>
+                <!-- 适合多种个情况:这里改变组件名称 -->
+                <div>
+                    <a href="" @click.prevent="componentname='logintemp'">登陆</a>
+                    <a href="" @click.prevent="componentname='registertemp'">注册</a>
+                    <component :is="componentname"></component>
+                </div>
+                <hr>
+                <span>组件动画</span>
+
+                <div>
+                    <a href="" @click.prevent="componentname='logintemp'">登陆</a>
+                    <a href="" @click.prevent="componentname='registertemp'">注册</a>
+                    <transition>
+                        <!-- 公用之前的 .v-enter-active,  .v-leave-active那些代码 -->
+                        <!-- mode="out-in" 让一个组件出去,下一个才进来 ,不过上下切换没看出啥区别.视频中上下切换效果明显-->
+                        <component :is="componentname" mode="out-in"></component>
+                    </transition>
+                </div>
+
+                <!-- 小球 -->
+                <transition @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter">
+                    <div class="ball" v-show="ballflag">
+                    </div>
+                </transition>
+                <input type="button" value="ball" @click="ballflag = !ballflag">
+
+                <hr>
+                <!-- 父子组件通信 -->
+                <test-com7 v-bind:fromparentmsg="msg"></test-com7>
+
+                <!-- say不要加括号。加括号就是方法的结果，不加就是方法的引用，这里需要把方法的引用赋值给childusesay -->
+                <temp8 v-on:childusesay="say"></temp8>
+
+                <!-- ref获取dom -->
+                <a href="" ref="doma">这是a标签，将被 ref 来获取dom</a> <span @click="getdom1">点击获取dom1</span>
+
+                <temp9 ref="doma9"></temp9>
+                <span @click="getdom9">点击获取dom9</span> <span @click="getdom9say">点击获取dom9的方法say9</span>
+                <p>下面是路由开始</p>
+                <hr>
+                <a href="#/login">登录路由</a><a href="#/register">注册路由</a>
+                <!-- 路由组件将在下方展示 -->
+
+                <hr>
+                <!-- 默认渲染为 a 标签 -->
+                <router-link to="/login?id=123&name=zs" tag="span">登陆</router-link>
+                <router-link to="/register/456/ls">注册</router-link>
+                <transition mode="out-in">
+                    <router-view></router-view>
+                </transition>
+
+                <hr><span>child属性</span>
+                <router-link to="/account/login">登陆</router-link>
+                <router-link to="/account/register">注册</router-link>
+
+                <router-view>
+
+                </router-view>
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 在 #app外面定义模板 -->
+    <template id="temp1">
+        <div id="sss">
+            <!-- 只能一个根元素 -->
+            <h2>标题莎莎啥的</h2>
+            <p>p啥婚纱莎莎啥的</p>
+        </div>
+    </template>
+
+    <!-- 私有组件 -->
+    <template id="temp2">
+        <div>
+            <h2>这个template也可以被私有组件调用</h2>
+        </div>
+    </template>
+
+
+
+    <template id="temp6">
+        <div>
+            <span>组件6计数:{{count}}</span>
+            <input type="button" value="+" @click="incresment" name="">
+        </div>
+    </template>
+
+    <!-- 登陆注册组件template -->
+    <template id="logintemp">
+        <div>
+            <h2>登陆--{{this.$route.query.id}}--{{this.$route.query.name}}</h2>
+            账号<input type="" name="">
+            密码<input type="" name="">
+        </div>
+    </template>
+
+    <template id="registertemp">
+        <div>
+            <h2>注册--{{this.$route.params.id}}--{{this.$route.params.name}}</h2>
+            邮箱11232<input type="" name="">
+        </div>
+    </template>
+
+    <!-- 用于父子组件方法传递和数据传递 -->
+    <template id="temp8">
+        <div>
+            <h2 @click="childusesay">点击调用父组件方法，调用不了</h2>
+        </div>
+    </template>
+
+    <!-- ref 获取 dom 组件 -->
+    <template id="temp9">
+        <div>
+            <h2>这是temp9的组件</h2>
+        </div>
+    </template>
+
+    <template id="account">
+        <div>
+            <h2>这是account的组件</h2>
+            <!-- 这里放置子路由的位置 -->
+            <router-view></router-view>
+        </div>
+    </template>
+
+
+
+
+
+    <script src="https://cdn.bootcss.com/vue/2.4.0/vue.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.js"></script>
+    <script src="https://cdn.bootcss.com/vue-router/3.0.1/vue-router.js"></script>
+    <script type="text/javascript">
+
+        var ojbt8 = {
+            template: '#temp8',
+            data: function () {
+                return { name: '张三', age: 21 }
+            },
+            // 这里定义一下方法
+            methods: {
+                childusesay() {
+                    console.log('这是模板#temp8的childusesay方法，想调用父组件的say');
+                    // 注意！虽然是出发的意思，但是不是触发父方法，而是触发自己身上的方法。。。再调用父方法，所以$emit('childusesay')childusesay而不是$emit('say')
+                    //逗号分隔传参数据
+                    this.$emit('childusesay', this.name, this.age);
+                }
+            }
+        }
+
+        var temp9 = {
+            template: '#temp9',
+            data: function () {
+                return { msg9: '我是来自组件#temp9的msg9' }
+            },
+            methods: {
+                temp9say() {
+                    console.log('这是来自的组件的temp9say方法');
+                }
+            }
+        }
+
+
+        var temp10login = {
+            template: '#logintemp'
+        }
+
+        var temp10register = {
+            template: '#registertemp'
+        }
+
+        var account = {
+            template:'#account'
+        }
+
+        /* 可用的路由定义
+        
+        var routerOjb = new VueRouter({
+                routes: [
+                
+                    { path: '/', redirect: '/login' },
+                    { path: '/login', component: temp10login },
+                    //注意这里的temp10login是模板对象变量引用不是字符串
+                    { path: '/register/:id/:name', component: temp10register }
+                ]
+            }) */
+
+        var routerOjb = new VueRouter({
+            routes: [
+                //默认展示login，根路径重定向
+                { path: '/', component:account },
+                { path: '/account', component:account, children:[
+                    {path:'login',component: temp10login},
+                    { path: 'register', component: temp10register }
+                ] },
+                { path: '/login', component: temp10login },
+                //注意这里的temp10login是模板对象变量引用不是字符串
+                { path: '/register/:id/:name', component: temp10register }
+            ]
+        })
+
+        // 组件
+        var com1 = Vue.extend({
+            template: '<h2>这是组件的h2</h2>'
+        })
+        Vue.component('testCom1', com1);
+
+        //合并写法
+        Vue.component('testCom2', Vue.extend({
+            template: '<h2>合并写法h2</h2>'
+        }));
+
+        Vue.component('testCom3', {
+            template: '<h3>再精简<span>span只能放里面,不能并排</span></h3>'
+        })
+
+        Vue.component('testCom4', {
+            template: '#temp1'
+        })
+
+        //组件data和 methods
+        Vue.component('testCom5', {
+            template: '<h3>组件5:{{msg5}}</h3>',
+            // return的data不要再i外面定义,否则只是一个引用,一个边,整个页面中用到这个组件的地方数据都会变
+            //所以在内部写
+            data: function () {
+                return {
+                    msg5: '北京',
+                    count: 0
+                }
+            }
+
+        })
+
+        Vue.component('testCom6', {
+            template: '#temp6',
+            // return的data不要再i外面定义,否则只是一个引用,一个边,整个页面中用到这个组件的地方数据都会变
+            //所以在内部写
+            data: function () {
+                return {
+                    count: 0
+                }
+            },
+            methods: {
+                incresment() {
+                    this.count++;
+                }
+            }
+
+        })
+
+        Vue.component('logintemp', {
+            template: '#logintemp'
+        })
+
+        Vue.component('registertemp', {
+            template: '#registertemp'
+        })
+
+
+
+
+        // 全局过滤器
+        Vue.filter('pool', function (msg, word) {
+            return msg + word;
+
+        });
+
+        // 配置
+        Vue.config.keyCodes.f2 = 113;
+
+        //全局自定义指令
+        Vue.directive('focus', {
+            bind: function (el) {
+
+            },
+            inserted: function (el) {
+                el.focus();
+            },
+            update: function (el) {
+
+            }
+
+        }
+        );
+
+        //样式一般在 bind 中
+        Vue.directive('color', {
+            bind: function (el, binding) {
+                console.log('binding.value:', binding.value);
+                console.log('binding.expression:', binding.expression);
+                el.style.color = binding.value;
+            },
+            inserted: function (el) {
+
+            },
+            update: function (el) {
+
+            }
+
+        }
+
+
+
+        );
+        // 自定义钩子函数简写
+        //等同于写到 bind 和 update中
+        Vue.directive('size', function (el, binding) {
+            el.style.fontSize = binding.value;
+        }
+
+
+        );
+
+
+        var vue = new Vue({
+            el: '#app',
+            data: {
+                numlist: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                objlist: [{ id: 0, name: 'aaa', age: 20 }, { id: 1, name: 'bbb', age: 22 }, { id: 2, name: 'ccc', age: 22 }],
+                obj: { name: 'aaa', age: 20, note: '备注' },
+                msg: '这是跑马灯模拟~~',
+                msg1: '<h1>111</h1>',
+                mtt: 'that is mtt',
+                id: null,
+                n1: 0,
+                n2: 0,
+                result: 0,
+                opt: '+',
+                flag: true,
+                style1: {
+                    color: 'red',
+                    'font-weight': '200'
+                },
+                style2: {
+                    color: 'yellow',
+                    'font-weight': '200'
+                },
+                name: null,
+                age: null,
+                keyword: '',
+                loginflag: true,
+                componentname: 'logintemp',
+                ballflag: false
+            },
+            methods: {
+                getdom1() {
+                    console.log('获取dom1', this.$refs.doma.innerText);
+                },
+                getdom9() {
+                    console.log('获取dom9', this.$refs.doma9.msg9);
+                },
+                getdom9say() {
+                    console.log('getdom9say方法，调用组件方法temp9say');
+                    this.$refs.doma9.temp9say();
+                },
+                beforeEnter(el) {
+                    el.style.transform = 'translate(0, 0)';
+                },
+                enter(el, done) {
+                    el.offsetWidth;
+                    el.style.transform = 'translate(150px, 0)';
+                    el.style.transition = 'all 1s ease';
+                    done();
+                },
+                afterEnter(el) {
+                    this.ballflag = !this.ballflag;
+
+                },
+                //search 法一
+                search(keyword) {
+                    var items = [];
+                    this.objlist.forEach(item => {
+                        if (item.name.indexOf(keyword) != -1) {
+                            items.push(item);
+                        }
+                    });
+                    return items;
+
+                },
+                //search 法二
+                search1(keyword) {
+                    return this.objlist.filter(item => {
+                        if (item.name.includes(keyword)) {
+                            return item;
+                        }
+                    });
+
+                },
+                del(id) {
+                    console.log(id);
+                    this.objlist.some((item, i) => {
+                        if (item.id == id) {
+                            this.objlist.splice(i, 1)
+                            return true;
+                        }
+                    });
+                },
+                del1(id) {
+                    var index = this.objlist.findIndex(item => {
+                        if (item.id == id) {
+                            return true;
+                        }
+                    })
+                    this.objlist.splice(index, 1);
+                },
+                add() {
+                    // this.objlist.unshift({id:this.id,name:this.name});
+                    this.objlist.push({ id: this.id, name: this.name });
+                },
+                active() {
+                    this.flag = !this.flag;
+                },
+                show: function () {
+                    if (this.id != null) {
+                        return;
+                    }
+                    var that = this;
+                    this.id = setInterval(() => {
+                        that.msg = that.msg.substring(1) + that.msg.substring(0, 1);
+                    }, 400)
+                },
+                stop() {
+                    clearInterval(this.id);
+                    this.id = null;
+                },
+                btn() {
+                    console.log('bnt');
+                },
+                inner() {
+                    console.log('iner');
+                },
+                out() {
+                    console.log('out');
+                },
+                href() {
+                    console.log('href');
+                },
+                calc() {
+                    console.log('calc...')
+                    switch (this.opt) {
+                        case '+':
+                            this.result = parseInt(this.n1) + parseInt(this.n2);
+                            break;
+                        case '-':
+                            this.result = parseInt(this.n1) - parseInt(this.n2);
+                            break;
+                        case '*':
+                            this.result = parseInt(this.n1) * parseInt(this.n2);
+                            break;
+                        case '/':
+                            this.result = parseInt(this.n1) / parseInt(this.n2);
+                            break;
+
+                    }
+
+                },
+                // 父组件的say方法
+                say(name, age) {
+                    console.log('这是来自父组件的say方法', 'name:', name, 'age:', age);
+                }
+            },
+            //私有过滤器
+            filters: {
+                pool: function (msg, word) {
+                    return msg + word + '这是私有的filters';
+                }
+            },
+            //自定义私有指令，记得directive加s
+            directives: {
+
+                // 这个引号加不加无所谓
+                'fontweight': {
+                    bind: function (el, binding) {
+                        el.style.fontWeight = binding.value;
+                    }
+
+                },
+                sizeone: function (el, binding) {
+                    el.style.fontSize = binding.value;
+                }
+            },
+            // 私有组件
+            components: {
+                login: {
+                    template: '<h2>私有组件login</h2>'
+                },
+                logout: {
+                    template: '#temp2'
+                },
+                // 父子组件通信
+                testCom7: {
+                    template: '<h1>这是子组件，来自父组件的数据msg,子组件通过fromparentmsg引用:{{fromparentmsg}}</h1>',
+                    data() {
+                        return {
+                            cc: '1'
+                        }
+                    },
+                    props: [
+                        'fromparentmsg'
+                    ]
+
+                },
+                //如果k-v同名，可以简写
+                temp8: ojbt8,
+                temp9,
+                account
+
+            },
+            router: routerOjb
+
+        });
+
+
+    // 字符串填充方法
+    // xxx.toString().padStart(2,'0'); 最大两位数，以0在前面补充
+
+
+    //post请求
+//     axios({
+//   method: 'post',
+//   url: '/user/12345',
+//   data: {
+//     firstName: 'Fred',
+//     lastName: 'Flintstone'
+//   }
+// });
+
+
+    //get 请求
+  //   axios.get('/user?ID=12345')
+  // .then(function (response) {
+  //   // handle success
+  //   console.log(response);
+  // })
+  // .catch(function (error) {
+  //   // handle error
+  //   console.log(error);
+  // })
+  // .then(function () {
+  //   // always executed
+  // });
+
+
+    </script>
+</body>
+
+</html>

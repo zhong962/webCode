@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .layout-footer {
+            background-color: #000;
+            height: 50px;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            z-index: 9999;
+            overflow: hidden;
+            bottom: 0;
+            border: 1px solid gainsboro;
+            border-top: 1px solid gainsboro;
+            text-align: center;
+        }
+
+        .bottom_nav {
+            width: 33%;
+            float: left;
+            line-height: 50px;
+        }
+
+        .layout-submenu {
+            height: 80px;
+            position: fixed;
+            width: 33%;
+            margin-left: -1px;
+            z-index: 9999;
+            bottom: 50px;
+            border: 1px solid gainsboro;
+            text-align: center;
+            background-color: white;
+            display: none;
+        }
+
+        .sub_menu {
+            line-height: 40px;
+            vertical-align: middle;
+            background: rgb(141, 113, 113);
+            color: #fff;
+        }
+
+        .layout-footer .bottom_nav:hover {
+            border-left: 1px solid gainsboro;
+            border-right: 1px solid gainsboro;
+        }
+
+        .layout-footer .bottom_nav:hover .layout-submenu {
+            display: block;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout-footer">
+        <div class="bottom_nav">
+            <a href="#">首页</a>
+        </div>
+        <div class="bottom_nav">
+            <div class="layout-submenu">
+                <div class="sub_menu" style="border-bottom: 1.5px solid #F2F2F2"><a>项目xx</a></div>
+                <div class="sub_menu">项目xx</div>
+            </div>
+            <a>xx服务</a>
+        </div>
+        <div class="bottom_nav">
+            <div class="layout-submenu">
+                <div class="sub_menu" style="border-bottom: 1.5px solid #F2F2F2"><a>中心公告</a></div>
+                <div class="sub_menu">中心资讯</div>
+            </div>
+            <a>xx资讯</a>
+        </div>
+       
+    </div>
+
+</body>
+
+</html>

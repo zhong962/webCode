@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  <!-- IE的设置 -->
+    <meta name="viewport" content="width=device-width, inital-scale=1.0"> <!-- 响应式设置 -->
+    <title>科技弥补人力不足，日本派出AI、机器人担纲警卫作业</title>
+	<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+
+
+    <link rel="stylesheet" href="./css/normalize.css"> <!-- CSS资源引入 -->
+    <link rel="stylesheet" href="./css/page.css"> <!-- CSS资源引入 -->
+    <link rel="shortcut icon" href="./images/logo.png" > <!-- 图标 -->
+  </head>
+  <body>
+
+  <div class="top"></div>
+	<div class="pr navpr">
+		<div class="nav pa">
+		<div class="w">
+			<img class="fl mt9" src="../img/nav-1.png"/>
+			<ul class="fl mt16 ml40">
+					<li><a href="../index1.html">首页</a></li>
+					<li><a href="../news/index.html">新闻资讯</a></li>
+					<li><a href="../aichutan/index.html">AI初探 </a></li>
+					<li><a href="../tushuoai/index.html">图说AI</a></li>
+					<li><a href="../zhinengshibie/index.html">智能识别</a></li>
+					<li><a href="../jiqikongzhi/index.html">机器控制</a></li>
+					<li><a href="../linjunrenwu/index.html">领军人物</a></li>
+					<li><a href="../guidianai/index.html">桂电AI</a></li>
+					<li><a href="../xgzz/index.html">相关著作</a></li>
+					<li><a href="../about/index.html">关于我们</a></li>
+					<div class="clear"></div>
+				</ul>
+			<div class="nav-btn fr mt17">
+				<a class="mr12" href="spage25.html">中文</a>|
+				<a class="ml10" href="spage26.html">English</a>			</div>
+			<div class="clear"></div>
+		</div>
+		<script>
+	$(function(){
+		var a = $('.nav'),
+			b =a.offset();
+		$(document).on('scroll',function(){
+			var	c = $(document).scrollTop();
+			if(b.top<=c){
+				a.css({'position':'fixed','top':'0px'})
+				}else{
+					a.css({'position':'absolute','top':'0px'})
+					}
+			})
+		})
+	</script>
+	</div>
+	</div>
+
+
+    <div class="bj">
+
+      <!-- 中间部分的内容 -->
+      <div class="bj-zhong">
+        <h1 class="title">科技弥补人力不足，日本派出AI、机器人担纲警卫作业</h1>
+        <div class="one">
+          <img src="./simg/s251.jpg" width=100% height=auto>
+        </div>
+        <div class="two">
+          <p>对于像是奥运这种国际性运动赛事，最重要的除了场馆准备外，警备、维安也是不容马虎的领域。然而，面对数以万计的观赛者、旅客，深陷人力不足困境的日本又要如何应对？答案是交给 AI、机器人等高科技来弥补。</p>
+          <p>根据《朝日新闻》报导，为了 2020 年东京奥运，日本警视厅针对警备问题，正与 Panasonic合作研发专用 AI 系统，并在造访人数高达 87 万人的隅田川烟火大会中，进行实测。</p>
+          <p>该次实验中，Panasonic 将相机设置在停驻于两个主要十字路口的警车上，让 AI 学习人潮流动数据。目标让 AI 学会判别人类或车辆的可疑行为，例如定点长时间静止不动、逆人流移动、放置可疑物品、汽车驶进限制地区等情况。</p>
+          <p>事实上，警备人员不足的问题，在过去 2012 年伦敦奥运、2016 年里约奥运都曾发生过。为此，身为科技大国的日本，才会将此重担交给 AI 和机器人。未来，该系统也会持续于大规模中运用，藉以累积数据，最后在 2020 年奥运中挑大梁。</p>
+          <p>Panasonic 表示，由于该系统还在开发当中，还不敢挂保证是否能够赶得上 2020。不过既然收了纳税人的钱办事，势必会全力以赴，还请各位多期待今后的成果。</p>
+        </div>
+        <div class="one">
+          <img src="./simg/s252.jpg" width=100% height=auto>
+        </div>
+        <div class="two">
+          <p>此外，警卫机器人也被认为是解决人手不足问题的妙招，其中拥有 35 年机器人开发经验的日本大型安保公司 ALSOK ，所研发的警卫机器人 Reborg-Χ，目前就正在东京车站前的办公大楼和羽田机场中「实习」，为 2 年后的东京奥运暖身。</p>
+        </div>
+
+      </div>
+      <!-- 中间部分的内容end -->
+
+    </div>
+<iframe src="../bottom.html" width="100%" height="200px" scrolling="No"  noresize="noresize" frameborder="0" id="bottomFrame"></iframe>
+  </body>
+</html>

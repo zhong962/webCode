@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			/* 记得用通配符初始化一下内外边距，必要时还可以考虑初始化全局box-sizing */
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			.test {
+				background-color: #CCC;
+				height: 30px;
+			}
+
+			.test ul {             /* ul是块级元素*/  
+				list-style: none;            /*消除列表项标记*/
+			}
+
+			.test ul li {
+				float: left;            /*列表横向显示*/
+				width: 100px;              /*控制内容的宽度*/
+				background-color: #CCC;
+			}
+
+			.test a {
+				display: block;
+				text-align: center;
+				line-height: 30px;                 /*设置行高*/
+			}
+
+			.test a:link {                    /* 未访问链接*/
+				color: #666;
+				background-color: #CCC;
+				text-decoration: none;           /*消除下划线*/
+			}
+  			.test a:visited{                                 /* 已访问链接 */
+				color:#666;
+			}
+			.test a:hover {                     /* 鼠标移动到链接上 */
+				color: #FFF;
+				font-weight: bold;                      /*指定字体的粗细，设置为粗字体*/
+				text-decoration: none;
+				background-color: #F00;
+			}
+			
+			
+			
+			
+
+			.menu2 {
+				font-family: arial, sans-serif;
+				margin-left: 480px;                /*相对body位置进行移动*/
+				margin-top: 50px;
+			}
+
+			.menu2 ul {
+				padding: 0;
+				margin: 0;
+				list-style: none;              /*消除列表项标记*/ 
+			}
+
+			.menu2 ul li {
+				float: left;               /* 列表横向显示*/
+			}
+
+			.menu2 ul li a,                                                                                                        /* 这里的选择器建议写成.menu2>ul>li>a */
+			.menu ul li a:visited {                      /* 已访问链接 */
+				display: block;
+				text-align: center;
+				text-decoration: none;           /*消除下划线*/
+				width: 104px;
+				color: #000;
+				border: 1px solid #fff;
+				border-width: 1px 1px 0 0;
+				background-color: #5678ee; 
+				line-height: 30px;               /*设置行高，高度由line-height撑开*/
+				font-size: 14px;
+			}
+
+			.menu2 ul li ul {
+				display: none;                /*隐藏某个元素，且不占用空间*/
+			}
+
+			.menu2 ul li a:hover {              /* 鼠标移动到链接上 */
+				color: #fff;
+			}
+
+			.menu2 ul li:hover ul {          /* 鼠标移动到链接上 */  /*下拉列表*/
+				display: block; 
+				width: 105px;
+			}
+
+			.menu2 ul li:hover ul li a {      /* 鼠标移动到链接上 */
+				background: #ff4321;
+				color: #000;
+			}
+
+			.menu2 ul li:hover ul li a:hover {       /* 鼠标移动到链接上 */
+				background: #dfc184;
+				color: #fff;
+			}
+
+
+
+
+
+			#button {
+				width: 150px;
+				margin-top: 270px;
+				margin-left: 170px;
+				font-family: "宋体";
+				font-size: 13px;
+				background-color: #ff9933;
+				color: #000000;
+			}
+
+			#button ul {
+				list-style: none;           /*消除列表项标记*/ 
+			}
+
+			#button ul li {
+				margin: 0;
+				border-bottom-width: 2px;
+				border-bottom-style: solid;
+				border-bottom-color: #ffff00;
+			}
+
+			#button ul li a {
+				display: block;          /*块级元素*/
+				padding: 5px 5px 5px 0.5em;
+				background-color: #ff9933;
+				color: #fff;
+				text-decoration: none;        /*消除下划线*/
+				border-right-width: 10px;
+				border-left-width: 10px;
+				border-right-style: solid;
+				border-left-style: solid;
+				border-right-color: #ffcc00;
+				border-left-color: #ffcc00;
+			}
+
+
+			#button ul li a:hover {                              /* 鼠标移动到链接上 */
+				background-color: #ffcc00;
+				color: #fff;
+				border-right-width: 10px;
+				border-left-width: 10px;
+				border-right-style: solid;
+				border-left-style: solid;
+				border-right-color: #ff00ff;
+				border-left-color: #ff00ff;
+
+			}
+		</style>
+	</head>
+	<body>
+		<div class="test">
+			<ul>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">产品介绍</a></li>
+				<li><a href="#">服务介绍</a></li>
+				<li><a href="#">技术支持</a></li>
+				<li><a href="#">立刻购买</a></li>
+				<li><a href="#">联系我们</a></li>
+			</ul>
+		</div>
+
+
+		<div class="menu2">
+			<ul>
+				<li><a href="#">文 件</a>
+					<ul>
+						<li><a href="#">打 开</a></li>
+						<li><a href="#">保 存</a></li>
+						<li><a href="#">新 建</a></li>
+					</ul>
+				</li>
+				<li><a href="#">查 看</a>
+					<ul>
+						<li><a href="#">工具栏</a></li>
+						<li><a href="#">标 尺</a></li>
+						<li><a href="#">缩 放</a></li>
+					</ul>
+				</li>
+				<li><a href="#">修 改</a>
+					<ul>
+						<li><a href="#">属 性</a></li>
+						<li><a href="#">样 式</a></li>
+					</ul>
+				</li>
+				<li><a href="#"> 窗 口</a>
+					<ul>
+						<li><a href="#">历史记录</a></li>
+						<li><a href="#">颜 色</a></li>
+						<li><a href="#">时间轴</a></li>
+					</ul>
+				</li>
+			</ul>
+
+		</div>
+
+		<div id="button">
+			<ul>
+				<li> <a href="#">首页</a> </li>
+				<li> <a href="#">公司频道</a> </li>
+				<li> <a href="#">最新动态</a> </li>
+				<li> <a href="#">客房介绍</a> </li>
+				<li> <a href="#">酒店服务</a> </li>
+				<li> <a href="#">休闲娱乐</a> </li>
+				<li> <a href="#">旅行社</a> </li>
+				<li> <a href="#">更多</a> </li>
+			</ul>
+
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  <!-- IE的设置 -->
+    <meta name="viewport" content="width=device-width, inital-scale=1.0"> <!-- 响应式设置 -->
+    <title>谷歌“AI猜画”朋友圈刷屏：用户参与让它变得更聪明</title>
+	<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+
+
+    <link rel="stylesheet" href="./css/normalize.css"> <!-- CSS资源引入 -->
+    <link rel="stylesheet" href="./css/page.css"> <!-- CSS资源引入 -->
+    <link rel="shortcut icon" href="./images/logo.png" > <!-- 图标 -->
+  </head>
+  <body>
+
+  <div class="top"></div>
+	<div class="pr navpr">
+		<div class="nav pa">
+		<div class="w">
+			<img class="fl mt9" src="../img/nav-1.png"/>
+			<ul class="fl mt16 ml40">
+					<li><a href="../index1.html">首页</a></li>
+					<li><a href="../news/index.html">新闻资讯</a></li>
+					<li><a href="../aichutan/index.html">AI初探 </a></li>
+					<li><a href="../tushuoai/index.html">图说AI</a></li>
+					<li><a href="../zhinengshibie/index.html">智能识别</a></li>
+					<li><a href="../jiqikongzhi/index.html">机器控制</a></li>
+					<li><a href="../linjunrenwu/index.html">领军人物</a></li>
+					<li><a href="../guidianai/index.html">桂电AI</a></li>
+					<li><a href="../xgzz/index.html">相关著作</a></li>
+					<li><a href="../about/index.html">关于我们</a></li>
+					<div class="clear"></div>
+				</ul>
+			<div class="nav-btn fr mt17">
+				<a class="mr12" href="spage31.html">中文</a>|
+				<a class="ml10" href="spage32.html">English</a>			</div>
+			<div class="clear"></div>
+		</div>
+		<script>
+	$(function(){
+		var a = $('.nav'),
+			b =a.offset();
+		$(document).on('scroll',function(){
+			var	c = $(document).scrollTop();
+			if(b.top<=c){
+				a.css({'position':'fixed','top':'0px'})
+				}else{
+					a.css({'position':'absolute','top':'0px'})
+					}
+			})
+		})
+	</script>
+	</div>
+	</div>
+
+
+    <div class="bj">
+
+      <!-- 中间部分的内容 -->
+      <div class="bj-zhong">
+        <h1 class="title">谷歌“AI猜画”朋友圈刷屏：用户参与让它变得更聪明</h1>
+        <div class="two">
+          <p>上线一天之后，谷歌推出的首款微信小程序猜画小歌已经在一些人的朋友圈刷了屏，大批“灵魂画手”乐此不疲的在朋友圈分享自己的画作，同时也发出诸多疑问：“为什么我画的这么像，AI却猜不出来?”</p>
+          <p>从传播效果来看，谷歌推出的首款微信小程序可以说取得了非常大的成功。</p>
+          <p>猜画小歌是一款玩法非常简单的小程序，具体玩法为，用户与谷歌 AI 组队，在有限的时间内进行速写。在每一轮体验中，用户需要在规定时间内勾勒出一幅日常用品的图画(比如狗、钟表或鞋子)，AI 队友则需要在时间结束前猜出图画中的物体。</p>
+          <p>当 AI 猜出图画中的物体时，用户就会进入下一轮，用户的猜画连胜次数也会相应增加。用户还可以邀请朋友或家人一起挑战最长的连胜纪录、分享有趣的素描图，并在体验过程中不断收集新的题目和图画。</p>
+          <p>猜画小歌提供的排行榜显示，目前一位画室学徒级别的用户，因在25分30秒的时间内连续画出了能被AI准确识别的288张画作而名列排行榜第一。</p>
+        </div>
+        <div class="one">
+          <img src="./simg/s311.jpg" width=100% height=auto>
+        </div>
+        <div class="two">
+          <p>猜画小歌中的成绩高低可能与你的画技并不一定成正比，事实上，很多用户在体验的过程中都会遇到这样的情况：明明已经很传神的画出了某样物品，但AI就是猜不出来。要解答这个疑问必须了解猜画小歌的运行原理。</p>
+          <p>猜画小歌对用户画作的辨识，利用的是神经网络技术，是基于对大量涂鸦样本的学习。</p>
+          <p>谷歌在官方说明中对其进行了简单的介绍：作为AI技术的一种，计算机视觉技术能让计算机直接理解输入的视觉信息，并由此“看到”这个世界。这一技术既能在视频通话中识别出你的朋友以便加上对应的标签，也能帮助识别人类眼底诊断图像上的早期糖尿病症状。得益于“神经网络”技术，一些看起来极其困难的事情，计算机也能处理得非常好：比如，通过粗糙的草图就能识别出是什么物体。现在，计算机已经能“看到”你随意涂鸦出的一团长着耳朵的墨迹可能是一只熊猫。</p>
+          <p>具体支撑这一游戏的是一个名叫RNN的递归神经网络，RNN可以利用它内部的记忆来处理任意时序的输入序列，这让它可以更容易处理如不分段的手写识别、语音识别等。所谓输入序列就是指写字时的笔划顺序，以及绘画时的前后过程。</p>
+          <p>事实上，早在2016年，谷歌就推出了玩法类似的网页版quick draw：它会随机显示一个名词，要求你在20秒内把它画出来。玩家需要用鼠标简单地把这个物体勾勒出轮廓，然后 Quick, Draw! 会判断你画的到底像不像。</p>
+          <p>虽然看上去游戏简单轻松，但它是谷歌一系列 AI 试验工具中的重要部分，它实际上使用了神经网络算法对玩家的涂鸦进行判断。谷歌试图用它来研究怎么让 AI 自学图像识别和光学字符辨识——这两项都是 AI 领域的核心课题。</p>
+          <p>一年之后，谷歌发布了该项目背后的数据集。Quick Draw 数据集是一个包含 5000 万张图画的集合，分成了 345 个类别，这些图画都来自于 Quick, Draw! 游戏的玩家。这些画都是加了时间戳的矢量图，并带有一些元数据标注，包括玩家被要求绘画的内容和玩家所在的国家。</p>
+          <p>这次引发朋友圈刷屏的猜画小歌同样被寄托了类似的目的：让每个人都有机会体验人工智能技术驱动下的人机交互。</p>
+          <p>在与AI不断互动的过程中，玩家可以看到AI猜画的过程。而谷歌也贴心的做了这样的设置，当用户通关某个物品后，便可以查看大家都是如何描绘该物品的——当一个物品的图画数据集被展示在你的面前时你或许可以尝试理解，在AI的眼中，“冰淇淋”是什么样的。</p>
+          <p>更重要的是，每一个体验了猜画小歌的用户，实际上也正在基于对于世界的认知，通过自己的画作，不断的训练着AI。</p>
+          <p>正如发布quick draw数据集时谷歌方面的发言：这不但是海量的数据，还是一面有意思的镜子——能借此透视怎么以众包的形式让公众参与训练机器学习系统，以及如何创建一个能反映不同文化背景与观念的数据集。</p>
+          <p>这句话同样可以用来描述猜画小歌：这不仅是一个小程序，更是一个让普通人参与训练机器学习系统的途径。</p>
+          <p>而从谷歌开发小程序的举动来看，这家国际科技巨头正在努力探索，找到最符合中国用户习惯的方式，来参与到自己的产品和技术研发中。</p>
+        </div>
+
+      </div>
+      <!-- 中间部分的内容end -->
+
+    </div>
+<iframe src="../bottom.html" width="100%" height="200px" scrolling="No"  noresize="noresize" frameborder="0" id="bottomFrame"></iframe>
+  </body>
+</html>
